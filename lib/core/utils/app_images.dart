@@ -6,4 +6,6 @@ abstract class AppImages {
   static const OnboardingFrame2 = 'assets/images/onboarding_frame2.png';
   static const FruitsBasket = 'assets/svgs/fruit_basket.svg';
   static const Pineapple = 'assets/svgs/pineapple.svg';
+  static const intro1 = 'assets/svgs/intro1.svg';
+  static const intro2 = 'assets/svgs/intro2.svg';
 }
