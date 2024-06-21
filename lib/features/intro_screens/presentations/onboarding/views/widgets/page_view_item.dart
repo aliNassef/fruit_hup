@@ -4,7 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruit_hup/constants.dart';
 import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
+import 'package:fruit_hup/core/utils/app_router.dart';
 import 'package:fruit_hup/features/intro_screens/data/model/on_boarding_model.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/utils/app_colors.dart';
@@ -42,13 +44,19 @@ class PageViewItem extends StatelessWidget {
                 width: 250.w,
               ),
             ),
-            Positioned(
-              top: 40.h,
-              
-              child: Text(
-                'skip',
-                style: AppStyles.textStyle13R.copyWith(
-                  color: AppColors.gray400,
+            Visibility(
+              visible: currentIndex != introPages.length - 1,
+              child: Positioned(
+                top: 40.h,
+                left: MediaQuery.sizeOf(context).width * .9,
+                child: InkWell(
+                  onTap: () {},
+                  child: Text(
+                    'تخط',
+                    style: AppStyles.textStyle13R.copyWith(
+                      color: AppColors.gray400,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -83,7 +91,12 @@ class PageViewItem extends StatelessWidget {
         VerticalSpace(16),
         Visibility(
           visible: currentIndex == introPages.length - 1,
-          child: DefaultAppButton(),
+          child: DefaultAppButton(
+            onPressed: () {
+              context.go(AppRouter.signInView);
+            },
+            text: 'ابدأ الان',
+          ),
         ),
       ],
     );

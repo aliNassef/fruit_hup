@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_localization: ^0.2.0
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10+1
   get_it: ^7.7.0
@@ -92,3 +93,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_intl:
+  enabled: true

@@ -7,18 +7,22 @@ class OnboardingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      // children: [
-      //   PageViewItem1(),
-      //   PageViewItem2(),
-      // ],
-      itemCount: introPages.length,
-      itemBuilder: (context, index) {
-        return PageViewItem(
-          currentIndex: index,
-          instance: introPages[index],
-        );
-      },
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: PageView.builder(
+        physics: BouncingScrollPhysics(),
+        // children: [
+        //   PageViewItem1(),
+        //   PageViewItem2(),
+        // ],
+        itemCount: introPages.length,
+        itemBuilder: (context, index) {
+          return PageViewItem(
+            currentIndex: index,
+            instance: introPages[index],
+          );
+        },
+      ),
     );
   }
 }

@@ -4,8 +4,9 @@ import 'package:fruit_hup/core/utils/app_colors.dart';
 import 'package:fruit_hup/core/utils/app_styles.dart';
 
 class DefaultAppButton extends StatelessWidget {
-  const DefaultAppButton({super.key});
-  
+  const DefaultAppButton({super.key, required this.text, this.onPressed});
+  final String text;
+  final void Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,9 +22,9 @@ class DefaultAppButton extends StatelessWidget {
           alignment: Alignment.center,
           backgroundColor: WidgetStatePropertyAll(AppColors.mainColor),
         ),
-        onPressed: () {},
+        onPressed:onPressed ,
         child: Text(
-          'start',
+         text,
           style: AppStyles.textStyle16B.copyWith(
             color: Colors.white,
           ),

@@ -3,8 +3,10 @@ import 'package:fruit_hup/features/intro_screens/presentations/onboarding/views/
 import 'package:fruit_hup/features/intro_screens/presentations/splash/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/auth/sign_in/presentation/views/sign_in_view.dart';
+
 abstract class AppRouter {
-  static const takeNoteView = '/TakeNoteView';
+  static const signInView = '/SignInView';
   static const editNoteView = '/EditNoteView';
   static const OnBoardingView = '/OnboardingView';
   static const searchView = '/SearchView';
@@ -22,12 +24,12 @@ abstract class AppRouter {
           return const OnboardingView();
         },
       ),
-      // GoRoute(
-      //   path: searchView,
-      //   builder: (context, state) {
-      //     return const SearchView();
-      //   },
-      // ),
+      GoRoute(
+        path: signInView,
+        builder: (context, state) {
+          return SignInView();
+        },
+      ),
     ],
   );
 }
