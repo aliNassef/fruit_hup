@@ -49,6 +49,76 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `تسجيل دخول`
+  String get login {
+    return Intl.message(
+      'تسجيل دخول',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `البريد الإلكتروني`
+  String get email {
+    return Intl.message(
+      'البريد الإلكتروني',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كلمة المرور`
+  String get password {
+    return Intl.message(
+      'كلمة المرور',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `نسيت كلمة المرور؟`
+  String get forgetPass {
+    return Intl.message(
+      'نسيت كلمة المرور؟',
+      name: 'forgetPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لا تمتلك حساب؟`
+  String get haveAccount {
+    return Intl.message(
+      'لا تمتلك حساب؟',
+      name: 'haveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `قم بانشاء حساب`
+  String get createNewAccount {
+    return Intl.message(
+      'قم بانشاء حساب',
+      name: 'createNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أو`
+  String get or {
+    return Intl.message(
+      'أو',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
