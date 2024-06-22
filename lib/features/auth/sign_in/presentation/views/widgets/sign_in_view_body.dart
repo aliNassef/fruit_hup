@@ -6,11 +6,10 @@ import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
 import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
 import 'package:fruit_hup/core/utils/app_images.dart';
 import 'package:fruit_hup/generated/l10n.dart';
-
 import '../../../../../../core/shared/widgets/or_dvider.dart';
 import 'donot_have_account.dart';
 import 'forget_pass_button.dart';
-import 'sign_with_another_way.dart';
+import 'sign_in_with_another_way.dart';
 
 class SignInViewBody extends StatelessWidget {
   const SignInViewBody({super.key});
@@ -50,28 +49,7 @@ class SignInViewBody extends StatelessWidget {
           DonotHaveAccount(),
           VerticalSpace(33),
           OrDivider(),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Column(
-              children: [
-                VerticalSpace(16),
-                SignWithAnotherWay(
-                  img: AppImages.google,
-                  text: S.of(context).signwithgoogle,
-                ),
-                VerticalSpace(16),
-                SignWithAnotherWay(
-                  img: AppImages.apple,
-                  text: S.of(context).signwithapple,
-                ),
-                VerticalSpace(16),
-                SignWithAnotherWay(
-                  img: AppImages.facebook,
-                  text: S.of(context).signwithfacebook,
-                ),
-              ],
-            ),
-          ),
+          SignInWithAnotherWay(),
         ],
       ),
     );
