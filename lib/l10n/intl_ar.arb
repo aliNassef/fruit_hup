@@ -5,5 +5,8 @@
     "forgetPass" : "نسيت كلمة المرور؟",
     "haveAccount" : "لا تمتلك حساب؟",
     "createNewAccount" : "قم بانشاء حساب",
-    "or" : "أو"
+    "or" : "أو",
+    "signwithgoogle" : "تسجيل بواسطة جوجل",
+    "signwithapple" : "تسجيل بواسطة أبل",
+    "signwithfacebook" :"تسجيل بواسطة فيسبوك"
 }

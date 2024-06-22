@@ -29,6 +29,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
-        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور")
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "signwithapple":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
+        "signwithfacebook":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
+        "signwithgoogle":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل")
       };
 }

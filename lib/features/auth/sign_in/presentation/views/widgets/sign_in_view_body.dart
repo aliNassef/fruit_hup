@@ -17,53 +17,63 @@ class SignInViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        VerticalSpace(20),
-        TopBar(
-          text: S.of(context).login,
-          icon: Image.asset(
-            AppImages.right_arrow,
-            height: 20.h,
-            width: 15.w,
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          VerticalSpace(20),
+          TopBar(
+            text: S.of(context).login,
+            icon: Image.asset(
+              AppImages.right_arrow,
+              height: 20.h,
+              width: 15.w,
+            ),
           ),
-        ),
-        VerticalSpace(24),
-        CustomTextFormField(
-          hintText: S.of(context).email,
-        ),
-        VerticalSpace(16),
-        CustomTextFormField(
-          hintText: S.of(context).password,
-          showIcon: true,
-        ),
-        VerticalSpace(16),
-        ForgetPassButton(),
-        VerticalSpace(33),
-        DefaultAppButton(
-          text: S.of(context).login,
-        ),
-        VerticalSpace(33),
-        DonotHaveAccount(),
-        VerticalSpace(33),
-        OrDivider(),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w),
-          child: Column(
-            children: [
-              VerticalSpace(16),
-              SignWithAnotherWay(
-                
-              ),
-              VerticalSpace(16),
-              SignWithAnotherWay(),
-              VerticalSpace(16),
-              SignWithAnotherWay(),
-            ],
+          VerticalSpace(24),
+          CustomTextFormField(
+            hintText: S.of(context).email,
           ),
-        ),
-      ],
+          VerticalSpace(16),
+          CustomTextFormField(
+            hintText: S.of(context).password,
+            showIcon: true,
+          ),
+          VerticalSpace(16),
+          ForgetPassButton(),
+          VerticalSpace(33),
+          DefaultAppButton(
+            text: S.of(context).login,
+          ),
+          VerticalSpace(33),
+          DonotHaveAccount(),
+          VerticalSpace(33),
+          OrDivider(),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16.w),
+            child: Column(
+              children: [
+                VerticalSpace(16),
+                SignWithAnotherWay(
+                  img: AppImages.google,
+                  text: S.of(context).signwithgoogle,
+                ),
+                VerticalSpace(16),
+                SignWithAnotherWay(
+                  img: AppImages.apple,
+                  text: S.of(context).signwithapple,
+                ),
+                VerticalSpace(16),
+                SignWithAnotherWay(
+                  img: AppImages.facebook,
+                  text: S.of(context).signwithfacebook,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
