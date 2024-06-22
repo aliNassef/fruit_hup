@@ -2,10 +2,10 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
-import 'package:fruit_hup/core/utils/app_router.dart';
-import 'package:fruit_hup/features/intro_screens/data/model/on_boarding_model.dart';
+import '../../../../../../constants.dart';
+import '../../../../../../core/shared/widgets/default_app_button.dart';
+import '../../../../../../core/utils/app_router.dart';
+import '../../../../data/model/on_boarding_model.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/shared/widgets/app_spacer.dart';

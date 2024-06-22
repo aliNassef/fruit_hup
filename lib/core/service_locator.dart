@@ -1,4 +1,4 @@
-import 'package:fruit_hup/core/cache/cache_helper.dart';
+import 'cache/cache_helper.dart';
 import 'package:get_it/get_it.dart';
 
 GetIt getIt = GetIt.instance;

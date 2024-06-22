@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/app_styles.dart';
 
 class DefaultAppButton extends StatelessWidget {
   const DefaultAppButton({super.key, required this.text, this.onPressed});

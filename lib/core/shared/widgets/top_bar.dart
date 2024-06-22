@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
+import '../../utils/app_styles.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key, required this.text, required this.icon});
