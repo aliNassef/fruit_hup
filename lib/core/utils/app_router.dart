@@ -9,6 +9,7 @@ import '../../features/auth/sign_in/presentation/views/sign_in_view.dart';
 abstract class AppRouter {
   static const signInView = '/SignInView';
   static const signupView = '/SignUpView';
+  static const homeView = '/HomeView';
   static const OnBoardingView = '/OnboardingView';
   static const searchView = '/SearchView';
   static final GoRouter router = GoRouter(
@@ -33,6 +34,12 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: signupView,
+        builder: (context, state) {
+          return SignUpView();
+        },
+      ),
+      GoRoute(
+        path: homeView,
         builder: (context, state) {
           return SignUpView();
         },

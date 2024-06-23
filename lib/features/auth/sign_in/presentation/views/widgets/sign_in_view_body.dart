@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
+import 'package:fruit_hup/core/shared/functions/build_loading_box.dart';
 import 'package:fruit_hup/features/auth/sign_in/presentation/view_model/sign_in_cubit/sign_in_cubit.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/shared/widgets/custom_text_form_field.dart';
 import '../../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../../core/shared/widgets/top_bar.dart';
+import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../generated/l10n.dart';
 import '../../../../../../core/shared/widgets/or_dvider.dart';
 import 'donot_have_account.dart';
@@ -20,6 +22,7 @@ class SignInViewBody extends StatelessWidget {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state is SignInLoaded) {
+          context.go(AppRouter.homeView);
         } else if (state is SignInFailure) {
           showDialog(
             context: context,
@@ -30,32 +33,7 @@ class SignInViewBody extends StatelessWidget {
             },
           );
         } else {
-          showDialog(
-            context: context,
-            builder: (context) {
-              return SizedBox(
-                height: 50,
-                width: 50,
-                child: AlertDialog(
-                  alignment: Alignment.center,
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      SizedBox(
-                        height: 50,
-                        width: 50,
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            color: AppColors.mainColor,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              );
-            },
-          );
+          buildLoadingBox(context);
         }
       },
       builder: (context, state) {
