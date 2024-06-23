@@ -9,14 +9,17 @@ class CustomTextFormField extends StatelessWidget {
     super.key,
     required this.hintText,
     this.showIcon = false,
+    this.controller,
   });
   final String hintText;
   final bool showIcon;
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: TextFormField(
+        controller: controller,
         style: AppStyles.textStyle16SB.copyWith(
           color: AppColors.gray950,
         ),

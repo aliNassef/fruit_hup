@@ -1,6 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/features/auth/sign_in/presentation/view_model/sign_in_cubit/sign_in_cubit.dart';
 
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/utils/app_images.dart';
@@ -14,27 +15,34 @@ class SignInWithAnotherWay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      child: Column(
-        children: [
-          VerticalSpace(16),
-          SignWithAnotherWay(
-            img: AppImages.google,
-            text: S.of(context).signwithgoogle,
+    return BlocBuilder<SignInCubit, SignInState>(
+      builder: (context, state) {
+        return Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          child: Column(
+            children: [
+              VerticalSpace(16),
+              SignWithAnotherWay(
+                onTap: () async {
+                  context.read<SignInCubit>().signInWithGoogle();
+                },
+                img: AppImages.google,
+                text: S.of(context).signwithgoogle,
+              ),
+              VerticalSpace(16),
+              SignWithAnotherWay(
+                img: AppImages.apple,
+                text: S.of(context).signwithapple,
+              ),
+              VerticalSpace(16),
+              SignWithAnotherWay(
+                img: AppImages.facebook,
+                text: S.of(context).signwithfacebook,
+              ),
+            ],
           ),
-          VerticalSpace(16),
-          SignWithAnotherWay(
-            img: AppImages.apple,
-            text: S.of(context).signwithapple,
-          ),
-          VerticalSpace(16),
-          SignWithAnotherWay(
-            img: AppImages.facebook,
-            text: S.of(context).signwithfacebook,
-          ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
