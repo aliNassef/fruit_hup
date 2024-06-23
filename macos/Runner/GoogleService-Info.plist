@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyDpLb0rbVYEqA7ftNWDbWGAdpweMGk1Cdo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>922353646678</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.fruitHup.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>fruits-hup</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fruits-hup.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:922353646678:ios:c80e7a9bbf19bfa2104ff7</string>
+</dict>
+</plist>
