@@ -8,5 +8,12 @@
     "or" : "أو",
     "signwithgoogle" : "تسجيل بواسطة جوجل",
     "signwithapple" : "تسجيل بواسطة أبل",
-    "signwithfacebook" :"تسجيل بواسطة فيسبوك"
+    "signwithfacebook" :"تسجيل بواسطة فيسبوك",
+    "newaccount" :"حساب جديد",
+    "fullname" : "الاسم كامل",
+    "fromRules" : " من خلال إنشاء حساب ، فإنك توافق على ",
+    "termsAndCondation" : " الشروط \nوالأحكام الخاصة بنا",
+    "signUp" : "إنشاء حساب جديد",
+    "HaveAccount" : " تمتلك حساب بالفعل؟ "
+    
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/core/utils/app_colors.dart';
 import 'core/utils/app_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'generated/l10n.dart';
@@ -14,6 +15,12 @@ class FruitHup extends StatelessWidget {
         locale: Locale('ar'),
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
+          
+          textSelectionTheme: TextSelectionThemeData(
+            selectionColor: AppColors.gray400,
+          
+            selectionHandleColor: AppColors.gray400,
+          ),
         ),
         localizationsDelegates: [
           S.delegate,

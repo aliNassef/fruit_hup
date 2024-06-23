@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/features/auth/sign_up/presentation/views/sign_up_view.dart';
 import '../../features/intro_screens/presentations/onboarding/views/onboarding_view.dart';
 import '../../features/intro_screens/presentations/splash/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -7,7 +8,7 @@ import '../../features/auth/sign_in/presentation/views/sign_in_view.dart';
 
 abstract class AppRouter {
   static const signInView = '/SignInView';
-  static const editNoteView = '/EditNoteView';
+  static const signupView = '/SignUpView';
   static const OnBoardingView = '/OnboardingView';
   static const searchView = '/SearchView';
   static final GoRouter router = GoRouter(
@@ -28,6 +29,12 @@ abstract class AppRouter {
         path: signInView,
         builder: (context, state) {
           return SignInView();
+        },
+      ),
+      GoRoute(
+        path: signupView,
+        builder: (context, state) {
+          return SignUpView();
         },
       ),
     ],

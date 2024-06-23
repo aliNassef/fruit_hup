@@ -10,6 +10,5 @@ abstract class AppColors {
   static const gray400 = Color(0xff949D9E);
   static const grayForIcon = Color(0xffC9CECF);
   static const gray950 = Color(0xff0C0D0D);
-
   static const borderColor = Color(0xffDDDFDF);
 }

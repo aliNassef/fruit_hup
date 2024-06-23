@@ -1,7 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
 import 'intl/messages_all.dart';
 
 // **************************************************************************
@@ -146,6 +145,66 @@ class S {
     return Intl.message(
       'تسجيل بواسطة فيسبوك',
       name: 'signwithfacebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `حساب جديد`
+  String get newaccount {
+    return Intl.message(
+      'حساب جديد',
+      name: 'newaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الاسم كامل`
+  String get fullname {
+    return Intl.message(
+      'الاسم كامل',
+      name: 'fullname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` من خلال إنشاء حساب ، فإنك توافق على `
+  String get fromRules {
+    return Intl.message(
+      ' من خلال إنشاء حساب ، فإنك توافق على ',
+      name: 'fromRules',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` الشروط \nوالأحكام الخاصة بنا`
+  String get termsAndCondation {
+    return Intl.message(
+      ' الشروط \nوالأحكام الخاصة بنا',
+      name: 'termsAndCondation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `إنشاء حساب جديد`
+  String get signUp {
+    return Intl.message(
+      'إنشاء حساب جديد',
+      name: 'signUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` تمتلك حساب بالفعل؟ `
+  String get HaveAccount {
+    return Intl.message(
+      ' تمتلك حساب بالفعل؟ ',
+      name: 'HaveAccount',
       desc: '',
       args: [],
     );

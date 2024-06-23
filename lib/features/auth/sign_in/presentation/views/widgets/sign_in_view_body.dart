@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/shared/widgets/custom_text_form_field.dart';
 import '../../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../../core/shared/widgets/top_bar.dart';
-import '../../../../../../core/utils/app_images.dart';
 import '../../../../../../generated/l10n.dart';
 import '../../../../../../core/shared/widgets/or_dvider.dart';
 import 'donot_have_account.dart';
@@ -24,11 +22,6 @@ class SignInViewBody extends StatelessWidget {
           VerticalSpace(20),
           TopBar(
             text: S.of(context).login,
-            icon: Image.asset(
-              AppImages.right_arrow,
-              height: 20.h,
-              width: 15.w,
-            ),
           ),
           VerticalSpace(24),
           CustomTextFormField(

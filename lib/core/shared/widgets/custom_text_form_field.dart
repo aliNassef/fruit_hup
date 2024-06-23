@@ -17,6 +17,9 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: TextFormField(
+        style: AppStyles.textStyle16SB.copyWith(
+          color: AppColors.gray950,
+        ),
         cursorColor: AppColors.gray400,
         autocorrect: true,
         decoration: InputDecoration(

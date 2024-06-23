@@ -1,5 +1,7 @@
-
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/core/utils/app_router.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_styles.dart';
@@ -25,6 +27,10 @@ class DonotHaveAccount extends StatelessWidget {
             style: AppStyles.textStyle16SB.copyWith(
               color: AppColors.mainColor,
             ),
+            recognizer: TapGestureRecognizer()
+              ..onTap = () {
+                context.push(AppRouter.signupView);
+              },
           ),
         ],
       ),
