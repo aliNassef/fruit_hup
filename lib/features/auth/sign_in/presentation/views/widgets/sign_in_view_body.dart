@@ -45,6 +45,9 @@ class SignInViewBody extends StatelessWidget {
             children: [
               VerticalSpace(20),
               TopBar(
+                onTap: () {
+                  
+                },
                 text: S.of(context).login,
               ),
               VerticalSpace(24),

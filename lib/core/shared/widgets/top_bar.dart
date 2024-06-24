@@ -8,8 +8,10 @@ class TopBar extends StatelessWidget {
   const TopBar({
     super.key,
     required this.text,
+    this.onTap,
   });
   final String text;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -20,7 +22,9 @@ class TopBar extends StatelessWidget {
             right: isArabic() ? 16.w : 0,
             left: !isArabic() ? 16.w : 0,
           ),
-          child: CircleArrow(),
+          child: CircleArrow(
+            onTap: onTap,
+          ),
         ),
         Spacer(
           flex: 2,

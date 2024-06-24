@@ -7,24 +7,29 @@ import '../../utils/app_images.dart';
 class CircleArrow extends StatelessWidget {
   const CircleArrow({
     super.key,
+    this.onTap,
   });
-
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 44.w,
-      height: 44.w,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: AppColors.borderColor,
+    return InkWell(
+      borderRadius: BorderRadius.circular(20),
+      onTap: onTap,
+      child: Container(
+        width: 44.w,
+        height: 44.w,
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: AppColors.borderColor,
+          ),
+          shape: BoxShape.circle,
         ),
-        shape: BoxShape.circle,
-      ),
-      alignment: Alignment.center,
-      child: Image.asset(
-        AppImages.right_arrow2,
-        height: 24.h,
-        width: 24.w,
+        alignment: Alignment.center,
+        child: Image.asset(
+          AppImages.right_arrow2,
+          height: 24.h,
+          width: 24.w,
+        ),
       ),
     );
   }
