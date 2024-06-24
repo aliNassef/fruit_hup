@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/features/auth/sign_up/presentation/views/sign_up_view.dart';
+import '../../features/home/presentation/views/home_view.dart';
 import '../../features/intro_screens/presentations/onboarding/views/onboarding_view.dart';
 import '../../features/intro_screens/presentations/splash/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
@@ -41,8 +42,20 @@ abstract class AppRouter {
       GoRoute(
         path: homeView,
         builder: (context, state) {
-          return SignUpView();
+          return HomeView();
         },
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: HomeView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            // Use ease-out curve
+            return FadeTransition(
+              opacity: animation.drive(
+                CurveTween(curve: Curves.easeOut),
+              ),
+              child: child,
+            );
+          },
+        ),
       ),
     ],
   );

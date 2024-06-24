@@ -24,6 +24,7 @@ class SignInViewBody extends StatelessWidget {
         if (state is SignInLoaded) {
           context.go(AppRouter.homeView);
         } else if (state is SignInFailure) {
+          context.pop();
           showDialog(
             context: context,
             builder: (context) {
