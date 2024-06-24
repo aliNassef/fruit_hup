@@ -46,7 +46,7 @@ class SignInViewBody extends StatelessWidget {
               VerticalSpace(20),
               TopBar(
                 onTap: () {
-                  
+                  context.go(AppRouter.OnBoardingView);
                 },
                 text: S.of(context).login,
               ),

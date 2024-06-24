@@ -50,7 +50,9 @@ class PageViewItem extends StatelessWidget {
                 top: 40.h,
                 left: MediaQuery.sizeOf(context).width * .9,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    context.go(AppRouter.signInView);
+                  },
                   child: Text(
                     'تخط',
                     style: AppStyles.textStyle13R.copyWith(

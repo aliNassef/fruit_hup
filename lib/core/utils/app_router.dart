@@ -46,15 +46,20 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: HomeView(),
+
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
             // Use ease-out curve
             return FadeTransition(
               opacity: animation.drive(
-                CurveTween(curve: Curves.easeOut),
+                CurveTween(
+                  curve: Curves.easeOut,
+                ),
               ),
               child: child,
             );
           },
+          transitionDuration:
+              Duration(milliseconds: 300), // Set the duration here
         ),
       ),
     ],
