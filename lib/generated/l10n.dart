@@ -49,6 +49,169 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+<<<<<<< HEAD
+=======
+
+  /// `تسجيل دخول`
+  String get login {
+    return Intl.message(
+      'تسجيل دخول',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `البريد الإلكتروني`
+  String get email {
+    return Intl.message(
+      'البريد الإلكتروني',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كلمة المرور`
+  String get password {
+    return Intl.message(
+      'كلمة المرور',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `نسيت كلمة المرور؟`
+  String get forgetPass {
+    return Intl.message(
+      'نسيت كلمة المرور؟',
+      name: 'forgetPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `لا تمتلك حساب؟`
+  String get haveAccount {
+    return Intl.message(
+      'لا تمتلك حساب؟',
+      name: 'haveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `قم بانشاء حساب`
+  String get createNewAccount {
+    return Intl.message(
+      'قم بانشاء حساب',
+      name: 'createNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `أو`
+  String get or {
+    return Intl.message(
+      'أو',
+      name: 'or',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل بواسطة جوجل`
+  String get signwithgoogle {
+    return Intl.message(
+      'تسجيل بواسطة جوجل',
+      name: 'signwithgoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل بواسطة أبل`
+  String get signwithapple {
+    return Intl.message(
+      'تسجيل بواسطة أبل',
+      name: 'signwithapple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل بواسطة فيسبوك`
+  String get signwithfacebook {
+    return Intl.message(
+      'تسجيل بواسطة فيسبوك',
+      name: 'signwithfacebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `حساب جديد`
+  String get newaccount {
+    return Intl.message(
+      'حساب جديد',
+      name: 'newaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الاسم كامل`
+  String get fullname {
+    return Intl.message(
+      'الاسم كامل',
+      name: 'fullname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` من خلال إنشاء حساب ، فإنك توافق على `
+  String get fromRules {
+    return Intl.message(
+      ' من خلال إنشاء حساب ، فإنك توافق على ',
+      name: 'fromRules',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` الشروط \nوالأحكام الخاصة بنا`
+  String get termsAndCondation {
+    return Intl.message(
+      ' الشروط \nوالأحكام الخاصة بنا',
+      name: 'termsAndCondation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `إنشاء حساب جديد`
+  String get signUp {
+    return Intl.message(
+      'إنشاء حساب جديد',
+      name: 'signUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` تمتلك حساب بالفعل؟ `
+  String get HaveAccount {
+    return Intl.message(
+      ' تمتلك حساب بالفعل؟ ',
+      name: 'HaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+>>>>>>> test
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +220,10 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+<<<<<<< HEAD
+=======
+      Locale.fromSubtags(languageCode: 'ar'),
+>>>>>>> test
     ];
   }
 

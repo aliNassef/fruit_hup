@@ -21,5 +21,33 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
+<<<<<<< HEAD
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+=======
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "HaveAccount":
+            MessageLookupByLibrary.simpleMessage(" تمتلك حساب بالفعل؟ "),
+        "createNewAccount":
+            MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+        "fromRules": MessageLookupByLibrary.simpleMessage(
+            " من خلال إنشاء حساب ، فإنك توافق على "),
+        "fullname": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
+        "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
+        "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
+        "newaccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
+        "or": MessageLookupByLibrary.simpleMessage("أو"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+        "signwithapple":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
+        "signwithfacebook":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
+        "signwithgoogle":
+            MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+        "termsAndCondation": MessageLookupByLibrary.simpleMessage(
+            " الشروط \nوالأحكام الخاصة بنا")
+      };
+>>>>>>> test
 }

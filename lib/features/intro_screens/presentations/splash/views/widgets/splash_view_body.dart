@@ -11,30 +11,33 @@ class SplashViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            AppImages.SplashPlanet,
-            width: 192.w,
-            height: 172.h,
-          ),
-          Spacer(),
-          Center(
-            child: Image.asset(
-              AppImages.SplashLogo,
-              height: 173.h,
-              width: 178.w,
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              AppImages.SplashPlanet,
+              width: 192.w,
+              height: 172.h,
             ),
-          ),
-          Spacer(),
-          SvgPicture.asset(
-            AppImages.SplashBottom,
-            height: 165.h,
-          ),
-        ],
+            Spacer(),
+            Center(
+              child: Image.asset(
+                AppImages.SplashLogo,
+                height: 173.h,
+                width: 178.w,
+              ),
+            ),
+            Spacer(),
+            SvgPicture.asset(
+              AppImages.SplashBottom,
+              height: 165.h,
+            ),
+          ],
+        ),
       ),
     );
   }
