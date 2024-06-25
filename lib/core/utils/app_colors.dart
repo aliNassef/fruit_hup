@@ -4,6 +4,8 @@ abstract class AppColors {
   // green
   static const mainColor = Color(0xff1B5E37);
   static const green500 = Color(0xff5DB957);
+  static const green50 = Color(0xffEEF8ED);
+
   static const secondryColor = Color(0xff2D9F5D);
   // gray
   static const gray500 = Color(0xff4E5556);

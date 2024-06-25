@@ -31,11 +31,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "fromRules": MessageLookupByLibrary.simpleMessage(
             " من خلال إنشاء حساب ، فإنك توافق على "),
         "fullname": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
+        "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "newaccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "signwithapple":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
