@@ -47,44 +47,68 @@ class SignInViewBody extends StatelessWidget {
       builder: (context, state) {
         return SingleChildScrollView(
           physics: BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              VerticalSpace(20),
-              TopBar(
-                onTap: () {
-                  context.go(AppRouter.OnBoardingView);
-                },
-                text: S.of(context).login,
-              ),
-              VerticalSpace(24),
-              CustomTextFormField(
-                controller: context.read<SignInCubit>().email,
-                hintText: S.of(context).email,
-              ),
-              VerticalSpace(16),
-              CustomTextFormField(
-                controller: context.read<SignInCubit>().pass,
-                hintText: S.of(context).password,
-                showIcon: true,
-              ),
-              VerticalSpace(16),
-              ForgetPassButton(),
-              VerticalSpace(33),
-              DefaultAppButton(
-                onPressed: () async {
-                  context.read<SignInCubit>().signInWithEmailAndPassword(
-                      email: context.read<SignInCubit>().email.text,
-                      pass: context.read<SignInCubit>().pass.text);
-                },
-                text: S.of(context).login,
-              ),
-              VerticalSpace(33),
-              DonotHaveAccount(),
-              VerticalSpace(33),
-              OrDivider(),
-              SignInWithAnotherWay(),
-            ],
+          child: Form(
+            key: context.read<SignInCubit>().formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                VerticalSpace(20),
+                TopBar(
+                  onTap: () {
+                    context.go(AppRouter.OnBoardingView);
+                  },
+                  text: S.of(context).login,
+                ),
+                VerticalSpace(24),
+                CustomTextFormField(
+                  controller: context.read<SignInCubit>().email,
+                  validator: (val) {
+                    final regex = RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$');
+                    if (val == null || val.isEmpty) {
+                      return 'Please enter an email';
+                    } else if (!regex.hasMatch(val)) {
+                      return 'Please enter a valid Gmail address';
+                    }
+                    return null;
+                  },
+                  hintText: S.of(context).email,
+                ),
+                VerticalSpace(16),
+                CustomTextFormField(
+                  controller: context.read<SignInCubit>().pass,
+                  validator: (val) {
+                    if (val == null || val.isEmpty) {
+                      return 'Please enter a password';
+                    }
+                    return null;
+                  },
+                  hintText: S.of(context).password,
+                  showIcon: true,
+                ),
+                VerticalSpace(16),
+                ForgetPassButton(),
+                VerticalSpace(33),
+                DefaultAppButton(
+                  onPressed: () async {
+                    if (context
+                        .read<SignInCubit>()
+                        .formKey
+                        .currentState!
+                        .validate()) {
+                      context.read<SignInCubit>().signInWithEmailAndPassword(
+                          email: context.read<SignInCubit>().email.text,
+                          pass: context.read<SignInCubit>().pass.text);
+                    }
+                  },
+                  text: S.of(context).login,
+                ),
+                VerticalSpace(33),
+                DonotHaveAccount(),
+                VerticalSpace(33),
+                OrDivider(),
+                SignInWithAnotherWay(),
+              ],
+            ),
           ),
         );
       },
