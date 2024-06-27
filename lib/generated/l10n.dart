@@ -229,6 +229,26 @@ class S {
       args: [],
     );
   }
+
+  /// `الأكثر مبيعًا`
+  String get bestSeller {
+    return Intl.message(
+      'الأكثر مبيعًا',
+      name: 'bestSeller',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `المزيد`
+  String get lot {
+    return Intl.message(
+      'المزيد',
+      name: 'lot',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

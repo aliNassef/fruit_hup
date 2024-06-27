@@ -25,4 +25,6 @@ abstract class AppImages {
 
   // demo
   static const demoProfilr = 'assets/images/demo.png';
+  static const demoHome = 'assets/images/demo_home.png';
+  static const watermillon = 'assets/images/watermillon.png';
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hup/core/shared/functions/build_loading_box.dart';
 import 'package:fruit_hup/features/auth/sign_in/presentation/view_model/sign_in_cubit/sign_in_cubit.dart';
+import 'package:fruit_hup/features/home/presentation/views/home_view.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/shared/widgets/custom_text_form_field.dart';
@@ -22,7 +23,13 @@ class SignInViewBody extends StatelessWidget {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state is SignInLoaded) {
-          context.go(AppRouter.homeView);
+          debugPrint('sucess *************');
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeView(),
+            ),
+          );
         } else if (state is SignInFailure) {
           context.pop();
           showDialog(
