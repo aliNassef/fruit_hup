@@ -1,5 +1,5 @@
-import 'package:fruit_hup/features/auth/sign_in/data/repo/sign_in_repo_impl.dart';
-import 'package:fruit_hup/features/auth/sign_up/data/repo/sign_up_repo_impl.dart';
+import '../features/auth/sign_in/data/repo/sign_in_repo_impl.dart';
+import '../features/auth/sign_up/data/repo/sign_up_repo_impl.dart';
 
 import 'cache/cache_helper.dart';
 import 'package:get_it/get_it.dart';

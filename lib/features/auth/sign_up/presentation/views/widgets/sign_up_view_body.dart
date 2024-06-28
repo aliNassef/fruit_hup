@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/shared/functions/toast_dialog.dart';
-import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
-import 'package:fruit_hup/features/auth/sign_up/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
+import '../../../../../../core/shared/functions/toast_dialog.dart';
+import '../../../../../../core/shared/widgets/default_app_button.dart';
+import '../../view_model/sign_up_cubit/sign_up_cubit.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../core/shared/functions/build_loading_box.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';

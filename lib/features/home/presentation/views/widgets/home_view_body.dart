@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
+import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/shared/widgets/custom_search_bar.dart';
 import 'best_seller_row.dart';
 import 'home_top_bar.dart';

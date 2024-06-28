@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hup/core/shared/functions/locale.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_images.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
-import 'package:fruit_hup/generated/l10n.dart';
+import '../functions/locale.dart';
+import '../../utils/app_colors.dart';
+import '../../utils/app_images.dart';
+import '../../utils/app_styles.dart';
+import '../../../generated/l10n.dart';
 
 class CustomSearchBar extends StatelessWidget {
   const CustomSearchBar({super.key});

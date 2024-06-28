@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/cache/cache_helper.dart';
-import 'package:fruit_hup/core/service_locator.dart';
-import 'package:fruit_hup/features/auth/sign_up/data/repo/sign_up_repo.dart';
+import '../../../../../../constants.dart';
+import '../../../../../../core/cache/cache_helper.dart';
+import '../../../../../../core/service_locator.dart';
+import '../../../data/repo/sign_up_repo.dart';
 
 part 'sign_up_state.dart';
 

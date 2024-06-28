@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/features/auth/sign_up/presentation/view_model/sign_up_cubit/sign_up_cubit.dart';
+import '../../view_model/sign_up_cubit/sign_up_cubit.dart';
 
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_styles.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/shared/functions/locale.dart';
+import '../functions/locale.dart';
 import '../../utils/app_styles.dart';
 import 'cirrcle_arrow.dart';
 
