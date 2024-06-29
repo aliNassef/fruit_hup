@@ -38,7 +38,7 @@ class HomeTopBar extends StatelessWidget {
                 ),
               ),
               Text(
-                getIt.get<CacheHelper>().getData(key: username),
+                getIt.get<CacheHelper>().getData(key: AppConstants.username),
                 style: AppStyles.textStyle16B.copyWith(
                   color: AppColors.gray950,
                 ),

@@ -26,7 +26,9 @@ class SignUpCubit extends Cubit<SignUpState> {
     try {
       await _signUpRepo.signUpWithEmailAndPass(
           email: email.text, pass: pass.text);
-      getIt.get<CacheHelper>().saveData(key: username, value: name.text);
+      getIt
+          .get<CacheHelper>()
+          .saveData(key: AppConstants.username, value: name.text);
       emit(SignUpLoaded());
     } catch (e) {
       emit(

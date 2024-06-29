@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fruit_hup/features/home/data/models/product_model.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key});
-
+  const ProductItem({super.key, required this.instanceOfProduct});
+  final ProductModel instanceOfProduct;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -21,11 +21,6 @@ class ProductItem extends StatelessWidget {
         Positioned(
           right: 8.w,
           top: 8.h,
-          // child: SvgPicture.asset(
-          //   AppImages.fav_icon,
-          //   width: 24.w,
-          //   height: 24.h,
-          // ),
           child: InkWell(
             onTap: () {},
             child: Icon(
@@ -36,13 +31,15 @@ class ProductItem extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 20.h,
-          left: 0,
-          right: 0,
-          child: Image.asset(
-            AppImages.watermillon,
-          ),
-        ),
+            bottom: 80.h,
+            left: 0,
+            right: 0,
+            child: Image.network(
+              instanceOfProduct.image,
+              height: 100.h,
+              width: 80.w,
+              fit: BoxFit.cover,
+            )),
         Positioned(
           bottom: 15.h,
           right: 8.w,
@@ -53,7 +50,7 @@ class ProductItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'بطيخ',
+                    instanceOfProduct.name,
                     style: AppStyles.textStyle13SB,
                   ),
                   VerticalSpace(4),
@@ -61,12 +58,12 @@ class ProductItem extends StatelessWidget {
                     TextSpan(
                       children: [
                         TextSpan(
-                          text: '20جنية /',
+                          text: '${instanceOfProduct.price}جنية /',
                           style: AppStyles.textStyle13B
                               .copyWith(color: AppColors.orange500),
                         ),
                         TextSpan(
-                          text: ' الكيلو',
+                          text: instanceOfProduct.measure,
                           style: AppStyles.textStyle13SB
                               .copyWith(color: AppColors.orange300),
                         )
@@ -75,7 +72,7 @@ class ProductItem extends StatelessWidget {
                   ),
                 ],
               ),
-              HorizontalSpace(15),
+              HorizontalSpace(20),
               CircleAvatar(
                 backgroundColor: AppColors.mainColor,
                 child: InkWell(

@@ -1,5 +1,16 @@
-import 'home_repo.dart';
+// import 'package:fruit_hup/core/api/api_services.dart';
 
-abstract class HomeRepoImpl extends HomeRepo {
+// import 'home_repo.dart';
+
+//   class HomeRepoImpl extends HomeRepo {
+//   final ApiServices api;
+
+//   HomeRepoImpl({required this.api});
   
-}
+//   @override
+//   Future<void> getAllProducts()async {
+
+//   }
+
+  
+// }
