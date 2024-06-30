@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../features/auth/sign_up/presentation/views/sign_up_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
 import '../../features/intro_screens/presentations/onboarding/views/onboarding_view.dart';
-import '../../features/intro_screens/presentations/splash/views/splash_view.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/auth/sign_in/presentation/views/sign_in_view.dart';
@@ -18,7 +17,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const SplashView();
+          return const HomeView();
         },
       ),
       GoRoute(

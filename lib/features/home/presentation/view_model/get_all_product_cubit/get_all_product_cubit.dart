@@ -1,21 +1,25 @@
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hup/core/api/api_services.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
+import 'package:fruit_hup/constants.dart';
+import 'package:fruit_hup/features/home/data/repo/home_repo.dart';
 
 part 'get_all_product_state.dart';
 
 class GetAllProductCubit extends Cubit<GetAllProductState> {
-  GetAllProductCubit(this.api) : super(GetAllProductInitial());
-  final ApiServices api;
+  GetAllProductCubit(this.homeRepo) : super(GetAllProductInitial());
+  final HomeRepo homeRepo;
   getAllProducts() async {
     emit(GetAllProductLoading());
-    try {
-      api.getData();
-      emit(GetAllProductLoaded());
-    } catch (e) {
-      emit(GetAllProductFailure(
-        errMessage: e.toString(),
-      ));
-    }
+    var data = await homeRepo.getAllProducts();
+    data.fold(
+      (l) {
+        AppConstants.products = l;
+        debugPrint(AppConstants.products.length.toString());
+        emit(GetAllProductLoaded());
+      },
+      (r) {
+        emit(GetAllProductFailure(errMessage: r.errMessage));
+      },
+    );
   }
 }

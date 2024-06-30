@@ -37,6 +37,7 @@ class HomeViewBody extends StatelessWidget {
                     if (state is GetAllProductLoaded) {
                       return Expanded(
                         child: GridView.builder(
+                          physics: BouncingScrollPhysics(),
                           gridDelegate:
                               SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,

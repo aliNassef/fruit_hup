@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -31,15 +32,21 @@ class ProductItem extends StatelessWidget {
           ),
         ),
         Positioned(
-            bottom: 80.h,
-            left: 0,
-            right: 0,
-            child: Image.network(
-              instanceOfProduct.image,
-              height: 100.h,
-              width: 80.w,
-              fit: BoxFit.cover,
-            )),
+          bottom: 80.h,
+          left: 0,
+          right: 0,
+          child: CachedNetworkImage(
+            imageUrl: instanceOfProduct.image,
+            placeholder: (context, url) => Center(
+              child: CircularProgressIndicator(
+                color: AppColors.mainColor,
+              ),
+            ),
+            height: 100.h,
+            width: 50.w,
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ),
+        ),
         Positioned(
           bottom: 15.h,
           right: 8.w,
