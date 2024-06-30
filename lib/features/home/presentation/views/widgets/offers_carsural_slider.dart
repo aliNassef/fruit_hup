@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/features/home/presentation/view_model/get_offers_cubit/get_offers_cubit.dart';
+import 'package:shimmer/shimmer.dart';
 
 class OffersCarsuralSlider extends StatelessWidget {
   const OffersCarsuralSlider({
@@ -42,7 +43,25 @@ class OffersCarsuralSlider extends StatelessWidget {
             child: Text(state.errMessage),
           );
         } else {
-          return CircularProgressIndicator();
+          return SizedBox(
+            height: 160.h,
+            width: MediaQuery.of(context).size.width,
+            child: Shimmer.fromColors(
+              baseColor: Colors.grey[300]!,
+              highlightColor: Colors.grey[100]!,
+              child: CarouselSlider.builder(
+                itemCount: 5, // Simulate 5 items in the shimmer effect
+                itemBuilder: (context, index, realIndex) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    color: Colors.white, // Placeholder color for shimmer effect
+                  );
+                },
+                options: CarouselOptions(height: 160.h, viewportFraction: 0.9),
+              ),
+            ),
+          );
         }
       },
     );
