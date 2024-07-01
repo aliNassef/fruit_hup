@@ -8,8 +8,10 @@ import '../../utils/app_styles.dart';
 import '../../../generated/l10n.dart';
 
 class CustomSearchBar extends StatelessWidget {
-  const CustomSearchBar({super.key, this.readOnly = false});
+  const CustomSearchBar(
+      {super.key, this.readOnly = false, this.searchControler});
   final bool readOnly;
+  final TextEditingController? searchControler;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,6 +29,7 @@ class CustomSearchBar extends StatelessWidget {
           ],
         ),
         child: TextFormField(
+          controller: searchControler,
           readOnly: readOnly,
           decoration: InputDecoration(
             filled: true,

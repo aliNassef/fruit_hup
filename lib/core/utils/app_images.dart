@@ -22,6 +22,7 @@ abstract class AppImages {
   // search
   static const searchIcon = 'assets/svgs/search_icon.svg';
   static const settingIcon = 'assets/svgs/setting_icon.svg';
+  static const noResult = 'assets/images/no_result.png';
 
   // demo
   static const demoProfilr = 'assets/images/demo.png';

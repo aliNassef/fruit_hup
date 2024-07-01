@@ -1,10 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/constants.dart';
- import 'package:fruit_hup/features/home/presentation/view_model/get_all_product_cubit/get_all_product_cubit.dart';
+import 'package:fruit_hup/core/utils/app_router.dart';
+import 'package:fruit_hup/features/home/presentation/view_model/get_all_product_cubit/get_all_product_cubit.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/shared/widgets/custom_search_bar.dart';
@@ -25,12 +25,13 @@ class HomeViewBody extends StatelessWidget {
         VerticalSpace(16),
         InkWell(
           onTap: () {
-            log('done');
+            context.push(AppRouter.searchView);
           },
           child: AbsorbPointer(
-              child: CustomSearchBar(
-            readOnly: true,
-          )),
+            child: CustomSearchBar(
+              readOnly: true,
+            ),
+          ),
         ),
         VerticalSpace(12),
         OffersCarsuralSlider(),

@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/core/utils/app_router.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -20,7 +21,9 @@ class BestSellerRow extends StatelessWidget {
           style: AppStyles.textStyle16B.copyWith(color: AppColors.gray950),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            context.push(AppRouter.morePopular);
+          },
           child: Text(
             S.of(context).lot,
             style: AppStyles.textStyle13R.copyWith(color: AppColors.gray400),
