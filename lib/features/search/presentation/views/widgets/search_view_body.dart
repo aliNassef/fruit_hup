@@ -3,12 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/core/shared/widgets/custom_search_bar.dart';
 import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
 import 'package:fruit_hup/features/search/presentation/view_model/search_cubit/search_cubit.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 
 import '../../../../../core/shared/widgets/app_spacer.dart';
+import 'before_search_result.dart';
 import 'search_item_list_tile.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -31,23 +30,7 @@ class SearchViewBody extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            'عمليات البحث الأخيرة',
-                            style: AppStyles.textStyle16SB.copyWith(
-                              color: AppColors.gray950,
-                            ),
-                          ),
-                          Spacer(),
-                          Text(
-                            'حذف الكل',
-                            style: AppStyles.textStyle13R.copyWith(
-                              color: AppColors.gray400,
-                            ),
-                          ),
-                        ],
-                      ),
+                      BeforeSearchResult(),
                       Expanded(
                         child: ListView.separated(
                           itemBuilder: (context, index) {
