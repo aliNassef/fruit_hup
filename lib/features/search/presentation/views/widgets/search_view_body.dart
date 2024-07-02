@@ -92,6 +92,15 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                       );
                     } else if (state is SearchFailure) {
                       return Center(child: Text(state.errMessage));
+                    } else if (state is SearchDeleteAllQueries) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Column(
+                          children: [
+                            BeforeSearchResult(),
+                          ],
+                        ),
+                      );
                     } else {
                       return ListView.separated(
                         physics: NeverScrollableScrollPhysics(),
@@ -154,27 +163,30 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                         )
                       ],
                     )
-                  : Column(
-                      children: [
-                        GridView.builder(
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 8.h,
-                            crossAxisSpacing: 10.w,
-                            mainAxisExtent: 214.h,
+                  : Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: Column(
+                        children: [
+                          GridView.builder(
+                            shrinkWrap: true,
+                            physics: NeverScrollableScrollPhysics(),
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 8.h,
+                              crossAxisSpacing: 10.w,
+                              mainAxisExtent: 214.h,
+                            ),
+                            itemBuilder: (context, index) {
+                              return ProductItem(
+                                instanceOfProduct: filteredItems[index],
+                              );
+                            },
+                            itemCount: filteredItems
+                                .length, // Set the number of items in your grid
                           ),
-                          itemBuilder: (context, index) {
-                            return ProductItem(
-                              instanceOfProduct: filteredItems[index],
-                            );
-                          },
-                          itemCount: filteredItems
-                              .length, // Set the number of items in your grid
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
         ],
       ),

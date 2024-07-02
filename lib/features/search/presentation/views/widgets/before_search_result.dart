@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hup/features/search/presentation/view_model/search_cubit/search_cubit.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -20,10 +21,15 @@ class BeforeSearchResult extends StatelessWidget {
           ),
         ),
         Spacer(),
-        Text(
-          'حذف الكل',
-          style: AppStyles.textStyle13R.copyWith(
-            color: AppColors.gray400,
+        InkWell(
+          onTap: () {
+            context.read<SearchCubit>().deleteAllQueries();
+          },
+          child: Text(
+            'حذف الكل',
+            style: AppStyles.textStyle13R.copyWith(
+              color: AppColors.gray400,
+            ),
           ),
         ),
       ],

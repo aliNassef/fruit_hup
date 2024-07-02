@@ -22,8 +22,8 @@ class SearchCubit extends Cubit<SearchState> {
     await searchRepo.addQueryToCollection(text: val);
   }
 
-  deleteSpecificQuery({required String docId}) async {
-    
-    await searchRepo.deleteSpecificQuery(docId: docId);
+  deleteAllQueries() async {
+    await searchRepo.deleteAllQueries();
+    emit(SearchDeleteAllQueries());
   }
 }

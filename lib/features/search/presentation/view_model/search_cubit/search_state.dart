@@ -18,3 +18,5 @@ final class SearchFailure extends SearchState {
 
   SearchFailure({required this.errMessage});
 }
+
+final class SearchDeleteAllQueries extends SearchState {}
