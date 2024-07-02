@@ -26,4 +26,9 @@ class SearchCubit extends Cubit<SearchState> {
     await searchRepo.deleteAllQueries();
     emit(SearchDeleteAllQueries());
   }
+
+  deleteSpecificQuery({required int index}) async {
+    await searchRepo.deleteSpecificQuery(index: index);
+    await getQueries();
+  }
 }

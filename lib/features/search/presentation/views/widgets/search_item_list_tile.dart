@@ -8,8 +8,10 @@ class SearchItemListTile extends StatelessWidget {
   const SearchItemListTile({
     super.key,
     required this.title,
+    required this.index,
   });
   final String title;
+  final int index;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -28,7 +30,9 @@ class SearchItemListTile extends StatelessWidget {
           color: AppColors.gray400,
         ),
         trailing: InkWell(
-          onTap: () {},
+          onTap: () {
+            context.read<SearchCubit>().deleteSpecificQuery(index: index);
+          },
           child: Icon(
             Icons.clear,
             color: AppColors.gray950,

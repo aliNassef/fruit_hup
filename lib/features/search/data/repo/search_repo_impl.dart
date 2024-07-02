@@ -33,9 +33,9 @@ class SearchRepoImpl extends SearchRepo {
   }
 
   @override
-  deleteSpecificQuery({required String docId}) async {
+  deleteSpecificQuery({required int index}) async {
     try {
-      await api.deleteQuery(docId);
+      await api.deleteSpecificQuery(index: index);
     } catch (e) {
       debugPrint(e.toString());
     }

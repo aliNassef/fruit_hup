@@ -78,6 +78,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                               itemBuilder: (context, index) {
                                 return SearchItemListTile(
                                   title: state.searchList[index],
+                                  index: index,
                                 );
                               },
                               separatorBuilder: (context, index) {

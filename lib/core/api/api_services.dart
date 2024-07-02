@@ -43,8 +43,15 @@ class ApiServices {
 
   deleteAllquries() async {
     final querySnapshot = await search.get();
+
     for (var doc in querySnapshot.docs) {
       await deleteQuery(doc.id);
     }
+  }
+
+  deleteSpecificQuery({required int index}) async {
+    final querySnapshot = await search.get();
+    var docId = querySnapshot.docs[index].id;
+    deleteQuery(docId);
   }
 }
