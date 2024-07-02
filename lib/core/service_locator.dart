@@ -1,5 +1,6 @@
 import 'package:fruit_hup/core/api/api_services.dart';
 import 'package:fruit_hup/features/home/data/repo/home_repo_impl.dart';
+import 'package:fruit_hup/features/search/data/repo/search_repo_impl.dart';
 
 import '../features/auth/sign_in/data/repo/sign_in_repo_impl.dart';
 import '../features/auth/sign_up/data/repo/sign_up_repo_impl.dart';
@@ -16,6 +17,9 @@ setupGetIt() async {
       api: getIt.get<ApiServices>(),
     ),
   );
+  await getIt.registerSingleton<SearchRepoImpl>(SearchRepoImpl(
+    api: getIt.get<ApiServices>(),
+  ));
 
   await getIt.registerSingleton<SignInRepoImpl>(SignInRepoImpl());
   await getIt.registerSingleton<SignUpRepoImpl>(SignUpRepoImpl());

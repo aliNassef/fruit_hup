@@ -9,6 +9,7 @@ import 'package:fruit_hup/core/utils/app_styles.dart';
 import 'package:fruit_hup/features/search/presentation/view_model/search_cubit/search_cubit.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../home/data/models/product_model.dart';
@@ -55,30 +56,78 @@ class _SearchViewBodyState extends State<SearchViewBody> {
           ),
           VerticalSpace(16),
           CustomSearchBar(
+            onSaved: (val) {
+              print(" *********** " + val!);
+              context.read<SearchCubit>().addQuery(val: val);
+            },
             searchControler: context.read<SearchCubit>().search,
           ),
           VerticalSpace(24),
           context.read<SearchCubit>().search.text.isEmpty
-              ? Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: Column(
-                    children: [
-                      BeforeSearchResult(),
-                      ListView.separated(
+              ? BlocBuilder<SearchCubit, SearchState>(
+                  builder: (context, state) {
+                    if (state is SearchLoaded) {
+                      return Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 16.w),
+                        child: Column(
+                          children: [
+                            BeforeSearchResult(),
+                            ListView.separated(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) {
+                                return SearchItemListTile(
+                                  title: state.searchList[index],
+                                );
+                              },
+                              separatorBuilder: (context, index) {
+                                return SizedBox(
+                                  height: 0,
+                                );
+                              },
+                              itemCount: state.searchList.length,
+                            ),
+                          ],
+                        ),
+                      );
+                    } else if (state is SearchFailure) {
+                      return Center(child: Text(state.errMessage));
+                    } else {
+                      return ListView.separated(
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return SearchItemListTile();
+                          return Shimmer.fromColors(
+                            baseColor: Colors.grey[300]!,
+                            highlightColor: Colors.grey[100]!,
+                            child: ListTile(
+                              title: Container(
+                                width: double.infinity,
+                                height: 16.0,
+                                color: Colors.white,
+                              ),
+                              leading: Container(
+                                width: 24.0,
+                                height: 24.0,
+                                color: Colors.white,
+                              ),
+                              trailing: Container(
+                                width: 24.0,
+                                height: 24.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                          );
                         },
                         separatorBuilder: (context, index) {
                           return SizedBox(
                             height: 0,
                           );
                         },
-                        itemCount: 3,
-                      ),
-                    ],
-                  ),
+                        itemCount: 3, // Number of shimmer items to display
+                      );
+                    }
+                  },
                 )
               : filteredItems.isEmpty
                   ? Column(

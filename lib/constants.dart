@@ -24,4 +24,5 @@ abstract class AppConstants {
   static const String productCollection = 'products';
   static List<ProductModel> products = [];
   static const String offerCollection = 'offers';
+  static const String searchCollection = 'search';
 }
