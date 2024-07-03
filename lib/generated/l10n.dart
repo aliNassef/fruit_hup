@@ -49,8 +49,6 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
-<<<<<<< HEAD
-=======
 
   /// `تسجيل دخول`
   String get login {
@@ -212,6 +210,56 @@ class S {
     );
   }
 >>>>>>> test
+
+  /// `صباح الخير !..`
+  String get goodMorning {
+    return Intl.message(
+      'صباح الخير !..',
+      name: 'goodMorning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ابحث عن.......`
+  String get searchFor {
+    return Intl.message(
+      'ابحث عن.......',
+      name: 'searchFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الأكثر مبيعًا`
+  String get bestSeller {
+    return Intl.message(
+      'الأكثر مبيعًا',
+      name: 'bestSeller',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `المزيد`
+  String get lot {
+    return Intl.message(
+      'المزيد',
+      name: 'lot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `البحث`
+  String get search {
+    return Intl.message(
+      'البحث',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -220,10 +268,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
-<<<<<<< HEAD
-=======
       Locale.fromSubtags(languageCode: 'ar'),
->>>>>>> test
     ];
   }
 

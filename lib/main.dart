@@ -12,6 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // ApiServices().getData();
   await CacheHelper().init();
   await setupGetIt();
   await ScreenUtil.ensureScreenSize();

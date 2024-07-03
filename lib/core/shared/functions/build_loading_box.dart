@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../utils/app_colors.dart';
 
@@ -6,24 +7,18 @@ Future<dynamic> buildLoadingBox(BuildContext context) {
   return showDialog(
     context: context,
     builder: (context) {
-      return SizedBox(
-        height: 50,
-        width: 50,
-        child: AlertDialog(
+      return Center(
+        child: Container(
+          width: 80.w,
+          height: 80.h,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            color: Colors.white,
+          ),
           alignment: Alignment.center,
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                height: 50,
-                width: 50,
-                child: Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.mainColor,
-                  ),
-                ),
-              ),
-            ],
+          child: CircularProgressIndicator(
+            color: AppColors.mainColor,
+            strokeWidth: 2,
           ),
         ),
       );
