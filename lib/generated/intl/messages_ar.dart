@@ -24,7 +24,6 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "HaveAccount":
             MessageLookupByLibrary.simpleMessage(" تمتلك حساب بالفعل؟ "),
-        "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -32,15 +31,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "fromRules": MessageLookupByLibrary.simpleMessage(
             " من خلال إنشاء حساب ، فإنك توافق على "),
         "fullname": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
-        "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
-        "lot": MessageLookupByLibrary.simpleMessage("المزيد"),
         "newaccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-        "search": MessageLookupByLibrary.simpleMessage("البحث"),
-        "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "signwithapple":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
