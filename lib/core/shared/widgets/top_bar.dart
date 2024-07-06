@@ -1,7 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:fruit_hup/core/utils/app_images.dart';
+import 'package:fruit_hup/core/utils/app_router.dart';
+import 'package:go_router/go_router.dart';
 import '../../utils/app_colors.dart';
 import '../functions/locale.dart';
 import '../../utils/app_styles.dart';
@@ -40,15 +44,21 @@ class TopBar extends StatelessWidget {
         Spacer(
           flex: 2,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 17.w),
-          child: CircleAvatar(
-            radius: 20,
-            backgroundColor: AppColors.green50,
-            child: SvgPicture.asset(
-              AppImages.notificationIcon,
-              width: 20.w,
-              height: 20.h,
+        InkWell(
+          onTap: () {
+            log('tapped');
+            context.push(AppRouter.notificationView);
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 17.w),
+            child: CircleAvatar(
+              radius: 20,
+              backgroundColor: AppColors.green50,
+              child: SvgPicture.asset(
+                AppImages.notificationIcon,
+                width: 20.w,
+                height: 20.h,
+              ),
             ),
           ),
         )
@@ -56,6 +66,3 @@ class TopBar extends StatelessWidget {
     );
   }
 }
-/** Spacer(
-          flex: 3,
-        ), */

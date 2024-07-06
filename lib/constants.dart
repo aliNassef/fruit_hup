@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:fruit_hup/features/home/data/models/product_model.dart';
 
 import 'core/utils/app_images.dart';
@@ -17,7 +18,7 @@ List<OnBoardingModel> introPages = [
         'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على\n التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
   ),
 ];
-
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 abstract class AppConstants {
   static const String username = 'name';
 
@@ -25,4 +26,5 @@ abstract class AppConstants {
   static List<ProductModel> products = [];
   static const String offerCollection = 'offers';
   static const String searchCollection = 'search';
+  static const String notificationCollection = 'notifications';
 }
