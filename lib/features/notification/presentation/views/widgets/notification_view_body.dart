@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/core/utils/app_router.dart';
 import 'package:fruit_hup/features/notification/presentation/view_model/notification_cubit/notification_cubit.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
@@ -35,7 +36,11 @@ class _NotificationViewBodyState extends State<NotificationViewBody> {
               TopBar(
                 text: S.of(context).notification,
                 onTap: () {
-                  context.pop();
+                  if (context.canPop()) {
+                    context.pop();
+                  } else {
+                    context.go(AppRouter.homeView);
+                  }
                 },
               ),
               VerticalSpace(16),
