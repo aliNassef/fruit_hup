@@ -9,9 +9,20 @@ import '../../../../../core/shared/widgets/top_bar.dart';
 import '../../../../../generated/l10n.dart';
 import 'notification_item.dart';
 
-class NotificationViewBody extends StatelessWidget {
+class NotificationViewBody extends StatefulWidget {
   const NotificationViewBody({super.key, this.message});
   final RemoteMessage? message;
+
+  @override
+  State<NotificationViewBody> createState() => _NotificationViewBodyState();
+}
+
+class _NotificationViewBodyState extends State<NotificationViewBody> {
+  @override
+  void initState() {
+    super.initState();
+    context.read<NotificationCubit>().getNotifications();
+  }
 
   @override
   Widget build(BuildContext context) {

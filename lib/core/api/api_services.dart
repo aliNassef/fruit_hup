@@ -55,11 +55,5 @@ class ApiServices {
     deleteQuery(docId);
   }
 
-  getNotifications() async {
-    QuerySnapshot querySnapshot = await FirebaseFirestore.instance
-        .collection(AppConstants.notificationCollection)
-        .get();
-    var data = querySnapshot.docs;
-    return data;
-  }
+ 
 }

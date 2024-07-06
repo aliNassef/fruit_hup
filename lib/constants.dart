@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/features/home/data/models/product_model.dart';
+import 'package:fruit_hup/features/notification/data/model/notification_model.dart';
 
 import 'core/utils/app_images.dart';
 import 'features/intro_screens/data/model/on_boarding_model.dart';
@@ -24,6 +25,8 @@ abstract class AppConstants {
 
   static const String productCollection = 'products';
   static List<ProductModel> products = [];
+    static List<NotificationModel> notifications = [];
+
   static const String offerCollection = 'offers';
   static const String searchCollection = 'search';
   static const String notificationCollection = 'notifications';
