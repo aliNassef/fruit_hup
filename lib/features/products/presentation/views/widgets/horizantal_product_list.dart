@@ -36,7 +36,7 @@ class HorizantalproductList extends StatelessWidget {
                         height: 60.h,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xffF3F5F7),
+                          color: Color(0xffF3F5F7),     
                         ),
                         child: Image.network(
                           AppConstants.products[index].image,

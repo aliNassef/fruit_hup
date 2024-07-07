@@ -26,6 +26,7 @@ abstract class AppImages {
 
   // products
   static const filter_icon = 'assets/svgs/filter_icon.svg';
+  static const filter_specific_icon = 'assets/svgs/filter_specific_icon.svg';
 
   // demo
   static const demoProfilr = 'assets/images/demo.png';

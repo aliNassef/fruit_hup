@@ -22,6 +22,9 @@
     "search" : "البحث",
     "notification" : "الاشعارات",
     "products" : "المنتجات",
-    "ourProducts" : "منتجاتنا"
+    "ourProducts" : "منتجاتنا",
+    "filter" : "تصنيف حسب :",
+    "priceRange" : "السعر :",
+    "to" : "الي"
   
 }

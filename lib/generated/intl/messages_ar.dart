@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "filter": MessageLookupByLibrary.simpleMessage("تصنيف حسب :"),
         "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "fromRules": MessageLookupByLibrary.simpleMessage(
             " من خلال إنشاء حساب ، فإنك توافق على "),
@@ -41,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "ourProducts": MessageLookupByLibrary.simpleMessage("منتجاتنا"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "priceRange": MessageLookupByLibrary.simpleMessage("السعر :"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
@@ -52,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "signwithgoogle":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "termsAndCondation": MessageLookupByLibrary.simpleMessage(
-            " الشروط \nوالأحكام الخاصة بنا")
+            " الشروط \nوالأحكام الخاصة بنا"),
+        "to": MessageLookupByLibrary.simpleMessage("الي")
       };
 }

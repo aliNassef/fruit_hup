@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../generated/l10n.dart';
+import 'bottom_sheet_container.dart';
+import 'filter_button_icon.dart';
 
 class ProductHeader extends StatelessWidget {
   const ProductHeader({
@@ -25,19 +25,17 @@ class ProductHeader extends StatelessWidget {
             S.of(context).ourProducts,
             style: AppStyles.textStyle16B.copyWith(color: AppColors.gray950),
           ),
-          Container(
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4),
-              color: Colors.white.withOpacity(0.1),
-              border: Border.all(
-                color: Color(0xffCACECE66).withOpacity(.4),
-              ),
-            ),
-            child: SvgPicture.asset(
-              AppImages.filter_icon,
-              alignment: Alignment.center,
-            ),
+          InkWell(
+            onTap: () {
+              showModalBottomSheet(
+                backgroundColor: Color(0xff000000).withOpacity(0.2),
+                context: context,
+                builder: (context) {
+                  return BottomSheetContainer();
+                },
+              );
+            },
+            child: FilterButtonIcon(),
           )
         ],
       ),

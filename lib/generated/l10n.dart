@@ -289,6 +289,36 @@ class S {
       args: [],
     );
   }
+
+  /// `تصنيف حسب :`
+  String get filter {
+    return Intl.message(
+      'تصنيف حسب :',
+      name: 'filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `السعر :`
+  String get priceRange {
+    return Intl.message(
+      'السعر :',
+      name: 'priceRange',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الي`
+  String get to {
+    return Intl.message(
+      'الي',
+      name: 'to',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
