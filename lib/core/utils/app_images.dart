@@ -24,6 +24,9 @@ abstract class AppImages {
   static const settingIcon = 'assets/svgs/setting_icon.svg';
   static const noResult = 'assets/images/no_result.png';
 
+  // products
+  static const filter_icon = 'assets/svgs/filter_icon.svg';
+
   // demo
   static const demoProfilr = 'assets/images/demo.png';
   static const demoHome = 'assets/images/demo_home.png';

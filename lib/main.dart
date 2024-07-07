@@ -13,7 +13,6 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // ApiServices().getData();
   await PushNotificationService().init();
   await CacheHelper().init();
   await setupGetIt();

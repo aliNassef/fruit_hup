@@ -20,6 +20,8 @@
     "bestSeller" : "الأكثر مبيعًا",
     "lot" : "المزيد",
     "search" : "البحث",
-    "notification" : "الاشعارات"
+    "notification" : "الاشعارات",
+    "products" : "المنتجات",
+    "ourProducts" : "منتجاتنا"
   
 }

@@ -269,6 +269,26 @@ class S {
       args: [],
     );
   }
+
+  /// `المنتجات`
+  String get products {
+    return Intl.message(
+      'المنتجات',
+      name: 'products',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `منتجاتنا`
+  String get ourProducts {
+    return Intl.message(
+      'منتجاتنا',
+      name: 'ourProducts',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
