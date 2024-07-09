@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
- import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
-import '../../../../products/data/models/product_model.dart';
+import '../../../data/models/product_model.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem({super.key, required this.instanceOfProduct});

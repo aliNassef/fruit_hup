@@ -15,10 +15,14 @@ class FruitHup extends StatelessWidget {
         locale: Locale('ar'),
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
-          
+          sliderTheme: SliderThemeData(
+            activeTrackColor: AppColors.mainColor,
+            inactiveTrackColor: AppColors.mainColor,
+            thumbColor: AppColors.mainColor,
+            thumbShape: const RoundSliderThumbShape(),
+          ),
           textSelectionTheme: TextSelectionThemeData(
             selectionColor: AppColors.gray400,
-          
             selectionHandleColor: AppColors.gray400,
           ),
         ),

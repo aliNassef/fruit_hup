@@ -14,7 +14,7 @@ class GetAllProductCubit extends Cubit<GetAllProductState> {
     data.fold(
       (l) {
         AppConstants.products = l;
-        debugPrint(AppConstants.products.length.toString());
+      //  debugPrint(AppConstants.products.length.toString());
         emit(GetAllProductLoaded());
       },
       (r) {

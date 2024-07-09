@@ -16,7 +16,7 @@ class BottomSheetContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300.h,
+      height: 312.h,
       width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(
         color: Colors.white,
@@ -32,8 +32,9 @@ class BottomSheetContainer extends StatelessWidget {
           HeaderSectionBottomSheet(),
           VerticalSpace(16),
           PriceRangeSection(),
-          VerticalSpace(16),
+          VerticalSpace(5),
           CustomRangeSlider(),
+          VerticalSpace(16),
           DefaultAppButton(text: 'تصفيه'),
         ],
       ),
