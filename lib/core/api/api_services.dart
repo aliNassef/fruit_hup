@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fruit_hup/constants.dart';
 
 class ApiServices {
-  CollectionReference products =
+  static CollectionReference products =
       FirebaseFirestore.instance.collection(AppConstants.productCollection);
 
   CollectionReference offers =
@@ -16,7 +16,9 @@ class ApiServices {
     var data = querySnapshot.docs;
     return data;
   }
-
+  getProductCollection() {
+    return products;
+  }
   getOffers() async {
     QuerySnapshot querySnapshot = await offers.get();
     var data = querySnapshot.docs;
@@ -54,6 +56,4 @@ class ApiServices {
     var docId = querySnapshot.docs[index].id;
     deleteQuery(docId);
   }
-
- 
 }

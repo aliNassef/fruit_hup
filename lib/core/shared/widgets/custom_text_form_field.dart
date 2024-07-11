@@ -10,10 +10,12 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     this.showIcon = false,
     this.controller,
+    this.centerHint = false,
     this.validator,
   });
   final String hintText;
   final bool showIcon;
+  final bool centerHint;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   @override
@@ -21,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: TextFormField(
+        textAlign: centerHint ? TextAlign.center : TextAlign.start,
         controller: controller,
         validator: validator,
         style: AppStyles.textStyle16SB.copyWith(

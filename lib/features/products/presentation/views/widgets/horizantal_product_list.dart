@@ -36,7 +36,7 @@ class HorizantalproductList extends StatelessWidget {
                         height: 60.h,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: Color(0xffF3F5F7),     
+                          color: Color(0xffF3F5F7),
                         ),
                         child: Image.network(
                           AppConstants.products[index].image,
@@ -65,26 +65,30 @@ class HorizantalproductList extends StatelessWidget {
           return Shimmer.fromColors(
             baseColor: Colors.grey[300]!,
             highlightColor: Colors.grey[100]!,
-            child: Padding(
-              padding: EdgeInsets.only(right: 8.0.w),
-              child: Column(
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    width: 60.w,
-                    height: 60.h,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
+            child: ListView.builder(
+              itemCount: 5,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => Padding(
+                padding: EdgeInsets.only(right: 8.0.w),
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: 60.w,
+                      height: 60.h,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                      ),
+                    ),
+                    VerticalSpace(2),
+                    Container(
+                      width: 40.w,
+                      height: 10.h,
                       color: Colors.white,
                     ),
-                  ),
-                  VerticalSpace(2),
-                  Container(
-                    width: 40.w,
-                    height: 10.h,
-                    color: Colors.white,
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           );
