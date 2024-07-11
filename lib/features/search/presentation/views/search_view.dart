@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/service_locator.dart';
-import 'package:fruit_hup/features/search/data/repo/search_repo_impl.dart';
-import 'package:fruit_hup/features/search/presentation/view_model/search_cubit/search_cubit.dart';
+import '../../../../core/service_locator.dart';
+import '../../data/repo/search_repo_impl.dart';
+import '../view_model/search_cubit/search_cubit.dart';
 
 import 'widgets/search_view_body.dart';
 

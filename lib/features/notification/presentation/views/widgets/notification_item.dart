@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/features/notification/data/model/notification_model.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../data/model/notification_model.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_styles.dart';
 

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:fruit_hup/core/api/api_services.dart';
-import 'package:fruit_hup/core/error/failure.dart';
-import 'package:fruit_hup/features/home/data/models/offer_model.dart';
+import '../../../../core/api/api_services.dart';
+import '../../../../core/error/failure.dart';
+import '../models/offer_model.dart';
 
 import '../models/product_model.dart';
 import 'home_repo.dart';

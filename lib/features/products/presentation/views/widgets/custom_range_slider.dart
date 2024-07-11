@@ -18,7 +18,6 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
   @override
   void initState() {
     super.initState();
-
     _values = RangeValues(widget.start % 300, widget.end % 300);
   }
 
@@ -29,7 +28,7 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
       child: RangeSlider(
         values: _values,
         min: 0,
-        max: 300,
+        max: 1000,
         divisions: 10,
         labels: RangeLabels(
           '\$${widget.start..toString()}',

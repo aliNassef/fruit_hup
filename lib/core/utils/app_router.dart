@@ -1,7 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/features/home/presentation/views/more_popular.dart';
-import 'package:fruit_hup/features/products/presentation/views/products_view.dart';
+import '../../features/home/presentation/views/more_popular.dart';
+import '../../features/products/presentation/views/products_view.dart';
 import '../../constants.dart';
 import '../../features/auth/sign_up/presentation/views/sign_up_view.dart';
 import '../../features/home/presentation/views/home_view.dart';

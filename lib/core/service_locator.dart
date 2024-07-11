@@ -1,6 +1,6 @@
-import 'package:fruit_hup/core/api/api_services.dart';
-import 'package:fruit_hup/features/home/data/repo/home_repo_impl.dart';
-import 'package:fruit_hup/features/search/data/repo/search_repo_impl.dart';
+import 'api/api_services.dart';
+import '../features/home/data/repo/home_repo_impl.dart';
+import '../features/search/data/repo/search_repo_impl.dart';
 
 import '../features/auth/sign_in/data/repo/sign_in_repo_impl.dart';
 import '../features/auth/sign_up/data/repo/sign_up_repo_impl.dart';

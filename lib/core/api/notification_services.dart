@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/utils/app_router.dart';
+import '../../constants.dart';
+import '../utils/app_router.dart';
 import 'package:go_router/go_router.dart';
 
 class PushNotificationService {

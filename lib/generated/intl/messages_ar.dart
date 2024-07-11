@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "priceRange": MessageLookupByLibrary.simpleMessage("السعر :"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+        "result": MessageLookupByLibrary.simpleMessage("نتائج"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),

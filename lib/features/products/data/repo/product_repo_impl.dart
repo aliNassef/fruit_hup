@@ -1,13 +1,9 @@
 import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:fruit_hup/core/api/api_services.dart';
-
-import 'package:fruit_hup/core/error/failure.dart';
-
-import 'package:fruit_hup/features/home/data/models/product_model.dart';
-
+import '../../../../core/api/api_services.dart';
+import '../../../../core/error/failure.dart';
+import '../../../home/data/models/product_model.dart';
 import 'product_repo.dart';
 
 class ProductRepoImpl extends ProductRepo {
@@ -16,7 +12,7 @@ class ProductRepoImpl extends ProductRepo {
   ProductRepoImpl({required this.api});
   @override
   Future<Either<List<ProductModel>, Failure>> fetchProdducts(
-      {num startPrice = 0, num endPrice = 300}) async {
+      {num startPrice = 0, num endPrice = 1000}) async {
     try {
       CollectionReference response =
           await api.getProductCollection() as CollectionReference;

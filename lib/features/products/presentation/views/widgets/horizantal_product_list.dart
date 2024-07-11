@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/features/home/presentation/view_model/get_all_product_cubit/get_all_product_cubit.dart';
+import '../../../../../constants.dart';
+import '../../../../home/presentation/view_model/get_all_product_cubit/get_all_product_cubit.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../../core/shared/widgets/app_spacer.dart';

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hup/features/home/data/models/offer_model.dart';
-import 'package:fruit_hup/features/home/data/repo/home_repo.dart';
+import '../../../data/models/offer_model.dart';
+import '../../../data/repo/home_repo.dart';
 import 'package:meta/meta.dart';
 
 part 'get_offers_state.dart';

@@ -2,16 +2,16 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../../constants.dart';
-import '../../../../../../core/shared/widgets/default_app_button.dart';
-import '../../../../../../core/utils/app_router.dart';
-import '../../../../data/model/on_boarding_model.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../../constants.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_images.dart';
+import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/app_styles.dart';
+import '../../../../data/model/on_boarding_model.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
-import 'package:fruit_hup/core/api/api_services.dart';
-import 'package:fruit_hup/core/error/failure.dart';
+import '../../../../core/api/api_services.dart';
+import '../../../../core/error/failure.dart';
 
 import 'search_repo.dart';
 

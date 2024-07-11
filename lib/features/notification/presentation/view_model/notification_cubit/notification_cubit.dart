@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fruit_hup/features/notification/data/model/notification_model.dart';
+import '../../../data/model/notification_model.dart';
 import 'package:meta/meta.dart';
 
 import '../../../../../constants.dart';

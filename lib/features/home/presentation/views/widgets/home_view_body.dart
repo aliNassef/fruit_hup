@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-   import 'package:fruit_hup/core/utils/app_router.dart';
+import '../../../../../core/utils/app_router.dart';
  import 'package:go_router/go_router.dart';
  import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/shared/widgets/custom_search_bar.dart';

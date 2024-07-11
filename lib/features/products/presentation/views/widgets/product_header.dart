@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/features/products/presentation/view_model/product_cubit/product_cubit.dart';
+import '../../view_model/product_cubit/product_cubit.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -37,7 +37,7 @@ class ProductHeader extends StatelessWidget {
                 isScrollControlled: true,
                 builder: (context) {
                   return BlocProvider.value(
-                    value: productCubit,
+                    value: productCubit..getIntialBottomSheetState(),
                     child: Padding(
                       padding: EdgeInsets.only(
                         bottom: MediaQuery.of(context).viewInsets.bottom,
