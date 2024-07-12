@@ -12,7 +12,10 @@ class ProductRepoImpl extends ProductRepo {
   ProductRepoImpl({required this.api});
   @override
   Future<Either<List<ProductModel>, Failure>> fetchProdducts(
-      {num startPrice = 0, num endPrice = 1000}) async {
+      {num startPrice = 0,
+      num endPrice = 1000,
+      required String sortBy,
+      required bool asc}) async {
     try {
       CollectionReference response =
           await api.getProductCollection() as CollectionReference;
@@ -20,8 +23,8 @@ class ProductRepoImpl extends ProductRepo {
           .where('price', isLessThan: endPrice)
           .where('price', isGreaterThan: startPrice)
           .orderBy(
-            'price',
-            descending: true,
+            sortBy,
+            descending: !asc,
           )
           .get();
 

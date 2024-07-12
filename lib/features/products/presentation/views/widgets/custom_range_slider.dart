@@ -18,7 +18,7 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
   @override
   void initState() {
     super.initState();
-    _values = RangeValues(widget.start % 300, widget.end % 300);
+    _values = RangeValues(widget.start % 1000, widget.end % 1000);
   }
 
   @override

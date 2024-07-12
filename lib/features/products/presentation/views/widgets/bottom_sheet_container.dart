@@ -1,6 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/core/shared/functions/toast_dialog.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -79,15 +82,18 @@ class BottomSheetContainer extends StatelessWidget {
                         ),
                       ),
                       SortByRow(
+                        index: 0,
                         checkBoxValue: context.read<ProductCubit>().checkBoxAsc,
                         text: 'السعر ( الأقل الي الأعلي )',
                       ),
                       SortByRow(
+                        index: 1,
                         checkBoxValue:
                             context.read<ProductCubit>().checkBoxDesc,
                         text: 'السعر ( الأعلي الي الأقل )',
                       ),
                       SortByRow(
+                        index: 2,
                         checkBoxValue:
                             context.read<ProductCubit>().checkBoxAlaph,
                         text: 'الأبجديه',
@@ -96,8 +102,7 @@ class BottomSheetContainer extends StatelessWidget {
                       DefaultAppButton(
                         text: 'تصفيه',
                         onPressed: () {
-                          context.read<ProductCubit>().fetchProducts();
-                          context.pop();
+                          validateFilterButton(context);
                         },
                       ),
                     ],
@@ -109,5 +114,33 @@ class BottomSheetContainer extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void validateFilterButton(BuildContext context) {
+    if (context.read<ProductCubit>().checkBoxAsc &&
+        (context.read<ProductCubit>().checkBoxAlaph == false &&
+            context.read<ProductCubit>().checkBoxDesc == false)) {
+      context.read<ProductCubit>().fetchProducts(sortBy: 'price', asc: true);
+      context.pop();
+    } else if (context.read<ProductCubit>().checkBoxDesc &&
+        (context.read<ProductCubit>().checkBoxAlaph == false &&
+            context.read<ProductCubit>().checkBoxAsc == false)) {
+      context.read<ProductCubit>().fetchProducts(sortBy: 'price', asc: false);
+      context.pop();
+    } else if (context.read<ProductCubit>().checkBoxAlaph &&
+        (context.read<ProductCubit>().checkBoxAsc == false &&
+            context.read<ProductCubit>().checkBoxDesc == false)) {
+      context.read<ProductCubit>().fetchProducts(sortBy: 'name', asc: true);
+      context.pop();
+    } else {
+      log('Focused');
+      if (context.read<ProductCubit>().checkBoxAlaph == false &&
+          context.read<ProductCubit>().checkBoxDesc == false &&
+          context.read<ProductCubit>().checkBoxAsc == false) {
+        showToast(text: 'يجب عليك تحديد خيار الترتيب');
+      } else {
+        showToast(text: 'يجب عليك تحديد خيار واحد');
+      }
+    }
   }
 }

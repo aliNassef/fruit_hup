@@ -40,10 +40,13 @@ class ProductsViewBody extends StatelessWidget {
         ),
         VerticalSpace(16),
         BlocBuilder<ProductCubit, ProductState>(
+          buildWhen: (previous, current) =>
+              current is ProductLoaded ||
+              current is ProductFailure ||
+              current is ProductInitial ||
+              current is ProductLoading,
           builder: (context, state) {
-            if (state is ProductInitial ||
-                state is bottomSheetFilter ||
-                state is bottomSheetIntial) {
+            if (state is ProductInitial) {
               return Expanded(
                 child: Column(
                   children: [

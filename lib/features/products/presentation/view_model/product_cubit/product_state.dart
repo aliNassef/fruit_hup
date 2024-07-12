@@ -24,3 +24,4 @@ final class ProductFailure extends ProductState {
 
   ProductFailure({required this.errMessage});
 }
+final class ProductFiltering extends ProductState {}

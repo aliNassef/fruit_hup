@@ -33,9 +33,13 @@ class ProductCubit extends Cubit<ProductState> {
     emit(bottomSheetIntial());
   }
 
-  fetchProducts() async {
+  fetchProducts({required String sortBy, required bool asc}) async {
     emit(ProductLoading());
-    var data = await productRepo.fetchProdducts();
+    var data = await productRepo.fetchProdducts(
+        sortBy: sortBy,
+        asc: asc,
+        startPrice: startPrice.text.isEmpty ? 0 : double.parse(startPrice.text),
+        endPrice: endPrice.text.isEmpty ? 1000 : double.parse(endPrice.text));
     data.fold(
       (l) {
         debugPrint(l[0].name);
