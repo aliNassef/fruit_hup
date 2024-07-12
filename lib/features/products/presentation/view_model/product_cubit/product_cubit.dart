@@ -24,8 +24,15 @@ class ProductCubit extends Cubit<ProductState> {
     emit(bottomSheetFilter());
   }
 
-  changeCheckBoxValue(bool checkBoxValue) {
-    checkBoxValue = !checkBoxValue;
+  // changeCheckBoxValue(bool checkBoxValue) {
+  //   checkBoxValue = !checkBoxValue;
+  //   emit(chooseSortByDone());
+  // }
+
+  void changeCheckBoxValue(int index) {
+    checkBoxAsc = index == 0;
+    checkBoxDesc = index == 1;
+    checkBoxAlaph = index == 2;
     emit(chooseSortByDone());
   }
 

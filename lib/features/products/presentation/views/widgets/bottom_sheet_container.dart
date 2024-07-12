@@ -83,19 +83,14 @@ class BottomSheetContainer extends StatelessWidget {
                       ),
                       SortByRow(
                         index: 0,
-                        checkBoxValue: context.read<ProductCubit>().checkBoxAsc,
                         text: 'السعر ( الأقل الي الأعلي )',
                       ),
                       SortByRow(
                         index: 1,
-                        checkBoxValue:
-                            context.read<ProductCubit>().checkBoxDesc,
                         text: 'السعر ( الأعلي الي الأقل )',
                       ),
                       SortByRow(
                         index: 2,
-                        checkBoxValue:
-                            context.read<ProductCubit>().checkBoxAlaph,
                         text: 'الأبجديه',
                       ),
                       VerticalSpace(16),

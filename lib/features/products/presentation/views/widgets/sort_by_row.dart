@@ -8,16 +8,24 @@ class SortByRow extends StatelessWidget {
   const SortByRow({
     super.key,
     required this.text,
-    required this.checkBoxValue,
-    required this.index,
+     required this.index,
   });
   final String text;
-  final bool checkBoxValue;
+
   final int index;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
+        final cubit = context.read<ProductCubit>();
+        bool checkBoxValue;
+        if (index == 0) {
+          checkBoxValue = cubit.checkBoxAsc;
+        } else if (index == 1) {
+          checkBoxValue = cubit.checkBoxDesc;
+        } else {
+          checkBoxValue = cubit.checkBoxAlaph;
+        }
         return Row(
           children: [
             Checkbox(
@@ -37,19 +45,7 @@ class SortByRow extends StatelessWidget {
               ),
               value: checkBoxValue,
               onChanged: (val) {
-                if (index == 0) {
-                  context.read<ProductCubit>().checkBoxAsc = val!;
-                  context.read<ProductCubit>().changeCheckBoxValue(
-                      context.read<ProductCubit>().checkBoxAsc);
-                } else if (index == 1) {
-                  context.read<ProductCubit>().checkBoxDesc = val!;
-                  context.read<ProductCubit>().changeCheckBoxValue(
-                      context.read<ProductCubit>().checkBoxDesc);
-                } else {
-                  context.read<ProductCubit>().checkBoxAlaph = val!;
-                  context.read<ProductCubit>().changeCheckBoxValue(
-                      context.read<ProductCubit>().checkBoxAlaph);
-                }
+                cubit.changeCheckBoxValue(index);
               },
             ),
             Text(
