@@ -62,34 +62,51 @@ class HorizantalproductList extends StatelessWidget {
             child: Text(state.errMessage),
           );
         } else {
-          return Shimmer.fromColors(
-            baseColor: Colors.grey[300]!,
-            highlightColor: Colors.grey[100]!,
+          return SizedBox(
+            height: 90.h,
             child: ListView.builder(
-              itemCount: 5,
+              physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => Padding(
-                padding: EdgeInsets.only(right: 8.0.w),
-                child: Column(
-                  children: [
-                    Container(
-                      alignment: Alignment.center,
-                      width: 60.w,
-                      height: 60.h,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Colors.white,
+              itemCount: AppConstants.products.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.only(right: 8.0.w),
+                  child: Column(
+                    children: [
+                      Shimmer.fromColors(
+                        baseColor: Colors.grey[300]!,
+                        highlightColor: Colors.grey[100]!,
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: 60.w,
+                          height: 60.h,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xffF3F5F7),
+                          ),
+                          child: Image.network(
+                            AppConstants.products[index].image,
+                            height: 36.h,
+                            width: 36.w,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
                       ),
-                    ),
-                    VerticalSpace(2),
-                    Container(
-                      width: 40.w,
-                      height: 10.h,
-                      color: Colors.white,
-                    ),
-                  ],
-                ),
-              ),
+                      VerticalSpace(2),
+                      Shimmer.fromColors(
+                        baseColor: Colors.grey[300]!,
+                        highlightColor: Colors.grey[100]!,
+                        child: Text(
+                          AppConstants.products[index].name,
+                          style: AppStyles.textStyle13SB.copyWith(
+                            color: AppColors.gray950,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                );
+              },
             ),
           );
         }
