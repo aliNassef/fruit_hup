@@ -19,6 +19,7 @@ class CircleArrow extends StatelessWidget {
         width: 44.w,
         height: 44.w,
         decoration: BoxDecoration(
+          color: Colors.white,
           border: Border.all(
             color: AppColors.borderColor,
           ),

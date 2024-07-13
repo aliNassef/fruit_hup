@@ -27,6 +27,13 @@ abstract class AppImages {
   // products
   static const filter_icon = 'assets/svgs/filter_icon.svg';
   static const filter_specific_icon = 'assets/svgs/filter_specific_icon.svg';
+  // product details
+  static const productDetails =
+      'assets/images/product_details_background_frame.png';
+  static const expieredDate = 'assets/svgs/expier.svg';
+  static const organic = 'assets/svgs/organic.svg';
+  static const starReview = 'assets/svgs/star_review.svg';
+  static const calories = 'assets/svgs/calories.svg';
 
   // demo
   static const demoProfilr = 'assets/images/demo.png';

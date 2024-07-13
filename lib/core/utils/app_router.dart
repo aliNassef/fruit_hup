@@ -1,7 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import '../../features/home/presentation/views/more_popular.dart';
-import '../../features/products/presentation/views/products_view.dart';
+import '../../features/product_details/presentation/views/product_details_view.dart';
 import '../../constants.dart';
 import '../../features/auth/sign_up/presentation/views/sign_up_view.dart';
 import '../../features/home/presentation/views/home_view.dart';
@@ -26,7 +26,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const ProductsView();
+          return const ProductDetailsView();
         },
       ),
       GoRoute(
