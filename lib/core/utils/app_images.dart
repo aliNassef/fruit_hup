@@ -45,6 +45,8 @@ abstract class AppImages {
   static const organic = 'assets/svgs/organic.svg';
   static const starReview = 'assets/svgs/star_review.svg';
   static const calories = 'assets/svgs/calories.svg';
+  // cart 
+  static const trash = 'assets/svgs/trash.svg';
 
   // demo
   static const demoProfilr = 'assets/images/demo.png';
