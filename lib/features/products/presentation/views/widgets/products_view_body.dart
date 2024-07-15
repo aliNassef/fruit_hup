@@ -24,7 +24,7 @@ class ProductsViewBody extends StatelessWidget {
     return Column(
       children: [
         VerticalSpace(16),
-        TopBar(
+        TopBar(showLeading: false,
           text: S.of(context).products,
         ),
         VerticalSpace(16),

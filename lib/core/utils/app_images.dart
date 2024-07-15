@@ -10,6 +10,17 @@ abstract class AppImages {
   static const Pineapple = 'assets/svgs/pineapple.svg';
   static const intro1 = 'assets/svgs/intro1.svg';
   static const intro2 = 'assets/svgs/intro2.svg';
+
+  // layout
+  static const home = 'assets/svgs/home.svg';
+  static const cart = 'assets/svgs/cart.svg';
+  static const profile = 'assets/svgs/user.svg';
+  static const categories = 'assets/svgs/categories.svg';
+  static const home_active = 'assets/svgs/home_active.svg';
+  static const cart_active = 'assets/svgs/cart_active.svg';
+  static const profile_active = 'assets/svgs/user_active.svg';
+  static const categories_active = 'assets/svgs/categories_active.svg';
+
   // sign icon
   static const right_arrow2 = 'assets/images/arrow_right2.png';
   // sign in with another way

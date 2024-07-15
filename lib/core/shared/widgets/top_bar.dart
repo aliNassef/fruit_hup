@@ -16,9 +16,11 @@ class TopBar extends StatelessWidget {
     super.key,
     required this.text,
     this.onTap,
+    this.showLeading = true,
   });
   final String text;
   final void Function()? onTap;
+  final bool showLeading;
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +32,14 @@ class TopBar extends StatelessWidget {
             right: isArabic() ? 16.w : 0,
             left: !isArabic() ? 16.w : 0,
           ),
-          child: CircleArrow(
-            onTap: onTap,
-          ),
+          child: showLeading
+              ? CircleArrow(
+                  onTap: onTap,
+                )
+              : null,
         ),
         Spacer(
-          flex: 2,
+          flex: showLeading ? 2 : 3,
         ),
         Text(
           text,
