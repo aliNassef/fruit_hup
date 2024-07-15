@@ -83,7 +83,10 @@ class ProductItem extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: AppColors.mainColor,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    // Add to cart
+                    
+                  },
                   child: Icon(
                     Icons.add,
                     color: Colors.white,

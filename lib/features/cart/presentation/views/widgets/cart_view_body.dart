@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
 import 'package:fruit_hup/core/utils/app_colors.dart';
 import 'package:fruit_hup/core/utils/app_styles.dart';
 
@@ -12,6 +13,7 @@ class CartViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Container(
           alignment: Alignment.center,
@@ -33,6 +35,11 @@ class CartViewBody extends StatelessWidget {
             itemCount: 3,
           ),
         ),
+        DefaultAppButton(
+          text: 'تقديم الطلب',
+          onPressed: () {},
+        ),
+        VerticalSpace(20),
       ],
     );
   }
