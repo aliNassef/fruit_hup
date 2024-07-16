@@ -1,14 +1,15 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/app_colors.dart';
-import '../../../../../core/utils/app_images.dart';
-
+ 
 class ProductCartImage extends StatelessWidget {
   const ProductCartImage({
     super.key,
+    required this.img,
   });
-
+  final String img;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -17,11 +18,22 @@ class ProductCartImage extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.fillProductColor,
       ),
-      child: Image.asset(
-        AppImages.watermillon,
+      child: CachedNetworkImage(
+        imageUrl: img,
         height: 40.h,
         width: 53.w,
+        placeholder: (context, url) => Center(
+          child: CircularProgressIndicator.adaptive(
+            backgroundColor: AppColors.mainColor,
+          ),
+        ),
+        errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
+      // child: Image.asset(
+      //   AppImages.watermillon,
+      //   height: 40.h,
+      //   width: 53.w,
+      // ),
     );
   }
 }

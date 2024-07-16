@@ -1,15 +1,21 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fruit_hup/core/shared/functions/toast_dialog.dart';
+import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../data/models/product_model.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({super.key, required this.instanceOfProduct});
+  const ProductItem(
+      {super.key, required this.instanceOfProduct, this.onTap, this.index});
   final ProductModel instanceOfProduct;
+  final void Function()? onTap;
+  final int? index;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -80,18 +86,24 @@ class ProductItem extends StatelessWidget {
                 ],
               ),
               HorizontalSpace(20),
-              CircleAvatar(
-                backgroundColor: AppColors.mainColor,
-                child: InkWell(
-                  onTap: () {
-                    // Add to cart
-                    
-                  },
-                  child: Icon(
-                    Icons.add,
-                    color: Colors.white,
-                  ),
-                ),
+              BlocConsumer<CartCubit, CartState>(
+                listener: (context, state) {
+                  if (state is AddedProductToCart && state.index == index) {
+                    showToast(text: 'تمت الاضافة للسلة');
+                  }
+                },
+                builder: (context, state) {
+                  return CircleAvatar(
+                    backgroundColor: AppColors.mainColor,
+                    child: InkWell(
+                      onTap: onTap,
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                  );
+                },
               )
             ],
           ),

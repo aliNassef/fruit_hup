@@ -20,15 +20,17 @@ List<OnBoardingModel> introPages = [
   ),
 ];
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+
 abstract class AppConstants {
   static const String username = 'name';
 
   static const String productCollection = 'products';
   static List<ProductModel> products = [];
-    static List<NotificationModel> notifications = [];
-      
+  static List<NotificationModel> notifications = [];
 
   static const String offerCollection = 'offers';
   static const String searchCollection = 'search';
   static const String notificationCollection = 'notifications';
+
+  static const String cartCollection = 'cart';
 }

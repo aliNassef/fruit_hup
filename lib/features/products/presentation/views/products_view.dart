@@ -25,6 +25,7 @@ class ProductsView extends StatelessWidget {
               getIt.get<ProductRepoImpl>(),
             ),
           ),
+       
         ],
         child: SafeArea(
           child: ProductsViewBody(),

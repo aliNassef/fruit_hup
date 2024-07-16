@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +7,7 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import '../../view_model/get_all_product_cubit/get_all_product_cubit.dart';
 import 'best_seller_row.dart';
 import 'product_item.dart';
@@ -25,6 +27,11 @@ class ProductGridSection extends StatelessWidget {
             BestSellerRow(),
             VerticalSpace(8),
             BlocBuilder<GetAllProductCubit, GetAllProductState>(
+              buildWhen: (previous, current) =>
+                  current is GetAllProductLoaded ||
+                  current is GetAllProductFailure ||
+                  current is GetAllProductInitial ||
+                  current is GetAllProductLoading,
               builder: (context, state) {
                 if (state is GetAllProductLoaded) {
                   return Expanded(
@@ -38,6 +45,19 @@ class ProductGridSection extends StatelessWidget {
                       ),
                       itemBuilder: (context, index) {
                         return ProductItem(
+                          index: index,
+                          onTap: () {
+                            // Add to cart
+                            context.read<CartCubit>().addProductToCart(
+                                  index: index,
+                                  quantity: 1,
+                                  img: AppConstants.products[index].image,
+                                  price: AppConstants.products[index].price,
+                                  name: AppConstants.products[index].name,
+                                  measure: AppConstants.products[index].measure,
+                                );
+                             log('added to cart');
+                          },
                           instanceOfProduct: AppConstants.products[index],
                         );
                       },
