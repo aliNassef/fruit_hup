@@ -5,8 +5,9 @@ import '../../../data/model/cart_model.dart';
 import 'product_cart_row.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key, required this.cartItem});
+  const CartItem({super.key, required this.cartItem,  });
   final CartModel cartItem;
+ 
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +17,7 @@ class CartItem extends StatelessWidget {
           color: Color(0xffF1F1F5),
         ),
       ),
-      child: ProductCartRow(
+      child: ProductCartRow( 
         cartItem: cartItem,
       ),
     );

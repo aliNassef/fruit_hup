@@ -27,3 +27,7 @@ final class AddedProductToCart extends CartState {
 
   AddedProductToCart({required this.index});
 }
+
+final class IncreaseQuantitySucess extends CartState {}
+
+final class DecreaseQuantitySucess extends CartState {}

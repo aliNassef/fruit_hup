@@ -2,6 +2,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../view_model/notification_cubit/notification_cubit.dart';
 import 'package:go_router/go_router.dart';
@@ -64,7 +65,9 @@ class _NotificationViewBodyState extends State<NotificationViewBody> {
         } else if (state is NotificationFailure) {
           return Center(child: Text(state.errMessage));
         } else {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(child: CircularProgressIndicator(
+            color: AppColors.mainColor,
+          ));
         }
       },
     );

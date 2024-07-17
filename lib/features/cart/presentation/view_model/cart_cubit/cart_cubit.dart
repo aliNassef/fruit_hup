@@ -8,6 +8,9 @@ part 'cart_state.dart';
 class CartCubit extends Cubit<CartState> {
   CartCubit(this.cartRepo) : super(CartInitial());
   final CartRepo cartRepo;
+  // total button calculation
+  
+  int total = 0;
   // add product to cart
   addProductToCart({
     required int index,
@@ -37,7 +40,14 @@ class CartCubit extends Cubit<CartState> {
     });
   }
 
+  increaseQuantity() {
+    
+    emit(IncreaseQuantitySucess());
+  }
+
+  decreaseQuantity() {
+    emit(DecreaseQuantitySucess());
+  }
   // remove product from cart
-  // increase quantity
-  // decrease quantity
+ 
 }

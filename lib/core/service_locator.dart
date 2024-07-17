@@ -1,7 +1,6 @@
 import 'package:fruit_hup/features/cart/data/repo/cart_repo_impl.dart';
 
-import '../features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
-import 'api/api_services.dart';
+ import 'api/api_services.dart';
 import '../features/home/data/repo/home_repo_impl.dart';
 import '../features/search/data/repo/search_repo_impl.dart';
 
@@ -40,9 +39,5 @@ setupGetIt() async {
   ));
   // cart
   await getIt.registerSingleton<CartRepoImpl>(CartRepoImpl());
-  getIt.registerLazySingleton<CartCubit>(
-    () => CartCubit(
-      getIt.get<CartRepoImpl>(),
-    ),
-  );
+   
 }

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
-import 'counter_row.dart';
 
 class ProductInfo extends StatelessWidget {
   const ProductInfo({
@@ -41,7 +40,7 @@ class ProductInfo extends StatelessWidget {
             ),
           ],
         ),
-        CounterRow(),
+        //    CounterRow(),
       ],
     );
   }

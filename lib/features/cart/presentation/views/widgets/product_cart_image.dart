@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/app_colors.dart';
- 
+
 class ProductCartImage extends StatelessWidget {
   const ProductCartImage({
     super.key,
@@ -25,15 +25,11 @@ class ProductCartImage extends StatelessWidget {
         placeholder: (context, url) => Center(
           child: CircularProgressIndicator.adaptive(
             backgroundColor: AppColors.mainColor,
+            valueColor: AlwaysStoppedAnimation<Color>(AppColors.mainColor),
           ),
         ),
         errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
-      // child: Image.asset(
-      //   AppImages.watermillon,
-      //   height: 40.h,
-      //   width: 53.w,
-      // ),
     );
   }
 }

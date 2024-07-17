@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hup/features/cart/data/model/cart_model.dart';
+import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -12,6 +14,7 @@ class ProductCartDetails extends StatelessWidget {
     required this.instanceOfCartModel,
   });
   final CartModel instanceOfCartModel;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -31,9 +34,24 @@ class ProductCartDetails extends StatelessWidget {
           ),
         ),
         VerticalSpace(6),
-        CounterRow(
-          horizantalPadding: 0,
-          radius: 12,
+        BlocBuilder<CartCubit, CartState>(
+          builder: (context, state) {
+            return CounterRow(
+              quantity: instanceOfCartModel.quantity,
+              addButton: () {
+                instanceOfCartModel.quantity++;
+                context.read<CartCubit>().increaseQuantity();
+              },
+              decreaseButton: () {
+                if (instanceOfCartModel.quantity > 1) {
+                  instanceOfCartModel.quantity--;
+                  context.read<CartCubit>().decreaseQuantity();
+                }
+              },
+              horizantalPadding: 0,
+              radius: 12,
+            );
+          },
         ),
       ],
     );
