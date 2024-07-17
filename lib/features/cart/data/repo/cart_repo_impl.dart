@@ -32,7 +32,7 @@ class CartRepoImpl extends CartRepo {
   }
 
   @override
-  removeProductFromCart({required int index}) async {
+  Future<void> removeProductFromCart({required int index}) async {
     try {
       var data = await cartCollection.get();
       var ddocId = data.docs[index].id;
@@ -41,7 +41,7 @@ class CartRepoImpl extends CartRepo {
       debugPrint(e.toString());
     }
   }
-
+  
   @override
   Stream<Either<List<CartModel>, dynamic>> getCartitems() {
     try {
@@ -56,4 +56,6 @@ class CartRepoImpl extends CartRepo {
       return Stream.value(Right(Failure(errMessage: e.toString())));
     }
   }
+  
+ 
 }

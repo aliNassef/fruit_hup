@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
- import 'package:fruit_hup/features/cart/data/model/cart_model.dart';
+import 'package:fruit_hup/features/cart/data/model/cart_model.dart';
 
 abstract class CartRepo {
   Future<void> addProductToCart({
@@ -9,7 +9,6 @@ abstract class CartRepo {
     required String name,
     required String measure,
   });
-
   Stream<Either<List<CartModel>, dynamic>> getCartitems();
-  removeProductFromCart({required  int index});
+  Future<void> removeProductFromCart({required int index});
 }
