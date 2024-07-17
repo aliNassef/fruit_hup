@@ -11,7 +11,8 @@ class CounterRow extends StatelessWidget {
     this.radius = 18,
     this.horizantalPadding = 12,
     this.addButton,
-    required this.quantity, this.decreaseButton,
+    required this.quantity,
+    this.decreaseButton,
   });
   final int quantity;
   final double radius;
@@ -28,6 +29,7 @@ class CounterRow extends StatelessWidget {
             radius: radius,
             backgroundColor: AppColors.mainColor,
             child: InkWell(
+              borderRadius: BorderRadius.circular(radius + 1),
               onTap: addButton,
               child: Icon(
                 Icons.add,
@@ -45,6 +47,7 @@ class CounterRow extends StatelessWidget {
             radius: radius,
             backgroundColor: Color(0xffF3F5F7),
             child: InkWell(
+              borderRadius: BorderRadius.circular(radius + 1),
               onTap: decreaseButton,
               child: Icon(
                 Icons.remove,

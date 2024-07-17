@@ -32,7 +32,15 @@ class CartRepoImpl extends CartRepo {
   }
 
   @override
-  removeProductFromCart() async {}
+  removeProductFromCart({required int index}) async {
+    try {
+      var data = await cartCollection.get();
+      var ddocId = data.docs[index].id;
+      await cartCollection.doc(ddocId).delete();
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
 
   @override
   Stream<Either<List<CartModel>, dynamic>> getCartitems() {

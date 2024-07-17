@@ -15,9 +15,9 @@ import 'product_cart_image.dart';
 class ProductCartRow extends StatelessWidget {
   const ProductCartRow({
     super.key,
-    required this.cartItem,
+    required this.cartItem, required this.index,
   });
-
+  final int index;
   final CartModel cartItem;
   @override
   Widget build(BuildContext context) {
@@ -38,6 +38,10 @@ class ProductCartRow extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 InkWell(
+                  onTap: () {
+                    context.read<CartCubit>().removeProductFromCart(index: index);
+
+                  },
                   child: SvgPicture.asset(
                     AppImages.trash,
                     height: 20.h,

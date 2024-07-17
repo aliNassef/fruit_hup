@@ -11,5 +11,5 @@ abstract class CartRepo {
   });
 
   Stream<Either<List<CartModel>, dynamic>> getCartitems();
-  removeProductFromCart();
+  removeProductFromCart({required  int index});
 }

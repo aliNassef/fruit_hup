@@ -42,6 +42,7 @@ class CartViewBody extends StatelessWidget {
               Expanded(
                 child: ListView.separated(
                   itemBuilder: (context, index) => CartItem(
+                    index: index,
                     cartItem: cartItems[index],
                   ),
                   separatorBuilder: (context, index) => VerticalSpace(4),
@@ -51,7 +52,7 @@ class CartViewBody extends StatelessWidget {
               BlocBuilder<CartCubit, CartState>(
                 builder: (context, state) {
                   return DefaultAppButton(
-                    text: 'الدفع 120 جنيه',
+                    text: 'الدفع ${context.read<CartCubit>().total} جنيه',
                     onPressed: () {},
                   );
                 },

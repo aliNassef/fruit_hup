@@ -31,3 +31,5 @@ final class AddedProductToCart extends CartState {
 final class IncreaseQuantitySucess extends CartState {}
 
 final class DecreaseQuantitySucess extends CartState {}
+
+final class RemoveProductFromCart extends CartState {}

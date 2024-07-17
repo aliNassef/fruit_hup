@@ -9,7 +9,7 @@ class CartCubit extends Cubit<CartState> {
   CartCubit(this.cartRepo) : super(CartInitial());
   final CartRepo cartRepo;
   // total button calculation
-  
+
   int total = 0;
   // add product to cart
   addProductToCart({
@@ -41,7 +41,6 @@ class CartCubit extends Cubit<CartState> {
   }
 
   increaseQuantity() {
-    
     emit(IncreaseQuantitySucess());
   }
 
@@ -49,5 +48,9 @@ class CartCubit extends Cubit<CartState> {
     emit(DecreaseQuantitySucess());
   }
   // remove product from cart
- 
+
+  void removeProductFromCart({required int index}) async {
+    await cartRepo.removeProductFromCart(index: index);
+    emit(RemoveProductFromCart());
+  }
 }
