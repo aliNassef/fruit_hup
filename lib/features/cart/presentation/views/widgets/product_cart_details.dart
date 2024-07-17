@@ -40,10 +40,14 @@ class ProductCartDetails extends StatelessWidget {
               quantity: instanceOfCartModel.quantity,
               addButton: () {
                 instanceOfCartModel.quantity++;
+                context.read<CartCubit>().total +=
+                    instanceOfCartModel.price.toInt();
                 context.read<CartCubit>().increaseQuantity();
               },
               decreaseButton: () {
                 if (instanceOfCartModel.quantity > 1) {
+                  context.read<CartCubit>().total -=
+                      instanceOfCartModel.price.toInt();
                   instanceOfCartModel.quantity--;
                   context.read<CartCubit>().decreaseQuantity();
                 }

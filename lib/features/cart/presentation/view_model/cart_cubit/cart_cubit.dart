@@ -34,10 +34,20 @@ class CartCubit extends Cubit<CartState> {
     emit(CartLoading());
     cartRepo.getCartitems().listen((event) {
       event.fold(
-        (cartItems) => emit(CartLoaded(cartItems: cartItems)),
+        (cartItems) {
+          calcTotal(cartItems);
+          emit(CartLoaded(cartItems: cartItems));
+        },
         (failure) => emit(CartFailure(errMessage: failure.errMessage)),
       );
     });
+  }
+
+  calcTotal(List<CartModel> cartItems) {
+    total = 0;
+    for (var item in cartItems) {
+      total += item.price.toInt() * item.quantity;
+    }
   }
 
   increaseQuantity() {
@@ -49,7 +59,7 @@ class CartCubit extends Cubit<CartState> {
   }
   // remove product from cart
 
-  void removeProductFromCart({required int index}) async {
+  Future<void> removeProductFromCart({required int index}) async {
     await cartRepo.removeProductFromCart(index: index);
     emit(RemoveProductFromCart());
   }
