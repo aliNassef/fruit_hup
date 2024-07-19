@@ -45,8 +45,19 @@ abstract class AppImages {
   static const organic = 'assets/svgs/organic.svg';
   static const starReview = 'assets/svgs/star_review.svg';
   static const calories = 'assets/svgs/calories.svg';
-  // cart 
+  // cart
   static const trash = 'assets/svgs/trash.svg';
+  // profile
+  static const signup_icon = 'assets/svgs/signup_icon.svg';
+  static const camera_icon = 'assets/svgs/Camera_icon.svg';
+  static const fav_icon = 'assets/svgs/fav_icon.svg';
+  static const left_arrow_icon = 'assets/svgs/left_arrow_icon.svg';
+  static const notification = 'assets/svgs/notification.svg';
+  static const profile_icon = 'assets/svgs/profile_icon.svg';
+  static const orders_icon = 'assets/svgs/order_icon.svg';
+  static const wallet_icon = 'assets/svgs/wallet_icon.svg';
+  static const info_circle = 'assets/svgs/info-circle.svg';
+  static const theme_choose = 'assets/svgs/theme_icon.svg';
 
   // demo
   static const demoProfilr = 'assets/images/demo.png';

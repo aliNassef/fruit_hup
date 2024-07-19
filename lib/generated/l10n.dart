@@ -339,6 +339,106 @@ class S {
       args: [],
     );
   }
+
+  /// `حسابي`
+  String get myProfile {
+    return Intl.message(
+      'حسابي',
+      name: 'myProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `عام`
+  String get public {
+    return Intl.message(
+      'عام',
+      name: 'public',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الملف الشخصي`
+  String get personalAccount {
+    return Intl.message(
+      'الملف الشخصي',
+      name: 'personalAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `طلباتي`
+  String get myOrders {
+    return Intl.message(
+      'طلباتي',
+      name: 'myOrders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `المدفوعات`
+  String get payments {
+    return Intl.message(
+      'المدفوعات',
+      name: 'payments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `المفضلة`
+  String get favorites {
+    return Intl.message(
+      'المفضلة',
+      name: 'favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `من نحن`
+  String get whoAreWe {
+    return Intl.message(
+      'من نحن',
+      name: 'whoAreWe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `المساعدة`
+  String get help {
+    return Intl.message(
+      'المساعدة',
+      name: 'help',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الوضع`
+  String get theme {
+    return Intl.message(
+      'الوضع',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تسجيل الخروج`
+  String get signOut {
+    return Intl.message(
+      'تسجيل الخروج',
+      name: 'signOut',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

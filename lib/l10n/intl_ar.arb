@@ -27,6 +27,16 @@
     "priceRange" : "السعر :",
     "to" : "الي",
     "result" : "نتائج",
-    "cart" : "السلة"
+    "cart" : "السلة",
+    "myProfile" : "حسابي",
+    "public" : "عام",
+    "personalAccount" : "الملف الشخصي",
+    "myOrders" : "طلباتي",
+    "payments" : "المدفوعات", 
+    "favorites" : "المفضلة",
+    "whoAreWe" : "من نحن",
+    "help" : "المساعدة",
+    "theme": "الوضع",
+    "signOut" : "تسجيل الخروج"
   
 }

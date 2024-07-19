@@ -29,6 +29,9 @@ class SignUpCubit extends Cubit<SignUpState> {
       getIt
           .get<CacheHelper>()
           .saveData(key: AppConstants.username, value: name.text);
+      getIt
+          .get<CacheHelper>()
+          .saveData(key: AppConstants.username, value: email.text);
       emit(SignUpLoaded());
     } catch (e) {
       emit(

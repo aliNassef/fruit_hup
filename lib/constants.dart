@@ -23,7 +23,7 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 abstract class AppConstants {
   static const String username = 'name';
-
+  static const String useremail = 'email';
   static const String productCollection = 'products';
   static List<ProductModel> products = [];
   static List<NotificationModel> notifications = [];

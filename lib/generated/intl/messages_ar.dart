@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "filter": MessageLookupByLibrary.simpleMessage("تصنيف حسب :"),
         "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
         "fromRules": MessageLookupByLibrary.simpleMessage(
@@ -36,18 +37,25 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullname": MessageLookupByLibrary.simpleMessage("الاسم كامل"),
         "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
+        "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "lot": MessageLookupByLibrary.simpleMessage("المزيد"),
+        "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
+        "myProfile": MessageLookupByLibrary.simpleMessage("حسابي"),
         "newaccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "notification": MessageLookupByLibrary.simpleMessage("الاشعارات"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "ourProducts": MessageLookupByLibrary.simpleMessage("منتجاتنا"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "payments": MessageLookupByLibrary.simpleMessage("المدفوعات"),
+        "personalAccount": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "priceRange": MessageLookupByLibrary.simpleMessage("السعر :"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+        "public": MessageLookupByLibrary.simpleMessage("عام"),
         "result": MessageLookupByLibrary.simpleMessage("نتائج"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
+        "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "signwithapple":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة أبل"),
@@ -57,6 +65,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "termsAndCondation": MessageLookupByLibrary.simpleMessage(
             " الشروط \nوالأحكام الخاصة بنا"),
-        "to": MessageLookupByLibrary.simpleMessage("الي")
+        "theme": MessageLookupByLibrary.simpleMessage("الوضع"),
+        "to": MessageLookupByLibrary.simpleMessage("الي"),
+        "whoAreWe": MessageLookupByLibrary.simpleMessage("من نحن")
       };
 }
