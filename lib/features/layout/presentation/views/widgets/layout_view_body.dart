@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_images.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
-import 'package:fruit_hup/features/cart/presentation/views/cart_view.dart';
-import 'package:fruit_hup/features/products/presentation/views/products_view.dart';
-import 'package:fruit_hup/features/profile/presentation/views/profile_view.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_images.dart';
+import '../../../../../core/utils/app_styles.dart';
+import '../../../../cart/presentation/views/cart_view.dart';
+import '../../../../products/presentation/views/products_view.dart';
+import '../../../../profile/presentation/views/profile_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../../../../home/presentation/views/home_view.dart';

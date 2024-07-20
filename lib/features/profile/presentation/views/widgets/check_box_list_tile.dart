@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
+import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../core/utils/app_styles.dart';
 
 import '../../../../../core/utils/app_colors.dart';
 

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/shared/functions/build_loading_box.dart';
-import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
-import 'package:fruit_hup/core/utils/app_images.dart';
-import 'package:fruit_hup/core/utils/app_router.dart';
-import 'package:fruit_hup/features/profile/presentation/view_model/profile_cubit/profile_cubit.dart';
-import 'package:fruit_hup/generated/l10n.dart';
+import '../../../../../core/shared/functions/build_loading_box.dart';
+import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../core/utils/app_images.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../view_model/profile_cubit/profile_cubit.dart';
+import '../../../../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_colors.dart';

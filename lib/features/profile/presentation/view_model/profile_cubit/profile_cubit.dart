@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hup/features/profile/data/repo/profile_repo.dart';
+import '../../../data/repo/profile_repo.dart';
 import 'package:meta/meta.dart';
 
 part 'profile_state.dart';

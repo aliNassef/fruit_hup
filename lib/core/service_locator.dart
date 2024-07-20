@@ -1,5 +1,5 @@
-import 'package:fruit_hup/features/cart/data/repo/cart_repo_impl.dart';
-import 'package:fruit_hup/features/profile/data/repo/profile_repo_impl.dart';
+import '../features/cart/data/repo/cart_repo_impl.dart';
+import '../features/profile/data/repo/profile_repo_impl.dart';
 
 import 'api/api_services.dart';
 import '../features/home/data/repo/home_repo_impl.dart';

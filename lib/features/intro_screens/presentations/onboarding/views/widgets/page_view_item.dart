@@ -5,6 +5,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../../constants.dart';
+import '../../../../../../core/cache/cache_helper.dart';
+import '../../../../../../core/service_locator.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../../core/utils/app_colors.dart';
@@ -51,6 +53,10 @@ class PageViewItem extends StatelessWidget {
                 left: MediaQuery.sizeOf(context).width * .9,
                 child: InkWell(
                   onTap: () {
+                    getIt.get<CacheHelper>().saveData(
+                          key: AppConstants.isLoggedOnce,
+                          value: true,
+                        );
                     context.go(AppRouter.signInView);
                   },
                   child: Text(
@@ -95,6 +101,11 @@ class PageViewItem extends StatelessWidget {
           visible: currentIndex == introPages.length - 1,
           child: DefaultAppButton(
             onPressed: () {
+              getIt.get<CacheHelper>().saveData(
+                    key: AppConstants.isLoggedOnce,
+                    value: true,
+                  );
+
               context.go(AppRouter.signInView);
             },
             text: 'ابدأ الان',

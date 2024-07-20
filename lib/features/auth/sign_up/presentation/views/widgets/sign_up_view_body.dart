@@ -21,7 +21,7 @@ class SignUpViewBody extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpLoaded) {
-          context.go(AppRouter.homeView);
+          context.go(AppRouter.layoutView);
         } else if (state is SignUpFailure) {
           context.pop();
           showDialog(

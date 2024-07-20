@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/service_locator.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
-import 'package:fruit_hup/features/cart/data/repo/cart_repo_impl.dart';
-import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
-import 'package:fruit_hup/features/cart/presentation/views/widgets/cart_view_body.dart';
+import '../../../../core/service_locator.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../data/repo/cart_repo_impl.dart';
+import '../view_model/cart_cubit/cart_cubit.dart';
+import 'widgets/cart_view_body.dart';
 
 import '../../../../generated/l10n.dart';
 

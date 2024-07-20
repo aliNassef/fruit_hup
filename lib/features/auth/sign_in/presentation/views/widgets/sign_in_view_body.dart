@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../layout/presentation/views/layout_view.dart';
 import '../../../../../../core/shared/functions/build_loading_box.dart';
 import '../../view_model/sign_in_cubit/sign_in_cubit.dart';
-import '../../../../../home/presentation/views/home_view.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/shared/widgets/custom_text_form_field.dart';
@@ -27,7 +27,7 @@ class SignInViewBody extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HomeView(),
+              builder: (context) => LayoutView(),
             ),
           );
         } else if (state is SignInFailure) {

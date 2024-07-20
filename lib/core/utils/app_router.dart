@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/features/layout/presentation/views/layout_view.dart';
+import '../../features/intro_screens/presentations/splash/views/splash_view.dart';
+import '../../features/layout/presentation/views/layout_view.dart';
 import '../../features/home/presentation/views/more_popular.dart';
 import '../../features/product_details/presentation/views/product_details_view.dart';
 import '../../constants.dart';
@@ -22,6 +23,7 @@ abstract class AppRouter {
   static const morePopular = '/MorePopular';
   static const notificationView = '/NotificationView';
   static const productDetailsView = '/ProductDetailsView';
+  static const layoutView = '/LayoutView';
   static final GoRouter router = GoRouter(
     initialLocation: '/',
     navigatorKey: navigatorKey,
@@ -29,7 +31,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const LayoutView();
+          return const SplashView();
         },
       ),
       GoRoute(
@@ -37,6 +39,28 @@ abstract class AppRouter {
         builder: (context, state) {
           return const OnboardingView();
         },
+      ),
+      GoRoute(
+        path: layoutView,
+        builder: (context, state) {
+          return LayoutView();
+        },
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: LayoutView(),
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            // Use ease-out curve
+            return FadeTransition(
+              opacity: animation.drive(
+                CurveTween(
+                  curve: Curves.easeOut,
+                ),
+              ),
+              child: child,
+            );
+          },
+          transitionDuration:
+              Duration(milliseconds: 300), // Set the duration here
+        ),
       ),
       GoRoute(
         path: signInView,

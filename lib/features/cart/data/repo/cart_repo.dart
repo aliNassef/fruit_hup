@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:fruit_hup/features/cart/data/model/cart_model.dart';
+import '../model/cart_model.dart';
 
 abstract class CartRepo {
   Future<void> addProductToCart({

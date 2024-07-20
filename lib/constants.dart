@@ -22,6 +22,7 @@ List<OnBoardingModel> introPages = [
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 abstract class AppConstants {
+  static String isLoggedOnce = 'isLoggedOnce';
   static const String username = 'name';
   static const String useremail = 'email';
   static const String productCollection = 'products';

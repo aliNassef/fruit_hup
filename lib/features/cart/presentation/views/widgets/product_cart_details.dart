@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/features/cart/data/model/cart_model.dart';
-import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
+import '../../../data/model/cart_model.dart';
+import '../../view_model/cart_cubit/cart_cubit.dart';
 
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';

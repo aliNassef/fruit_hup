@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hup/features/cart/data/model/cart_model.dart';
-import 'package:fruit_hup/features/cart/data/repo/cart_repo.dart';
 import 'package:meta/meta.dart';
+
+import '../../../data/model/cart_model.dart';
+import '../../../data/repo/cart_repo.dart';
 
 part 'cart_state.dart';
 

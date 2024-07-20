@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
-import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
+import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../core/shared/widgets/default_app_button.dart';
+import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/shared/widgets/cirrcle_arrow.dart';
 import '../../../../../core/utils/app_images.dart';
 import 'product_details_item.dart';
