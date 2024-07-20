@@ -1,5 +1,6 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/core/shared/widgets/layout_or_login.dart';
 import '../../features/intro_screens/presentations/splash/views/splash_view.dart';
 import '../../features/layout/presentation/views/layout_view.dart';
 import '../../features/home/presentation/views/more_popular.dart';
@@ -16,6 +17,7 @@ import '../../features/search/presentation/views/search_view.dart';
 
 abstract class AppRouter {
   static const signInView = '/SignInView';
+  static const layoutOrLogin = '/LayoutOrLogin';
   static const signupView = '/SignUpView';
   static const homeView = '/HomeView';
   static const OnBoardingView = '/OnboardingView';
@@ -24,6 +26,7 @@ abstract class AppRouter {
   static const notificationView = '/NotificationView';
   static const productDetailsView = '/ProductDetailsView';
   static const layoutView = '/LayoutView';
+  static const MyProfile = '/MyProfile';
   static final GoRouter router = GoRouter(
     initialLocation: '/',
     navigatorKey: navigatorKey,
@@ -41,10 +44,24 @@ abstract class AppRouter {
         },
       ),
       GoRoute(
+        path: layoutOrLogin,
+        builder: (context, state) {
+          return const LayoutOrLogin();
+        },
+      ),
+      GoRoute(
         path: layoutView,
         builder: (context, state) {
           return LayoutView();
         },
+        // routes: [
+        //   GoRoute(
+        //     path: MyProfile,
+        //     builder: (context, state) {
+        //       return HomeView();
+        //     },
+        //   ),
+        // ],
         pageBuilder: (context, state) => CustomTransitionPage(
           child: LayoutView(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {

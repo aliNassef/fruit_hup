@@ -41,7 +41,7 @@ class _SplashViewState extends State<SplashView> {
       Duration(seconds: 3),
       () => getIt.get<CacheHelper>().getData(key: AppConstants.isLoggedOnce)
           ? GoRouter.of(context).pushReplacement(
-              AppRouter.signInView,
+              AppRouter.layoutOrLogin,
             )
           : GoRouter.of(context).pushReplacement(
               AppRouter.OnBoardingView,
