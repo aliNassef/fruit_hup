@@ -45,6 +45,7 @@ class SignUpViewBody extends StatelessWidget {
             children: [
               VerticalSpace(20),
               TopBar(
+                showTrailing: false,
                 onTap: () {
                   context.pop();
                 },

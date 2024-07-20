@@ -54,6 +54,8 @@ class SignInViewBody extends StatelessWidget {
               children: [
                 VerticalSpace(20),
                 TopBar(
+                  showTrailing: false,
+                  showLeading: false,
                   onTap: () {
                     context.go(AppRouter.OnBoardingView);
                   },
