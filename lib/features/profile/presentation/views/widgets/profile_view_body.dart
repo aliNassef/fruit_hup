@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/shared/functions/build_loading_box.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../core/shared/widgets/top_bar.dart';
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_router.dart';
 import '../../view_model/profile_cubit/profile_cubit.dart';
@@ -35,6 +36,13 @@ class ProfileViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            VerticalSpace(16),
+            TopBar(
+              showLeading: false,
+              showTrailing: false,
+              text: S.of(context).myProfile,
+            ),
+            VerticalSpace(20),
             UserInfo(),
             VerticalSpace(30),
             Text(
