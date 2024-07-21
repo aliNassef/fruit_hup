@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +8,7 @@ import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
 import '../../../../../generated/l10n.dart';
 import '../../view_model/profile_cubit/profile_cubit.dart';
+import 'log_out_dialog.dart';
 
 class LogOutButton extends StatelessWidget {
   const LogOutButton({
@@ -19,7 +19,17 @@ class LogOutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        context.read<ProfileCubit>().logout();
+        final cubit = context.read<ProfileCubit>();
+
+        showDialog(
+          context: context,
+          builder: (context) {
+            return BlocProvider.value(
+              value: cubit,
+              child: LogoutDialog(),
+            );
+          },
+        );
       },
       child: Container(
         width: MediaQuery.sizeOf(context).width,

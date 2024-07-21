@@ -25,14 +25,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "HaveAccount":
             MessageLookupByLibrary.simpleMessage(" تمتلك حساب بالفعل؟ "),
         "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
+        "cancel": MessageLookupByLibrary.simpleMessage("لا أرغب"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
         "changePass": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+        "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmPass":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديده"),
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
         "currentPass":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الحالي"),
+        "doYOuWantToLogout":
+            MessageLookupByLibrary.simpleMessage("هل تريد تسجيل الخروج؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "filter": MessageLookupByLibrary.simpleMessage("تصنيف حسب :"),
