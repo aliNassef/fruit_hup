@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(" تمتلك حساب بالفعل؟ "),
         "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+        "changePass": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -55,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "public": MessageLookupByLibrary.simpleMessage("عام"),
         "result": MessageLookupByLibrary.simpleMessage("نتائج"),
+        "saveChanges": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),

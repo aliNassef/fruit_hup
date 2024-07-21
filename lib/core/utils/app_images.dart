@@ -58,6 +58,7 @@ abstract class AppImages {
   static const wallet_icon = 'assets/svgs/wallet_icon.svg';
   static const info_circle = 'assets/svgs/info-circle.svg';
   static const theme_choose = 'assets/svgs/theme_icon.svg';
+  static const edit_icon = 'assets/images/edit_icon.png';
 
   // demo
   static const demoProfilr = 'assets/images/demo.png';

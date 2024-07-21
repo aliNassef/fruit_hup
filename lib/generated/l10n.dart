@@ -449,6 +449,26 @@ class S {
       args: [],
     );
   }
+
+  /// `تغيير كلمة المرور`
+  String get changePass {
+    return Intl.message(
+      'تغيير كلمة المرور',
+      name: 'changePass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `حفظ التغييرات`
+  String get saveChanges {
+    return Intl.message(
+      'حفظ التغييرات',
+      name: 'saveChanges',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../layout/presentation/views/layout_view.dart';
 import '../../../../../../core/shared/functions/build_loading_box.dart';
 import '../../view_model/sign_in_cubit/sign_in_cubit.dart';
@@ -77,6 +78,10 @@ class SignInViewBody extends StatelessWidget {
                 ),
                 VerticalSpace(16),
                 CustomTextFormField(
+                  icon: Icon(
+                    Icons.visibility_rounded,
+                    color: AppColors.grayForIcon,
+                  ),
                   controller: context.read<SignInCubit>().pass,
                   validator: (val) {
                     if (val == null || val.isEmpty) {

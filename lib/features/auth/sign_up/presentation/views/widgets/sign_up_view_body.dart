@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/shared/functions/toast_dialog.dart';
 import '../../../../../../core/shared/widgets/default_app_button.dart';
+import '../../../../../../core/utils/app_colors.dart';
 import '../../view_model/sign_up_cubit/sign_up_cubit.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../core/shared/functions/build_loading_box.dart';
@@ -73,6 +74,10 @@ class SignUpViewBody extends StatelessWidget {
               ),
               VerticalSpace(16),
               CustomTextFormField(
+                icon: Icon(
+                  Icons.visibility_rounded,
+                  color: AppColors.grayForIcon,
+                ),
                 validator: (val) {
                   if (val == null || val.isEmpty) {
                     return 'Please enter a password';

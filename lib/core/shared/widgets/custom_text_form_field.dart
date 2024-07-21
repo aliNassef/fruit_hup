@@ -12,17 +12,28 @@ class CustomTextFormField extends StatelessWidget {
     this.controller,
     this.centerHint = false,
     this.validator,
+    this.icon,
+    this.initialValue,
+    this.onSaved,
+    this.readOnly = false,
   });
   final String hintText;
   final bool showIcon;
   final bool centerHint;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final Widget? icon;
+  final String? initialValue;
+  final void Function(String?)? onSaved;
+  final bool readOnly;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: TextFormField(
+        readOnly: readOnly,
+        onSaved: onSaved,
+        initialValue: initialValue,
         textAlign: centerHint ? TextAlign.center : TextAlign.start,
         controller: controller,
         validator: validator,
@@ -45,19 +56,13 @@ class CustomTextFormField extends StatelessWidget {
           suffixIcon: showIcon && isArabic()
               ? Padding(
                   padding: EdgeInsets.only(left: 16.w),
-                  child: Icon(
-                    Icons.visibility_rounded,
-                    color: AppColors.grayForIcon,
-                  ),
+                  child: icon,
                 )
               : null,
           prefixIcon: showIcon && !isArabic()
               ? Padding(
                   padding: EdgeInsets.only(right: 16.w),
-                  child: Icon(
-                    Icons.visibility,
-                    color: AppColors.grayForIcon,
-                  ),
+                  child: icon,
                 )
               : null,
         ),
