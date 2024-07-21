@@ -1,7 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/shared/widgets/layout_or_login.dart';
-import '../../features/intro_screens/presentations/splash/views/splash_view.dart';
+import 'package:fruit_hup/features/intro_screens/presentations/splash/views/splash_view.dart';
 import '../../features/layout/presentation/views/layout_view.dart';
 import '../../features/home/presentation/views/more_popular.dart';
 import '../../features/product_details/presentation/views/product_details_view.dart';
@@ -36,7 +36,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const MyProfileView();
+          return const SplashView();
         },
       ),
       GoRoute(

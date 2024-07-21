@@ -27,8 +27,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
         "changePass": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+        "confirmPass":
+            MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديده"),
         "createNewAccount":
             MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
+        "currentPass":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور الحالي"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "filter": MessageLookupByLibrary.simpleMessage("تصنيف حسب :"),
@@ -43,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lot": MessageLookupByLibrary.simpleMessage("المزيد"),
         "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "myProfile": MessageLookupByLibrary.simpleMessage("حسابي"),
+        "newPass": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
         "newaccount": MessageLookupByLibrary.simpleMessage("حساب جديد"),
         "notification": MessageLookupByLibrary.simpleMessage("الاشعارات"),
         "or": MessageLookupByLibrary.simpleMessage("أو"),

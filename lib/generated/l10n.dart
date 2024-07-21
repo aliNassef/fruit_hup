@@ -469,6 +469,36 @@ class S {
       args: [],
     );
   }
+
+  /// `كلمة المرور الحالي`
+  String get currentPass {
+    return Intl.message(
+      'كلمة المرور الحالي',
+      name: 'currentPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `كلمة المرور الجديدة`
+  String get newPass {
+    return Intl.message(
+      'كلمة المرور الجديدة',
+      name: 'newPass',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تأكيد كلمة المرور الجديده`
+  String get confirmPass {
+    return Intl.message(
+      'تأكيد كلمة المرور الجديده',
+      name: 'confirmPass',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

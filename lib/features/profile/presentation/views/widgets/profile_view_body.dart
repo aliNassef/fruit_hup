@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/features/profile/presentation/views/about_us.dart';
 import 'package:fruit_hup/features/profile/presentation/views/my_profile_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import '../../../../../core/shared/functions/build_loading_box.dart';
@@ -56,7 +57,15 @@ class ProfileViewBody extends StatelessWidget {
             VerticalSpace(20),
             ProfileListTile(
               onTap: () {
-                navigateToNewPage(context, const MyProfileView());
+                final profileCubit = context.read<ProfileCubit>();
+
+                navigateToNewPage(
+                  context,
+                  BlocProvider.value(
+                    value: profileCubit,
+                    child: const MyProfileView(),
+                  ),
+                );
               },
               icon: AppImages.profile_icon,
               text: S.of(context).personalAccount,
@@ -90,6 +99,9 @@ class ProfileViewBody extends StatelessWidget {
             ),
             VerticalSpace(16),
             ProfileListTile(
+              onTap: () {
+                navigateToNewPage(context, AboutUs());
+              },
               icon: AppImages.info_circle,
               text: S.of(context).whoAreWe,
             ),

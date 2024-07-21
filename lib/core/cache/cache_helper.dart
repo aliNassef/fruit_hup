@@ -1,9 +1,9 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CacheHelper {
   static late SharedPreferences sharedPreferences;
-
-//! Here The Initialize of cache .
+  //! Here The Initialize of cache .
   init() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
@@ -63,5 +63,16 @@ class CacheHelper {
     } else {
       return await sharedPreferences.setInt(key, value);
     }
+  }
+
+  // setSecureData with FlutterSecureStorage
+  setSecureData(String key, dynamic val) async {
+    final storage = new FlutterSecureStorage();
+    await storage.write(key: key, value: val);
+  }
+
+  getSecureData(String key) async {
+    final storage = new FlutterSecureStorage();
+    return await storage.read(key: key);
   }
 }

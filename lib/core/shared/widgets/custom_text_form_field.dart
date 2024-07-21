@@ -16,6 +16,7 @@ class CustomTextFormField extends StatelessWidget {
     this.initialValue,
     this.onSaved,
     this.readOnly = false,
+    this.secure = false,
   });
   final String hintText;
   final bool showIcon;
@@ -26,11 +27,13 @@ class CustomTextFormField extends StatelessWidget {
   final String? initialValue;
   final void Function(String?)? onSaved;
   final bool readOnly;
+  final bool secure;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: TextFormField(
+        obscureText: secure,
         readOnly: readOnly,
         onSaved: onSaved,
         initialValue: initialValue,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../../core/utils/app_colors.dart';
-import '../../../../../layout/presentation/views/layout_view.dart';
 import '../../../../../../core/shared/functions/build_loading_box.dart';
 import '../../view_model/sign_in_cubit/sign_in_cubit.dart';
 import 'package:go_router/go_router.dart';
@@ -25,12 +24,7 @@ class SignInViewBody extends StatelessWidget {
       listener: (context, state) {
         if (state is SignInLoaded) {
           debugPrint('sucess *************');
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => LayoutView(),
-            ),
-          );
+          context.go(AppRouter.layoutView);
         } else if (state is SignInFailure) {
           context.pop();
           showDialog(
