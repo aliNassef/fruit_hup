@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hup/core/utils/app_router.dart';
-import 'package:go_router/go_router.dart';
-
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
 
@@ -11,15 +8,15 @@ class ProfileListTile extends StatelessWidget {
     super.key,
     required this.icon,
     required this.text,
+    this.onTap,
   });
   final String icon;
   final String text;
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        context.push(AppRouter.MyProfile);
-      },
+      onTap: onTap,
       child: Container(
         decoration: BoxDecoration(
           border: Border(

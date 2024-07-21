@@ -439,6 +439,16 @@ class S {
       args: [],
     );
   }
+
+  /// `المعلومات الشخصية`
+  String get personalInfo {
+    return Intl.message(
+      'المعلومات الشخصية',
+      name: 'personalInfo',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/features/profile/presentation/views/my_profile_view.dart';
+import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import '../../../../../core/shared/functions/build_loading_box.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/shared/widgets/top_bar.dart';
@@ -53,6 +55,9 @@ class ProfileViewBody extends StatelessWidget {
             ),
             VerticalSpace(20),
             ProfileListTile(
+              onTap: () {
+                navigateToNewPage(context, const MyProfileView());
+              },
               icon: AppImages.profile_icon,
               text: S.of(context).personalAccount,
             ),
@@ -93,6 +98,15 @@ class ProfileViewBody extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void navigateToNewPage(BuildContext context, Widget newPage) {
+    PersistentNavBarNavigator.pushNewScreen(
+      context,
+      screen: newPage,
+      withNavBar: true, // To keep the bottom nav bar
+      pageTransitionAnimation: PageTransitionAnimation.fade,
     );
   }
 }

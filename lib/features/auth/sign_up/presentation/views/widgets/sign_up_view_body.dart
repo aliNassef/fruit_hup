@@ -21,6 +21,7 @@ class SignUpViewBody extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpLoaded) {
+          context.pop();
           context.go(AppRouter.layoutView);
         } else if (state is SignUpFailure) {
           context.pop();
@@ -53,6 +54,7 @@ class SignUpViewBody extends StatelessWidget {
               ),
               VerticalSpace(24),
               CustomTextFormField(
+                controller: context.read<SignUpCubit>().name,
                 hintText: S.of(context).fullname,
               ),
               VerticalSpace(16),

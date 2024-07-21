@@ -49,6 +49,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "payments": MessageLookupByLibrary.simpleMessage("المدفوعات"),
         "personalAccount": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "personalInfo":
+            MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
         "priceRange": MessageLookupByLibrary.simpleMessage("السعر :"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "public": MessageLookupByLibrary.simpleMessage("عام"),

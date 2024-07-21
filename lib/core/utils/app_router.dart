@@ -13,6 +13,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/auth/sign_in/presentation/views/sign_in_view.dart';
 import '../../features/notification/presentation/views/notification_view.dart';
+import '../../features/profile/presentation/views/my_profile_view.dart';
 import '../../features/search/presentation/views/search_view.dart';
 
 abstract class AppRouter {
@@ -26,7 +27,8 @@ abstract class AppRouter {
   static const notificationView = '/NotificationView';
   static const productDetailsView = '/ProductDetailsView';
   static const layoutView = '/LayoutView';
-  static const MyProfile = '/MyProfile';
+  static const myProfile = '/MyProfile';
+
   static final GoRouter router = GoRouter(
     initialLocation: '/',
     navigatorKey: navigatorKey,
@@ -54,29 +56,10 @@ abstract class AppRouter {
         builder: (context, state) {
           return LayoutView();
         },
-        // routes: [
-        //   GoRoute(
-        //     path: MyProfile,
-        //     builder: (context, state) {
-        //       return HomeView();
-        //     },
-        //   ),
-        // ],
         pageBuilder: (context, state) => CustomTransitionPage(
           child: LayoutView(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            // Use ease-out curve
-            return FadeTransition(
-              opacity: animation.drive(
-                CurveTween(
-                  curve: Curves.easeOut,
-                ),
-              ),
-              child: child,
-            );
-          },
-          transitionDuration:
-              Duration(milliseconds: 300), // Set the duration here
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
         ),
       ),
       GoRoute(
@@ -86,19 +69,8 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: SignInView(),
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            // Use ease-out curve
-            return FadeTransition(
-              opacity: animation.drive(
-                CurveTween(
-                  curve: Curves.easeOut,
-                ),
-              ),
-              child: child,
-            );
-          },
-          transitionDuration:
-              Duration(milliseconds: 300), // Set the duration here
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
         ),
       ),
       GoRoute(
@@ -114,20 +86,8 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: HomeView(),
-
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            // Use ease-out curve
-            return FadeTransition(
-              opacity: animation.drive(
-                CurveTween(
-                  curve: Curves.easeOut,
-                ),
-              ),
-              child: child,
-            );
-          },
-          transitionDuration:
-              Duration(milliseconds: 300), // Set the duration here
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
         ),
       ),
       GoRoute(
@@ -137,20 +97,8 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: ProductDetailsView(),
-
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            // Use ease-out curve
-            return FadeTransition(
-              opacity: animation.drive(
-                CurveTween(
-                  curve: Curves.easeOut,
-                ),
-              ),
-              child: child,
-            );
-          },
-          transitionDuration:
-              Duration(milliseconds: 300), // Set the duration here
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
         ),
       ),
       GoRoute(
@@ -166,52 +114,54 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: MorePopular(),
-
-          transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            // Use ease-out curve
-            return FadeTransition(
-              opacity: animation.drive(
-                CurveTween(
-                  curve: Curves.easeOut,
-                ),
-              ),
-              child: child,
-            );
-          },
-          transitionDuration:
-              Duration(milliseconds: 300), // Set the duration here
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
         ),
       ),
       GoRoute(
-          path: notificationView,
-          builder: (context, state) {
-            final RemoteMessage? message = state.extra as RemoteMessage?;
-            return NotificationView(
-              message: message,
-            );
-          },
-          pageBuilder: (context, state) {
-            final RemoteMessage? message = state.extra as RemoteMessage?;
+        path: notificationView,
+        builder: (context, state) {
+          final RemoteMessage? message = state.extra as RemoteMessage?;
+          return NotificationView(
+            message: message,
+          );
+        },
+        pageBuilder: (context, state) {
+          final RemoteMessage? message = state.extra as RemoteMessage?;
 
-            return CustomTransitionPage(
-              child: NotificationView(
-                message: message,
-              ),
-              transitionsBuilder:
-                  (context, animation, secondaryAnimation, child) {
-                // Use ease-out curve
-                return FadeTransition(
-                  opacity: animation.drive(
-                    CurveTween(
-                      curve: Curves.easeOut,
-                    ),
-                  ),
-                  child: child,
-                );
-              },
-              transitionDuration: Duration(milliseconds: 300),
-            );
-          })
+          return CustomTransitionPage(
+            child: NotificationView(
+              message: message,
+            ),
+            transitionsBuilder: buildEaseoutAnimation,
+            transitionDuration: Duration(milliseconds: 300),
+          );
+        },
+      ),
+      GoRoute(
+        path: myProfile,
+        builder: (context, state) {
+          return MyProfileView(); // New Profile View
+        },
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: MyProfileView(),
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
+        ),
+      ),
     ],
   );
+
+  static Widget buildEaseoutAnimation(
+      context, animation, secondaryAnimation, child) {
+    // Use ease-out curve
+    return FadeTransition(
+      opacity: animation.drive(
+        CurveTween(
+          curve: Curves.easeOut,
+        ),
+      ),
+      child: child,
+    );
+  }
 }
