@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -6,6 +8,7 @@ import '../../../../../core/shared/widgets/top_bar.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
+import '../../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import '../../view_model/search_cubit/search_cubit.dart';
 import '../../../../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
@@ -180,6 +183,18 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                             ),
                             itemBuilder: (context, index) {
                               return ProductItem(
+                                onTap: () {
+                                  context.read<CartCubit>().addProductToCart(
+                                        index: index,
+                                        quantity: 1,
+                                        img: filteredItems[index].image,
+                                        price: filteredItems[index].price,
+                                        name: filteredItems[index].name,
+                                        measure: filteredItems[index].measure,
+                                      );
+                                  log('added to cart');
+                                },
+                                index: index,
                                 instanceOfProduct: filteredItems[index],
                               );
                             },

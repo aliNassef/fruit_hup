@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "doYOuWantToLogout":
             MessageLookupByLibrary.simpleMessage("هل تريد تسجيل الخروج؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "filter": MessageLookupByLibrary.simpleMessage("تصنيف حسب :"),
         "forgetPass": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
