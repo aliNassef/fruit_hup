@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
- import 'package:fruit_hup/core/utils/app_images.dart';
+import 'package:fruit_hup/core/utils/app_images.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import '../../../../../core/shared/functions/toast_dialog.dart';
 import '../../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
@@ -19,6 +20,7 @@ class ProductItem extends StatelessWidget {
   final int? index;
   @override
   Widget build(BuildContext context) {
+    final favCubit = context.read<FavCubit>();
     return Stack(
       children: [
         Container(
@@ -26,13 +28,24 @@ class ProductItem extends StatelessWidget {
           width: 163.w,
           decoration: BoxDecoration(color: AppColors.fillProductColor),
         ),
-        Positioned(
-          right: 8.w,
-          top: 8.h,
-          child: InkWell(
-            onTap: () {},
-            child: SvgPicture.asset(AppImages.heart, height: 20.h, width: 20.w),
-          ),
+        BlocBuilder<FavCubit, FavState>(
+          builder: (context, state) {
+            return Positioned(
+              right: 8.w,
+              top: 8.h,
+              child: InkWell(
+                onTap: () {
+                  favCubit.changeFav(index!);
+                  favCubit.addProductToFav(product: instanceOfProduct);
+                },
+                child: favCubit.isFav
+                    ? SvgPicture.asset(AppImages.hearted,
+                        height: 20.h, width: 20.w)
+                    : SvgPicture.asset(AppImages.heart,
+                        height: 20.h, width: 20.w),
+              ),
+            );
+          },
         ),
         Positioned(
           bottom: 80.h,

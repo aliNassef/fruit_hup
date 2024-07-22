@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hup/features/profile/data/repo/profile_repo_impl.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import '../../../../core/service_locator.dart';
 import '../../../cart/data/repo/cart_repo_impl.dart';
 import '../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
@@ -27,6 +29,11 @@ class HomeView extends StatelessWidget {
           ),
           BlocProvider(
             create: (context) => CartCubit(getIt.get<CartRepoImpl>()),
+          ),
+          BlocProvider(
+            create: (context) => FavCubit(
+              getIt.get<ProfileRepoImpl>(),
+            ),
           ),
         ],
         child: SafeArea(

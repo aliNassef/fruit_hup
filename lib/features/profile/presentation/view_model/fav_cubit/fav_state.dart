@@ -15,4 +15,12 @@ final class FavLoaded extends FavState {
 
 final class FavLoading extends FavState {}
 
-final class FavFailure extends FavState {}
+final class FavFailure extends FavState {
+  final String errMessage;
+
+  FavFailure({required this.errMessage});
+}
+
+final class FavChanged extends FavState {}
+
+final class ProductAdded extends FavState {}

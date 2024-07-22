@@ -42,4 +42,5 @@ setupGetIt() async {
   await getIt.registerSingleton<CartRepoImpl>(CartRepoImpl());
   // Profile
   await getIt.registerSingleton<ProfileRepoImpl>(ProfileRepoImpl());
+  
 }

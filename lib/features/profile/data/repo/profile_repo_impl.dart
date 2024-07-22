@@ -1,11 +1,15 @@
 import 'dart:developer';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/constants.dart';
 import 'package:fruit_hup/core/cache/cache_helper.dart';
 import 'package:fruit_hup/core/service_locator.dart';
+import 'package:fruit_hup/features/home/data/models/product_model.dart';
 
+import '../../../../core/error/failure.dart';
 import 'profile_repo.dart';
 
 class ProfileRepoImpl extends ProfileRepo {
@@ -42,9 +46,37 @@ class ProfileRepoImpl extends ProfileRepo {
       log(e.toString());
     }
   }
-  
+
+  final favCollection =
+      FirebaseFirestore.instance.collection(AppConstants.favCollection);
+
+  addProducToFav({required ProductModel product}) async {
+    try {
+      await favCollection.add({
+        'image': product.image,
+        'name': product.name,
+        'price': product.price,
+        'count': product.count,
+        "measure": product.measure,
+      });
+    } catch (e) {
+      log(e.toString());
+    }
+  }
+
   @override
-  Future<void> addToFav({required int index}) async{
-   
+  Stream<Either<List<ProductModel>, dynamic>> getFavProducts() {
+    try {
+      return favCollection.snapshots().map((snapshot) {
+        List<ProductModel> favItems = snapshot.docs
+            .map((doc) => ProductModel.fromJson(doc.data()))
+            .toList();
+        return Left(favItems);
+      }).handleError((error) {
+        return Right(Failure(errMessage: error.toString()));
+      });
+    } catch (e) {
+      return Stream.value(Right(Failure(errMessage: e.toString())));
+    }
   }
 }

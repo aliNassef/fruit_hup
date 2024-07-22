@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/core/service_locator.dart';
+import 'package:fruit_hup/features/cart/data/repo/cart_repo_impl.dart';
+import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
+import 'package:fruit_hup/features/profile/data/repo/profile_repo_impl.dart';
 import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import 'package:fruit_hup/features/profile/presentation/views/about_us.dart';
 import 'package:fruit_hup/features/profile/presentation/views/fav_view.dart';
@@ -84,8 +88,19 @@ class ProfileViewBody extends StatelessWidget {
               onTap: () {
                 navigateToNewPage(
                   context,
-                  BlocProvider(
-                    create: (context) => FavCubit(),
+                  MultiBlocProvider(
+                    providers: [
+                      BlocProvider(
+                        create: (context) => FavCubit(
+                          getIt.get<ProfileRepoImpl>(),
+                        )..getFavProducts(),
+                      ),
+                      BlocProvider(
+                        create: (context) => CartCubit(
+                          getIt.get<CartRepoImpl>(),
+                        ),
+                      ),
+                    ],
                     child: const FavView(),
                   ),
                 );
