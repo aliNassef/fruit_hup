@@ -42,4 +42,9 @@ class ProfileRepoImpl extends ProfileRepo {
       log(e.toString());
     }
   }
+  
+  @override
+  Future<void> addToFav({required int index}) async{
+   
+  }
 }

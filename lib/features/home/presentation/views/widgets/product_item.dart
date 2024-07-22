@@ -2,7 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+ import 'package:fruit_hup/core/utils/app_images.dart';
 import '../../../../../core/shared/functions/toast_dialog.dart';
 import '../../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
@@ -30,11 +31,7 @@ class ProductItem extends StatelessWidget {
           top: 8.h,
           child: InkWell(
             onTap: () {},
-            child: Icon(
-              FontAwesomeIcons.heart,
-              color: Color(0xff292D32),
-              size: 20,
-            ),
+            child: SvgPicture.asset(AppImages.heart, height: 20.h, width: 20.w),
           ),
         ),
         Positioned(
