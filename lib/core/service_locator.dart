@@ -1,3 +1,6 @@
+import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
+
 import '../features/cart/data/repo/cart_repo_impl.dart';
 import '../features/profile/data/repo/profile_repo_impl.dart';
 
@@ -40,7 +43,14 @@ setupGetIt() async {
   ));
   // cart
   await getIt.registerSingleton<CartRepoImpl>(CartRepoImpl());
+  getIt.registerLazySingleton<CartCubit>(
+    () => CartCubit(getIt.get<CartRepoImpl>()),
+  );
+
   // Profile
   await getIt.registerSingleton<ProfileRepoImpl>(ProfileRepoImpl());
-  
+  // favorite
+  getIt.registerLazySingleton<FavCubit>(
+    () => FavCubit(getIt.get<ProfileRepoImpl>()),
+  );
 }
