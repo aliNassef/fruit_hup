@@ -32,6 +32,9 @@ class HomeView extends StatelessWidget {
           BlocProvider.value(
             value: getIt<FavCubit>(),
           ),
+          BlocProvider.value(
+            value: getIt<CartCubit>(),
+          ),
         ],
         child: SafeArea(
           child: HomeViewBody(),
