@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
+import '../../../../profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import '../../view_model/get_all_product_cubit/get_all_product_cubit.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
@@ -53,7 +55,20 @@ class MorePopularBody extends StatelessWidget {
                     mainAxisExtent: 214.h,
                   ),
                   itemBuilder: (context, index) {
+                    final favCubit = context.read<FavCubit>();
                     return ProductItem(
+                      addToCart: () {
+                        context.read<CartCubit>().addProductToCart(
+                            index: index,
+                            quantity: 1,
+                            img: AppConstants.products[index].image,
+                            price: AppConstants.products[index].price,
+                            name: AppConstants.products[index].name,
+                            measure: AppConstants.products[index].measure);
+                      },
+                      addOrRemoveToFav: () {
+                        favCubit.changeFav(index, AppConstants.products);
+                      },
                       instanceOfProduct: AppConstants.products[index],
                     );
                   },

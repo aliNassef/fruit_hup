@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import '../../../../../core/shared/widgets/custom_search_bar.dart';
 import '../../../../../core/shared/widgets/top_bar.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -182,7 +183,11 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                               mainAxisExtent: 214.h,
                             ),
                             itemBuilder: (context, index) {
+                              final favCubit = context.read<FavCubit>();
                               return ProductItem(
+                                addOrRemoveToFav: () {
+                                  favCubit.changeFav(index, filteredItems);
+                                },
                                 addToCart: () {
                                   context.read<CartCubit>().addProductToCart(
                                         index: index,
