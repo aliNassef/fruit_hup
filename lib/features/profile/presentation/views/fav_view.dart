@@ -39,8 +39,9 @@ class FavView extends StatelessWidget {
                         mainAxisExtent: 214.h,
                       ),
                       itemBuilder: (context, index) {
-                        return ProductItem(
-                          onTap: () {
+                         return ProductItem(
+                        
+                          addToCart: () {
                             // Add to cart
                             //   context.read<CartCubit>().addProductToCart(
                             //         index: index,

@@ -14,9 +14,14 @@ import '../../../data/models/product_model.dart';
 
 class ProductItem extends StatelessWidget {
   const ProductItem(
-      {super.key, required this.instanceOfProduct, this.onTap, this.index});
+      {super.key,
+      required this.instanceOfProduct,
+      this.addToCart,
+      this.index,
+      this.addOrRemoveToFav});
   final ProductModel instanceOfProduct;
-  final void Function()? onTap;
+  final void Function()? addToCart;
+  final void Function()? addOrRemoveToFav;
   final int? index;
   @override
   Widget build(BuildContext context) {
@@ -34,16 +39,12 @@ class ProductItem extends StatelessWidget {
               right: 8.w,
               top: 8.h,
               child: InkWell(
-                onTap: () {
-                  favCubit.changeFav(index!);
-                  favCubit.addProductToFav(product: instanceOfProduct);
-                },
-                child: favCubit.isFav
-                    ? SvgPicture.asset(AppImages.hearted,
-                        height: 20.h, width: 20.w)
-                    : SvgPicture.asset(AppImages.heart,
-                        height: 20.h, width: 20.w),
-              ),
+                  onTap: addOrRemoveToFav,
+                  child: favCubit.favoriteProductId.contains(instanceOfProduct.id)
+                      ? SvgPicture.asset(AppImages.hearted,
+                          height: 20.h, width: 20.w)
+                      : SvgPicture.asset(AppImages.heart,
+                          height: 20.h, width: 20.w)),
             );
           },
         ),
@@ -106,7 +107,7 @@ class ProductItem extends StatelessWidget {
                   return CircleAvatar(
                     backgroundColor: AppColors.mainColor,
                     child: InkWell(
-                      onTap: onTap,
+                      onTap: addToCart,
                       child: Icon(
                         Icons.add,
                         color: Colors.white,

@@ -21,6 +21,10 @@ final class FavFailure extends FavState {
   FavFailure({required this.errMessage});
 }
 
-final class FavChanged extends FavState {}
+final class FavChanged extends FavState {
+  final int index;
+
+  FavChanged({required this.index});
+}
 
 final class ProductAdded extends FavState {}

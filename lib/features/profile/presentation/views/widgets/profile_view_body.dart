@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/core/service_locator.dart';
- import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
+import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import 'package:fruit_hup/features/profile/presentation/views/about_us.dart';
 import 'package:fruit_hup/features/profile/presentation/views/fav_view.dart';

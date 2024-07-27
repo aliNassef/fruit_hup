@@ -183,7 +183,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                             ),
                             itemBuilder: (context, index) {
                               return ProductItem(
-                                onTap: () {
+                                addToCart: () {
                                   context.read<CartCubit>().addProductToCart(
                                         index: index,
                                         quantity: 1,

@@ -53,6 +53,7 @@ class ProfileRepoImpl extends ProfileRepo {
   addProducToFav({required ProductModel product}) async {
     try {
       await favCollection.add({
+        'id': product.id,
         'image': product.image,
         'name': product.name,
         'price': product.price,
@@ -73,6 +74,7 @@ class ProfileRepoImpl extends ProfileRepo {
             .toList();
         return Left(favItems);
       }).handleError((error) {
+        log(error.toString());
         return Right(Failure(errMessage: error.toString()));
       });
     } catch (e) {

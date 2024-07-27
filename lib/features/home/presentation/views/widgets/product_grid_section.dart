@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../../../constants.dart';
@@ -44,9 +45,15 @@ class ProductGridSection extends StatelessWidget {
                         mainAxisExtent: 214.h,
                       ),
                       itemBuilder: (context, index) {
+                        final favCubit = context.read<FavCubit>();
                         return ProductItem(
                           index: index,
-                          onTap: () {
+                          addOrRemoveToFav: () {
+                            log("check id " + AppConstants.products[index].id.toString());
+                            favCubit.changeFav(
+                                index, AppConstants.products[index]);
+                          },
+                          addToCart: () {
                             // Add to cart
                             context.read<CartCubit>().addProductToCart(
                                   index: index,
@@ -56,7 +63,7 @@ class ProductGridSection extends StatelessWidget {
                                   name: AppConstants.products[index].name,
                                   measure: AppConstants.products[index].measure,
                                 );
-                             log('added to cart');
+                            log('added to cart');
                           },
                           instanceOfProduct: AppConstants.products[index],
                         );
