@@ -7,6 +7,7 @@ import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav
 import 'package:fruit_hup/generated/l10n.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import '../../../home/presentation/views/widgets/product_item.dart';
 
 class FavView extends StatelessWidget {
@@ -39,19 +40,17 @@ class FavView extends StatelessWidget {
                         mainAxisExtent: 214.h,
                       ),
                       itemBuilder: (context, index) {
-                         return ProductItem(
-                        
+                        return ProductItem(
                           addToCart: () {
                             // Add to cart
-                            //   context.read<CartCubit>().addProductToCart(
-                            //         index: index,
-                            //         quantity: 1,
-                            //         img:s.image,
-                            //         price: AppConstants.products[index].price,
-                            //         name: AppConstants.products[index].name,
-                            //         measure: AppConstants.products[index].measure,
-                            //       );
-                            //    log('added to cart');
+                            context.read<CartCubit>().addProductToCart(
+                                  index: index,
+                                  quantity: 1,
+                                  img: state.products[index].image,
+                                  price: state.products[index].price,
+                                  name: state.products[index].name,
+                                  measure: state.products[index].measure,
+                                );
                           },
                           instanceOfProduct: state.products[index],
                         );
