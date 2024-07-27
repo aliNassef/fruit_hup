@@ -7,4 +7,5 @@ abstract class ProfileRepo {
   Future<void> changeUserPass(String pass);
   Stream<Either<List<ProductModel>, dynamic>> getFavProducts();
   Future<void> addProducToFav({required ProductModel product});
+  Future<void> removeProductFromFav({required int index});
 }

@@ -22,9 +22,7 @@ final class FavFailure extends FavState {
 }
 
 final class FavChanged extends FavState {
-  final int index;
-
-  FavChanged({required this.index});
+   
 }
 
 final class ProductAdded extends FavState {}

@@ -10,7 +10,7 @@ part 'fav_state.dart';
 class FavCubit extends Cubit<FavState> {
   FavCubit(this.profileRepo) : super(FavInitial());
   final ProfileRepo profileRepo;
-  bool isFav = false;
+  // bool isFav = false;
   Set<int> favoriteProductId = {};
   getFavProducts() {
     emit(FavLoading());
@@ -26,12 +26,19 @@ class FavCubit extends Cubit<FavState> {
     await profileRepo.addProducToFav(product: product);
   }
 
-  changeFav(int index, ProductModel product) async {
-    isFav = !isFav;
+  removeProductFromFav({required int index,}) async {
+    await profileRepo.removeProductFromFav(index: index);
+  }
 
-    await addProductToFav(product: product);
-    log("the id is " + product.id.toString());
-    favoriteProductId.add(product.id);
-    emit(FavChanged(index: index));
+  changeFav(int index, ProductModel product) async {
+    if (favoriteProductId.contains(product.id)) {
+      favoriteProductId.remove(product.id);
+      removeProductFromFav(index: index);
+    } else {
+      await addProductToFav(product: product);
+      log("the id is " + product.id.toString());
+      favoriteProductId.add(product.id);
+    }
+    emit(FavChanged());
   }
 }

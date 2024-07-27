@@ -81,4 +81,19 @@ class ProfileRepoImpl extends ProfileRepo {
       return Stream.value(Right(Failure(errMessage: e.toString())));
     }
   }
+
+  @override
+  Future<void> removeProductFromFav({required int index}) async {
+    try {
+      var data = await favCollection.get();
+      for (var element in data.docs) {
+        if (element['id'] == AppConstants.products[index].id) {
+          await favCollection.doc(element.id).delete();
+          break;
+        }
+      }
+    } catch (e) {
+      log(e.toString());
+    }
+  }
 }

@@ -49,8 +49,7 @@ class ProductGridSection extends StatelessWidget {
                         return ProductItem(
                           index: index,
                           addOrRemoveToFav: () {
-                            log("check id " + AppConstants.products[index].id.toString());
-                            favCubit.changeFav(
+                             favCubit.changeFav(
                                 index, AppConstants.products[index]);
                           },
                           addToCart: () {
