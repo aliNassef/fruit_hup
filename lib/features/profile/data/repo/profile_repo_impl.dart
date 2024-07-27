@@ -83,7 +83,25 @@ class ProfileRepoImpl extends ProfileRepo {
   }
 
   @override
-  Future<void> removeProductFromFav({required int index}) async {
+  Future<void> removeProductFromFavById({required int index}) async {
+    try {
+      var data = await favCollection.get();
+      // for (var element in data.docs) {
+      //   if (element['id'] == AppConstants.products[index].id) {
+      //     await favCollection.doc(element.id).delete();
+      //     break;
+      //   }
+      // }
+      var docId = data.docs[index].id;
+      await favCollection.doc(docId).delete();
+    } catch (e) {
+      log(e.toString());
+    }
+  }
+
+  @override
+  Future<void> removeProductFromFav(
+      {required int index, required List<ProductModel> products}) async {
     try {
       var data = await favCollection.get();
       for (var element in data.docs) {

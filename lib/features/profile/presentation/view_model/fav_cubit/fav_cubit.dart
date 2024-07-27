@@ -26,18 +26,25 @@ class FavCubit extends Cubit<FavState> {
     await profileRepo.addProducToFav(product: product);
   }
 
-  removeProductFromFav({required int index,}) async {
-    await profileRepo.removeProductFromFav(index: index);
+  removeProductFromFavById({
+    required int index,
+  }) async {
+    await profileRepo.removeProductFromFavById(index: index);
   }
 
-  changeFav(int index, ProductModel product) async {
-    if (favoriteProductId.contains(product.id)) {
-      favoriteProductId.remove(product.id);
-      removeProductFromFav(index: index);
+  removeProductFromFav(
+      {required int index, required List<ProductModel> products}) async {
+    await profileRepo.removeProductFromFav(index: index, products: products);
+  }
+
+  changeFav(int index, List<ProductModel> product) async {
+    if (favoriteProductId.contains(product[index].id)) {
+      favoriteProductId.remove(product[index].id);
+      removeProductFromFav(index: index, products: product);
     } else {
-      await addProductToFav(product: product);
-      log("the id is " + product.id.toString());
-      favoriteProductId.add(product.id);
+      await addProductToFav(product: product[index]);
+      log("the id is " + product[index].id.toString());
+      favoriteProductId.add(product[index].id);
     }
     emit(FavChanged());
   }

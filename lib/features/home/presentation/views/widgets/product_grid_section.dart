@@ -49,8 +49,7 @@ class ProductGridSection extends StatelessWidget {
                         return ProductItem(
                           index: index,
                           addOrRemoveToFav: () {
-                             favCubit.changeFav(
-                                index, AppConstants.products[index]);
+                            favCubit.changeFav(index, AppConstants.products);
                           },
                           addToCart: () {
                             // Add to cart

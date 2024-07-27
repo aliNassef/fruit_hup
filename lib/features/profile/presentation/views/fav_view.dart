@@ -41,6 +41,11 @@ class FavView extends StatelessWidget {
                       ),
                       itemBuilder: (context, index) {
                         return ProductItem(
+                          addOrRemoveToFav: () {
+                            context
+                                .read<FavCubit>()
+                                .removeProductFromFavById(index: index);
+                          },
                           addToCart: () {
                             // Add to cart
                             context.read<CartCubit>().addProductToCart(
