@@ -27,7 +27,7 @@ abstract class AppConstants {
   static const String useremail = 'email';
   static const String userPass = 'password';
   static const String productCollection = 'products';
-
+  static const String favoriteProductsCollection = 'favoriteProducts';
   static const String favCollection = 'favourites';
 
   static List<ProductModel> products = [];

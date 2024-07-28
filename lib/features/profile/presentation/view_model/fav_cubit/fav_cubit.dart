@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:fruit_hup/features/home/data/models/product_model.dart';
 import 'package:fruit_hup/features/profile/data/repo/profile_repo.dart';
@@ -34,6 +33,7 @@ class FavCubit extends Cubit<FavState> {
 
   removeProductFromFav(
       {required int index, required List<ProductModel> products}) async {
+    favoriteProductId.remove(products[index].id);
     await profileRepo.removeProductFromFav(index: index, products: products);
   }
 
