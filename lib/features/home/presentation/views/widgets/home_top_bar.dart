@@ -27,9 +27,15 @@ class HomeTopBar extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 22,
-            backgroundImage: AssetImage(
-              AppImages.demoProfilr,
-            ),
+            backgroundImage:
+                getIt.get<CacheHelper>().getData(key: AppConstants.userImage) !=
+                        null
+                    ? NetworkImage(getIt
+                        .get<CacheHelper>()
+                        .getData(key: AppConstants.userImage))
+                    : AssetImage(
+                        AppImages.demoProfilr,
+                      ),
           ),
           HorizontalSpace(11),
           Column(
