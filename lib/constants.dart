@@ -25,6 +25,7 @@ abstract class AppConstants {
   static String isLoggedOnce = 'isLoggedOnce';
   static const String username = 'name';
   static const String useremail = 'email';
+  static const String userImage = 'image';
   static const String userPass = 'password';
   static const String productCollection = 'products';
   static const String favoriteProductsCollection = 'favoriteProducts';
