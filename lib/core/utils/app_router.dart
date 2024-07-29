@@ -1,6 +1,7 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/shared/widgets/layout_or_login.dart';
+import 'package:fruit_hup/features/home/data/models/product_model.dart';
 import 'package:fruit_hup/features/intro_screens/presentations/splash/views/splash_view.dart';
 import '../../features/layout/presentation/views/layout_view.dart';
 import '../../features/home/presentation/views/more_popular.dart';
@@ -91,16 +92,29 @@ abstract class AppRouter {
         ),
       ),
       GoRoute(
-        path: productDetailsView,
-        builder: (context, state) {
-          return ProductDetailsView();
-        },
-        pageBuilder: (context, state) => CustomTransitionPage(
-          child: ProductDetailsView(),
-          transitionsBuilder: buildEaseoutAnimation,
-          transitionDuration: Duration(milliseconds: 300),
-        ),
-      ),
+          path: productDetailsView,
+          builder: (context, state) {
+            final message = state.extra as Map<String, dynamic>;
+            final instanceOfProduct = message['model'] as ProductModel;
+            final index = message['index'] as int;
+            return ProductDetailsView(
+              index: index,
+              instanceOfProduct: instanceOfProduct,
+            );
+          },
+          pageBuilder: (context, state) {
+            final message = state.extra as Map<String, dynamic>;
+            final instanceOfProduct = message['model'] as ProductModel;
+            final index = message['index'] as int;
+            return CustomTransitionPage(
+              child: ProductDetailsView(
+                index: index,
+                instanceOfProduct: instanceOfProduct,
+              ),
+              transitionsBuilder: buildEaseoutAnimation,
+              transitionDuration: Duration(milliseconds: 300),
+            );
+          }),
       GoRoute(
         path: searchView,
         builder: (context, state) {

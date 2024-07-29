@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hup/features/home/data/models/product_model.dart';
 
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -7,8 +8,9 @@ import '../../../../../core/utils/app_styles.dart';
 class ProductInfo extends StatelessWidget {
   const ProductInfo({
     super.key,
+    required this.instanceOfProduct,
   });
-
+  final ProductModel instanceOfProduct;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,7 +19,7 @@ class ProductInfo extends StatelessWidget {
         Column(
           children: [
             Text(
-              'Watermelon',
+              instanceOfProduct.name,
               style: AppStyles.textStyle16B.copyWith(color: AppColors.gray950),
             ),
             VerticalSpace(8),
@@ -26,12 +28,12 @@ class ProductInfo extends StatelessWidget {
               TextSpan(
                 children: [
                   TextSpan(
-                    text: '${20}جنية /',
+                    text: '${instanceOfProduct.price}جنية /',
                     style: AppStyles.textStyle13B
                         .copyWith(color: AppColors.orange500),
                   ),
                   TextSpan(
-                    text: ' كيلو',
+                    text: ' ${instanceOfProduct.measure}',
                     style: AppStyles.textStyle13SB
                         .copyWith(color: AppColors.orange300),
                   )
