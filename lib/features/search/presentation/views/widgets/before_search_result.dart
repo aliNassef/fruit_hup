@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hup/generated/l10n.dart';
 import '../../view_model/search_cubit/search_cubit.dart';
 
 import '../../../../../core/utils/app_colors.dart';
@@ -15,7 +16,7 @@ class BeforeSearchResult extends StatelessWidget {
     return Row(
       children: [
         Text(
-          'عمليات البحث الأخيرة',
+          S.of(context).lastSearchInfo,
           style: AppStyles.textStyle16SB.copyWith(
             color: AppColors.gray950,
           ),
@@ -26,7 +27,7 @@ class BeforeSearchResult extends StatelessWidget {
             context.read<SearchCubit>().deleteAllQueries();
           },
           child: Text(
-            'حذف الكل',
+            S.of(context).deleteAll,
             style: AppStyles.textStyle13R.copyWith(
               color: AppColors.gray400,
             ),

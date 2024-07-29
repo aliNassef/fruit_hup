@@ -162,7 +162,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                         ),
                         VerticalSpace(6),
                         Text(
-                          'عفوًا... هذه المعلومات غير متوفرة للحظة',
+                          S.of(context).sorryInfonotfound,
                           style: AppStyles.textStyle13R
                               .copyWith(color: AppColors.gray400),
                         )

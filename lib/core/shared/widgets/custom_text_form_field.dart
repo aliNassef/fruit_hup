@@ -56,15 +56,15 @@ class CustomTextFormField extends StatelessWidget {
           border: borderStyle(),
           enabledBorder: borderStyle(),
           focusedBorder: borderStyle(),
-          suffixIcon: showIcon && isArabic()
+          suffixIcon: showIcon && !isArabic()
               ? Padding(
-                  padding: EdgeInsets.only(left: 16.w),
+                  padding: EdgeInsetsDirectional.only(end: 16.w),
                   child: icon,
                 )
               : null,
-          prefixIcon: showIcon && !isArabic()
+          prefixIcon: showIcon && isArabic()
               ? Padding(
-                  padding: EdgeInsets.only(right: 16.w),
+                  padding: EdgeInsetsDirectional.only(end: 16.w),
                   child: icon,
                 )
               : null,

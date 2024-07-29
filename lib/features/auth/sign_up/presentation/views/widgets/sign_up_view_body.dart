@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hup/features/auth/sign_up/presentation/views/widgets/donot_have_account.dart';
 import '../../../../../../core/shared/functions/toast_dialog.dart';
 import '../../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../../core/utils/app_colors.dart';
@@ -11,7 +12,6 @@ import '../../../../../../core/shared/widgets/custom_text_form_field.dart';
 import '../../../../../../core/shared/widgets/top_bar.dart';
 import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../generated/l10n.dart';
-import '../../../../sign_in/presentation/views/widgets/donot_have_account.dart';
 import 'terms_and_condation_check_box.dart';
 
 class SignUpViewBody extends StatelessWidget {

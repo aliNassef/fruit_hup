@@ -1,10 +1,8 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../../../../constants.dart';
 import '../../../../../core/cache/cache_helper.dart';
 import '../../../../../core/service_locator.dart';
@@ -48,7 +46,8 @@ class HomeTopBar extends StatelessWidget {
                 ),
               ),
               Text(
-                getIt.get<CacheHelper>().getData(key: AppConstants.username),
+                getIt.get<CacheHelper>().getData(key: AppConstants.username) ??
+                    'ali',
                 style: AppStyles.textStyle16B.copyWith(
                   color: AppColors.gray950,
                 ),

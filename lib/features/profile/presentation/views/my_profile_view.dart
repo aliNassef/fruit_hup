@@ -67,8 +67,9 @@ class MyProfileView extends StatelessWidget {
                   showIcon: true,
                   icon: Image.asset(AppImages.edit_icon, height: 20, width: 20),
                   hintText: getIt
-                      .get<CacheHelper>()
-                      .getData(key: AppConstants.username),
+                          .get<CacheHelper>()
+                          .getData(key: AppConstants.username) ??
+                      'ali',
                 ),
                 VerticalSpace(8),
 
@@ -78,8 +79,9 @@ class MyProfileView extends StatelessWidget {
                   showIcon: true,
                   icon: Image.asset(AppImages.edit_icon, height: 20, width: 20),
                   hintText: getIt
-                      .get<CacheHelper>()
-                      .getData(key: AppConstants.useremail),
+                          .get<CacheHelper>()
+                          .getData(key: AppConstants.useremail) ??
+                      'test@gmail.com',
                 ),
                 VerticalSpace(16),
                 Padding(

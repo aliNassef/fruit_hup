@@ -27,7 +27,7 @@ class HorizantalproductList extends StatelessWidget {
               itemCount: AppConstants.products.length,
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 8.0.w),
+                  padding: EdgeInsetsDirectional.only(start: 8.0.w),
                   child: Column(
                     children: [
                       Container(

@@ -12,7 +12,7 @@ class FruitHup extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       builder: (context, child) => MaterialApp.router(
-        locale: Locale('ar'),
+        locale: Locale('en'),
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
           sliderTheme: SliderThemeData(

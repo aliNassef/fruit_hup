@@ -24,13 +24,15 @@ class UserInfo extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              getIt.get<CacheHelper>().getData(key: AppConstants.username),
+              getIt.get<CacheHelper>().getData(key: AppConstants.username) ??
+                  'ali',
               style: AppStyles.textStyle13B.copyWith(
                 color: Color(0xff131F46),
               ),
             ),
             Text(
-              getIt.get<CacheHelper>().getData(key: AppConstants.useremail),
+              getIt.get<CacheHelper>().getData(key: AppConstants.useremail) ??
+                  'test@gmail.com',
               style: AppStyles.textStyle13R.copyWith(
                 color: Color(0xff888FA0),
               ),

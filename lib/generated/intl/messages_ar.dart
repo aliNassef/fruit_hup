@@ -35,6 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("قم بانشاء حساب"),
         "currentPass":
             MessageLookupByLibrary.simpleMessage("كلمة المرور الحالي"),
+        "deleteAll": MessageLookupByLibrary.simpleMessage("حذف الكل"),
         "doYOuWantToLogout":
             MessageLookupByLibrary.simpleMessage("هل تريد تسجيل الخروج؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
@@ -48,8 +49,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
         "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
+        "lastSearchInfo":
+            MessageLookupByLibrary.simpleMessage("عمليات البحث الأخيرة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),
         "lot": MessageLookupByLibrary.simpleMessage("المزيد"),
+        "main": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "myOrders": MessageLookupByLibrary.simpleMessage("طلباتي"),
         "myProfile": MessageLookupByLibrary.simpleMessage("حسابي"),
         "newPass": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
@@ -63,12 +67,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "personalInfo":
             MessageLookupByLibrary.simpleMessage("المعلومات الشخصية"),
         "priceRange": MessageLookupByLibrary.simpleMessage("السعر :"),
+        "productList": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
         "public": MessageLookupByLibrary.simpleMessage("عام"),
         "result": MessageLookupByLibrary.simpleMessage("نتائج"),
         "saveChanges": MessageLookupByLibrary.simpleMessage("حفظ التغييرات"),
         "search": MessageLookupByLibrary.simpleMessage("البحث"),
         "searchFor": MessageLookupByLibrary.simpleMessage("ابحث عن......."),
+        "shoppingCart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
         "signOut": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "signUp": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
         "signwithapple":
@@ -77,6 +83,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة فيسبوك"),
         "signwithgoogle":
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
+        "sorryInfonotfound": MessageLookupByLibrary.simpleMessage(
+            "عفوًا... هذه المعلومات غير متوفرة للحظة"),
         "termsAndCondation": MessageLookupByLibrary.simpleMessage(
             " الشروط \nوالأحكام الخاصة بنا"),
         "theme": MessageLookupByLibrary.simpleMessage("الوضع"),

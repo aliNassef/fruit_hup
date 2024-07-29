@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
 import 'package:fruit_hup/core/utils/app_colors.dart';
 import 'package:fruit_hup/core/utils/app_styles.dart';
+import 'package:fruit_hup/generated/l10n.dart';
 
 import '../../../../core/shared/widgets/top_bar.dart';
 
@@ -17,8 +18,9 @@ class AboutUs extends StatelessWidget {
           children: [
             VerticalSpace(16),
             TopBar(
+              onTap: () => Navigator.pop(context),
               showTrailing: false,
-              text: 'من نحن',
+              text: S.of(context).whoAreWe,
             ),
             VerticalSpace(20),
             Expanded(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_hup/generated/l10n.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -41,7 +42,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
         inactiveIcon: SvgPicture.asset(
           AppImages.home,
         ),
-        title: (" الرئيسية"),
+        title: (S.of(context).main),
         textStyle: AppStyles.textStyle11SB.copyWith(
           color: AppColors.mainColor,
         ),
@@ -56,7 +57,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
         iconSize: 30,
         icon: LayoutActiveIcon(img: AppImages.categories_active),
         activeColorSecondary: AppColors.mainColor,
-        title: (" المنتجات"),
+        title: (S.of(context).productList),
         textStyle: AppStyles.textStyle11SB.copyWith(
           color: AppColors.mainColor,
         ),
@@ -70,7 +71,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
         iconSize: 30,
         icon: LayoutActiveIcon(img: AppImages.cart_active),
         activeColorSecondary: AppColors.mainColor,
-        title: (" سلة التسوق"),
+        title: (S.of(context).shoppingCart),
         textStyle: AppStyles.textStyle11SB.copyWith(
           color: AppColors.mainColor,
         ),
@@ -82,7 +83,7 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
         iconSize: 30,
         activeColorSecondary: AppColors.mainColor,
         icon: LayoutActiveIcon(img: AppImages.profile_active),
-        title: (" حسابي"),
+        title: (S.of(context).myProfile),
         textStyle: AppStyles.textStyle11SB.copyWith(
           color: AppColors.mainColor,
         ),

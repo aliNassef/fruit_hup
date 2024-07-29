@@ -125,6 +125,7 @@ class ProfileViewBody extends StatelessWidget {
               icon: AppImages.info_circle,
               text: S.of(context).whoAreWe,
             ),
+            VerticalSpace(20),
             LogOutButton(),
             VerticalSpace(20),
           ],

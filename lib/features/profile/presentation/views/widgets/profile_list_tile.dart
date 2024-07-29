@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit_hup/core/shared/functions/locale.dart';
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
 
@@ -36,7 +37,9 @@ class ProfileListTile extends StatelessWidget {
           ),
           trailing: InkWell(
             onTap: () {},
-            child: SvgPicture.asset(AppImages.left_arrow_icon),
+            child: isArabic()
+                ? SvgPicture.asset(AppImages.left_arrow_icon)
+                : Image.asset(AppImages.right_arrow2),
           ),
         ),
       ),
