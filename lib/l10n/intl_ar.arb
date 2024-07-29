@@ -51,9 +51,9 @@
     "sorryInfonotfound" :  "عفوًا... هذه المعلومات غير متوفرة للحظة",
     "lastSearchInfo" :"عمليات البحث الأخيرة",
     "deleteAll" : "حذف الكل",
-    "main" : "الرئيسية",
-    "productList" : "المنتجات",
-    "shoppingCart" : "سلة التسوق"
+    "main" : "الرئيسية "  ,
+    "productList" : "المنتجات ",
+    "shoppingCart" : "سلة التسوق "
     
   
 }

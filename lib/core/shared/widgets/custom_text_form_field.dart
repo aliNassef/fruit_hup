@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../functions/locale.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_styles.dart';
 
@@ -56,13 +55,7 @@ class CustomTextFormField extends StatelessWidget {
           border: borderStyle(),
           enabledBorder: borderStyle(),
           focusedBorder: borderStyle(),
-          suffixIcon: showIcon && !isArabic()
-              ? Padding(
-                  padding: EdgeInsetsDirectional.only(end: 16.w),
-                  child: icon,
-                )
-              : null,
-          prefixIcon: showIcon && isArabic()
+          suffixIcon: showIcon
               ? Padding(
                   padding: EdgeInsetsDirectional.only(end: 16.w),
                   child: icon,
