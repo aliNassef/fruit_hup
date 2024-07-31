@@ -48,10 +48,14 @@
     "confirm" : "Confirm",
     "cancel" : "Cancel",
     "fav" : "Favorites",
-    "sorryInfonotfound" : "Sorry... this information is not available at the moment"
-,    "lastSearchInfo" : "Recent Searches"
-,     "deleteAll" : "Delete All",
-"main" : "Home",
-"productList" : "Products",
-"shoppingCart" : "Shopping Cart"
+    "sorryInfonotfound" : "Sorry... this information is not available at the moment",    "lastSearchInfo" : "Recent Searches",     "deleteAll" : "Delete All",
+    "main" : "Home",
+    "productList" : "Products",
+    "shoppingCart" : "Shopping Cart",
+    "language" : "language",
+    "lang" : "English",
+    "chooseLanguage"  : "Choose Language",
+     "en" : "English",
+    "ar" : "العربية"
+
 }

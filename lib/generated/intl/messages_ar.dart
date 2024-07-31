@@ -24,10 +24,12 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "HaveAccount":
             MessageLookupByLibrary.simpleMessage(" تمتلك حساب بالفعل؟ "),
+        "ar": MessageLookupByLibrary.simpleMessage("العربية"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("الأكثر مبيعًا"),
         "cancel": MessageLookupByLibrary.simpleMessage("لا أرغب"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
         "changePass": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
+        "chooseLanguage": MessageLookupByLibrary.simpleMessage("اختر اللغة"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
         "confirmPass":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور الجديده"),
@@ -39,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "doYOuWantToLogout":
             MessageLookupByLibrary.simpleMessage("هل تريد تسجيل الخروج؟"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+        "en": MessageLookupByLibrary.simpleMessage("English"),
         "fav": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "filter": MessageLookupByLibrary.simpleMessage("تصنيف حسب :"),
@@ -49,6 +52,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
         "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
+        "lang": MessageLookupByLibrary.simpleMessage("العربية"),
+        "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "lastSearchInfo":
             MessageLookupByLibrary.simpleMessage("عمليات البحث الأخيرة"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل دخول"),

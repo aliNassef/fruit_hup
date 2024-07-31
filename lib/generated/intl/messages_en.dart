@@ -24,10 +24,13 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "HaveAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "ar": MessageLookupByLibrary.simpleMessage("العربية"),
         "bestSeller": MessageLookupByLibrary.simpleMessage("Best Seller"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "changePass": MessageLookupByLibrary.simpleMessage("Change Password"),
+        "chooseLanguage":
+            MessageLookupByLibrary.simpleMessage("Choose Language"),
         "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
         "confirmPass":
             MessageLookupByLibrary.simpleMessage("Confirm New Password"),
@@ -38,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "doYOuWantToLogout":
             MessageLookupByLibrary.simpleMessage("Do you want to log out?"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "en": MessageLookupByLibrary.simpleMessage("English"),
         "fav": MessageLookupByLibrary.simpleMessage("Favorites"),
         "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "filter": MessageLookupByLibrary.simpleMessage("Sort by:"),
@@ -49,6 +53,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "haveAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "lang": MessageLookupByLibrary.simpleMessage("English"),
+        "language": MessageLookupByLibrary.simpleMessage("language"),
         "lastSearchInfo":
             MessageLookupByLibrary.simpleMessage("Recent Searches"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),

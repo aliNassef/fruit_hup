@@ -22,6 +22,9 @@ List<OnBoardingModel> introPages = [
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 abstract class AppConstants {
+  static const int cardPaymentMethodIntegrationId = 4564350;
+
+  static const kConstantPayMobKey = '';
   static String isLoggedOnce = 'isLoggedOnce';
   static const String username = 'name';
   static const String useremail = 'email';

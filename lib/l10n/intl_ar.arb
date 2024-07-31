@@ -53,7 +53,12 @@
     "deleteAll" : "حذف الكل",
     "main" : "الرئيسية "  ,
     "productList" : "المنتجات ",
-    "shoppingCart" : "سلة التسوق "
+    "shoppingCart" : "سلة التسوق ",
+    "language" : "اللغة",
+    "lang" : "العربية",
+    "chooseLanguage"  : "اختر اللغة",
+    "en" : "English",
+    "ar" : "العربية"
     
   
 }

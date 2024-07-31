@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/core/service_locator.dart';
+import 'package:fruit_hup/core/utils/locale/language_cubit/change_lang_cubit.dart';
 import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
 import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 import 'package:fruit_hup/features/profile/presentation/views/about_us.dart';
@@ -106,6 +107,17 @@ class ProfileViewBody extends StatelessWidget {
               icon: AppImages.notification,
               text: S.of(context).notification,
             ),
+            ProfileListTile(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) => ChangeLanguageDialog(),
+                );
+              },
+              icon: AppImages.language_icon,
+              text: S.of(context).lang,
+              showLang: true,
+            ),
             CheckBoxListTile(
               icon: AppImages.theme_choose,
               text: S.of(context).theme,
@@ -140,6 +152,72 @@ class ProfileViewBody extends StatelessWidget {
       screen: newPage,
       withNavBar: true, // To keep the bottom nav bar
       pageTransitionAnimation: PageTransitionAnimation.fade,
+    );
+  }
+}
+
+class ChangeLanguageDialog extends StatelessWidget {
+  const ChangeLanguageDialog({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(0),
+      ),
+      title: Text(
+        S.of(context).chooseLanguage,
+        textAlign: TextAlign.center,
+        style: AppStyles.textStyle16B.copyWith(color: AppColors.gray950),
+      ),
+      actions: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                backgroundColor: AppColors.mainColor,
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: AppColors.mainColor),
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                minimumSize: Size(100, 40),
+              ),
+              onPressed: () {
+                context.read<ChangeLangCubit>().changeLangToEn();
+                Navigator.of(context).pop(true);
+              },
+              child: Text(
+                S.of(context).en,
+                style: AppStyles.textStyle16B.copyWith(color: Colors.white),
+              ),
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  side: BorderSide(color: AppColors.mainColor),
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                minimumSize: Size(100, 40),
+              ),
+              onPressed: () {
+                context.read<ChangeLangCubit>().changeLangToAr();
+                Navigator.of(context).pop(false);
+              },
+              child: Text(
+                S.of(context).ar,
+                style:
+                    AppStyles.textStyle16B.copyWith(color: AppColors.mainColor),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
