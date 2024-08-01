@@ -1,6 +1,8 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/shared/widgets/layout_or_login.dart';
+import 'package:fruit_hup/features/checkout/presentation/views/address_view.dart';
+import 'package:fruit_hup/features/checkout/presentation/views/check_out_view.dart';
 import 'package:fruit_hup/features/home/data/models/product_model.dart';
 import 'package:fruit_hup/features/intro_screens/presentations/splash/views/splash_view.dart';
 import '../../features/layout/presentation/views/layout_view.dart';
@@ -29,6 +31,7 @@ abstract class AppRouter {
   static const productDetailsView = '/ProductDetailsView';
   static const layoutView = '/LayoutView';
   static const myProfile = '/MyProfile';
+  static const addressView = '/AddressView';
 
   static final GoRouter router = GoRouter(
     initialLocation: '/',
@@ -37,7 +40,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const SplashView();
+          return const CheckOutView();
         },
       ),
       GoRoute(
@@ -59,6 +62,17 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: LayoutView(),
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
+        ),
+      ),
+      GoRoute(
+        path: addressView,
+        builder: (context, state) {
+          return AddressView();
+        },
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: AddressView(),
           transitionsBuilder: buildEaseoutAnimation,
           transitionDuration: Duration(milliseconds: 300),
         ),

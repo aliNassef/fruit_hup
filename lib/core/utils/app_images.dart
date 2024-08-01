@@ -64,7 +64,8 @@ abstract class AppImages {
   // favorite
   static const heart = 'assets/svgs/heart_icon.svg';
   static const hearted = 'assets/svgs/hearted_icon.svg';
-
+  // checkout
+  static const checkout = 'assets/svgs/check_out_icon.svg';
   // demo
   static const demoProfilr = 'assets/images/demo.png';
   static const demoHome = 'assets/images/demo_home.png';
