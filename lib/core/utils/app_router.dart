@@ -34,6 +34,7 @@ abstract class AppRouter {
   static const myProfile = '/MyProfile';
   static const addressView = '/AddressView';
   static const paymentView = '/PaymentView';
+  static const checkoutView = '/checkoutView';
 
   static final GoRouter router = GoRouter(
     initialLocation: '/',
@@ -70,6 +71,17 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: LayoutView(),
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
+        ),
+      ),
+      GoRoute(
+        path: checkoutView,
+        builder: (context, state) {
+          return CheckOutView();
+        },
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: CheckOutView(),
           transitionsBuilder: buildEaseoutAnimation,
           transitionDuration: Duration(milliseconds: 300),
         ),
