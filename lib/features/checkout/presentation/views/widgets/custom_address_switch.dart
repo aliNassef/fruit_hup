@@ -1,16 +1,17 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/core/utils/app_colors.dart';
 import 'package:fruit_hup/core/utils/app_styles.dart';
+import 'package:fruit_hup/features/checkout/presentation/view_model/address_cubit/address_cubit.dart';
 
 class CustomAddressSwitch extends StatelessWidget {
   const CustomAddressSwitch({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
+    final addressCubit = context.read<AddressCubit>();
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: Row(
@@ -23,10 +24,11 @@ class CustomAddressSwitch extends StatelessWidget {
                 scale: .8,
                 child: Switch(
                   splashRadius: 0,
-                  materialTapTargetSize:
-                      MaterialTapTargetSize.values[1],
-                  value: true,
-                  onChanged: (bool value) {},
+                  materialTapTargetSize: MaterialTapTargetSize.values[1],
+                  value: addressCubit.switchValue,
+                  onChanged: (bool value) {
+                    addressCubit.changeSwitchVal(value);
+                  },
                   inactiveThumbColor: Colors.white,
                   trackOutlineWidth: WidgetStatePropertyAll(0),
                   thumbIcon: WidgetStatePropertyAll(
@@ -35,8 +37,9 @@ class CustomAddressSwitch extends StatelessWidget {
                       color: Colors.transparent,
                     ),
                   ),
-                  trackColor:
-                      WidgetStatePropertyAll(AppColors.mainColor),
+                  trackColor: WidgetStatePropertyAll(addressCubit.switchValue
+                      ? AppColors.mainColor
+                      : AppColors.gray400),
                   activeColor: Colors.white,
                   trackOutlineColor: WidgetStateColor.transparent,
                 ),
@@ -45,8 +48,7 @@ class CustomAddressSwitch extends StatelessWidget {
           ),
           Text(
             'حفظ العنوان',
-            style: AppStyles.textStyle13SB
-                .copyWith(color: AppColors.gray400),
+            style: AppStyles.textStyle13SB.copyWith(color: AppColors.gray400),
           ),
         ],
       ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/shared/widgets/layout_or_login.dart';
 import 'package:fruit_hup/features/checkout/presentation/views/address_view.dart';
 import 'package:fruit_hup/features/checkout/presentation/views/check_out_view.dart';
+import 'package:fruit_hup/features/checkout/presentation/views/payment_view.dart';
 import 'package:fruit_hup/features/home/data/models/product_model.dart';
 import 'package:fruit_hup/features/intro_screens/presentations/splash/views/splash_view.dart';
 import '../../features/layout/presentation/views/layout_view.dart';
@@ -32,6 +33,7 @@ abstract class AppRouter {
   static const layoutView = '/LayoutView';
   static const myProfile = '/MyProfile';
   static const addressView = '/AddressView';
+  static const paymentView = '/PaymentView';
 
   static final GoRouter router = GoRouter(
     initialLocation: '/',
@@ -40,7 +42,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const CheckOutView();
+          return const SplashView();
         },
       ),
       GoRoute(
@@ -53,6 +55,12 @@ abstract class AppRouter {
         path: layoutOrLogin,
         builder: (context, state) {
           return const LayoutOrLogin();
+        },
+      ),
+      GoRoute(
+        path: paymentView,
+        builder: (context, state) {
+          return const PaymentView();
         },
       ),
       GoRoute(

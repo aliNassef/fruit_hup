@@ -24,7 +24,7 @@ final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 abstract class AppConstants {
   static const int cardPaymentMethodIntegrationId = 4564350;
 
-  static const kConstantPayMobKey = '';
+  static const kConstantPayMobKey = 'ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2ljSEp2Wm1sc1pWOXdheUk2T1Rjek5EZzVMQ0p1WVcxbElqb2lhVzVwZEdsaGJDSjkud2JJUVVfalBybWNMQXhCeTF1U3VLVTU0X0R1czk4VHByYlB4ekc2S0lDZWtvbDdWTVRVZ18ycEZTRzVnR1dndFEtcER1azdidndFZWRpQU11a3Rqdmc';
   static String isLoggedOnce = 'isLoggedOnce';
   static const String username = 'name';
   static const String useremail = 'email';
@@ -33,13 +33,16 @@ abstract class AppConstants {
   static const String productCollection = 'products';
   static const String favoriteProductsCollection = 'favoriteProducts';
   static const String favCollection = 'favourites';
-
   static List<ProductModel> products = [];
   static List<NotificationModel> notifications = [];
-
   static const String offerCollection = 'offers';
   static const String searchCollection = 'search';
   static const String notificationCollection = 'notifications';
-
   static const String cartCollection = 'cart';
+  static const String userAddrress = 'address';
+  static const String userCity = 'city';
+  static const String userDepartmentNumber = 'departmentNumber';
+
+
+
 }
