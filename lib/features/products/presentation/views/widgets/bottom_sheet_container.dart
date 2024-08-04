@@ -66,6 +66,7 @@ class BottomSheetContainer extends StatelessWidget {
                           context.read<ProductCubit>().changeBottomSheetPage();
                         },
                       ),
+                      VerticalSpace(10),
                     ],
                   );
                 } else {
@@ -116,17 +117,17 @@ class BottomSheetContainer extends StatelessWidget {
         (context.read<ProductCubit>().checkBoxAlaph == false &&
             context.read<ProductCubit>().checkBoxDesc == false)) {
       context.read<ProductCubit>().fetchProducts(sortBy: 'price', asc: true);
-      context.pop();
+      Navigator.pop(context);
     } else if (context.read<ProductCubit>().checkBoxDesc &&
         (context.read<ProductCubit>().checkBoxAlaph == false &&
             context.read<ProductCubit>().checkBoxAsc == false)) {
       context.read<ProductCubit>().fetchProducts(sortBy: 'price', asc: false);
-      context.pop();
+      Navigator.pop(context);
     } else if (context.read<ProductCubit>().checkBoxAlaph &&
         (context.read<ProductCubit>().checkBoxAsc == false &&
             context.read<ProductCubit>().checkBoxDesc == false)) {
       context.read<ProductCubit>().fetchProducts(sortBy: 'name', asc: true);
-      context.pop();
+      Navigator.pop(context);
     } else {
       log('Focused');
       if (context.read<ProductCubit>().checkBoxAlaph == false &&

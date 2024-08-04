@@ -101,12 +101,11 @@ class _LayoutViewBodyState extends State<LayoutViewBody> {
       screens: _buildScreens(),
       items: _navBarsItems(),
       handleAndroidBackButtonPress: true, // Default is true.
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset: false,
       stateManagement: true,
       hideNavigationBarWhenKeyboardAppears: true,
       decoration: buildNavBarDecoration(),
       popBehaviorOnSelectedNavBarItemPress: PopBehavior.all,
-      padding: const EdgeInsets.only(top: 8),
       backgroundColor: Colors.white,
       isVisible: true,
       animationSettings: const NavBarAnimationSettings(

@@ -31,18 +31,19 @@ class ProductHeader extends StatelessWidget {
             onTap: () {
               ProductCubit productCubit = context.read<ProductCubit>();
               showModalBottomSheet(
+                useSafeArea: true,
                 backgroundColor: Color(0xff000000).withOpacity(0.2),
                 context: context,
-                isDismissible: true,
                 isScrollControlled: true,
+                isDismissible: true,
                 builder: (context) {
                   return BlocProvider.value(
                     value: productCubit..getIntialBottomSheetState(),
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).viewInsets.bottom,
-                      ),
-                      child: SingleChildScrollView(
+                    child: SafeArea(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).viewInsets.bottom,
+                        ),
                         child: BottomSheetContainer(),
                       ),
                     ),

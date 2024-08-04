@@ -22,7 +22,9 @@ class ProductGridSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w),
+        padding: EdgeInsets.symmetric(
+            horizontal: 16.w,
+          ),
         child: Column(
           children: [
             BestSellerRow(),
