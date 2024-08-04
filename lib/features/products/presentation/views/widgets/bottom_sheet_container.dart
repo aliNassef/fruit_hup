@@ -12,7 +12,6 @@ import '../../view_model/product_cubit/product_cubit.dart';
 import 'custom_range_slider.dart';
 import 'header_section_bottom_sheet.dart';
 import 'price_range_section.dart';
-import 'package:go_router/go_router.dart';
 
 import 'sort_by_row.dart';
 import 'top_indicator_bottom_sheet.dart';
