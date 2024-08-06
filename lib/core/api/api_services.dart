@@ -11,6 +11,10 @@ class ApiServices {
   CollectionReference search =
       FirebaseFirestore.instance.collection(AppConstants.searchCollection);
 
+  CollectionReference orders =
+      FirebaseFirestore.instance.collection(AppConstants.orderCollection);
+
+
   getProductsData() async {
     QuerySnapshot querySnapshot = await products.get();
     var data = querySnapshot.docs;

@@ -4,14 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruit_hup/constants.dart';
 import 'package:fruit_hup/core/cache/cache_helper.dart';
 import 'package:fruit_hup/core/service_locator.dart';
+import 'package:fruit_hup/core/services/stripe_payment/payment_manger.dart';
 import 'package:fruit_hup/core/shared/widgets/custom_text_form_field.dart';
 import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
 import 'package:fruit_hup/features/checkout/presentation/view_model/address_cubit/address_cubit.dart';
 import 'package:fruit_hup/features/checkout/presentation/views/widgets/custom_address_switch.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../core/services/paymob_service.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/shared/widgets/top_bar.dart';
 import 'tap_bar_row.dart';
@@ -93,12 +92,7 @@ class AddressViewBody extends StatelessWidget {
                     );
 
                 // navigation to payment screen
-                PaymobManager().getPaymentKey(100, 'EGP').then((value) {
-                  launchUrl(
-                    Uri.parse(
-                        "https://accept.paymob.com/api/acceptance/iframes/791787?payment_token=$value"),
-                  );
-                });
+                PaymentManager.makePayment(100, 'EGP');
               } else {}
             },
           ),

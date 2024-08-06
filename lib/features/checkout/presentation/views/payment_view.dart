@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-  
+
 class PaymentView extends StatefulWidget {
   const PaymentView({super.key});
 
@@ -9,6 +9,7 @@ class PaymentView extends StatefulWidget {
 }
 
 class _PaymentViewState extends State<PaymentView> {
+  InAppWebViewController? webViewController;
   @override
   void initState() {
     super.initState();
@@ -17,7 +18,16 @@ class _PaymentViewState extends State<PaymentView> {
   @override
   Widget build(BuildContext context) {
     return InAppWebView(
-      onWebViewCreated: (controller) {},
+      initialUrlRequest: URLRequest(
+        url: WebUri.uri(
+          Uri.parse("https://your-stripe-payment-url.com"),
+        ), 
+      ),
+      onWebViewCreated: (controller) {
+        webViewController = controller;
+      },
+
+
     );
   }
 }

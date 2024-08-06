@@ -37,6 +37,7 @@ class CartCubit extends Cubit<CartState> {
       event.fold(
         (cartItems) {
           calcTotal(cartItems);
+
           emit(CartLoaded(cartItems: cartItems));
         },
         (failure) => emit(CartFailure(errMessage: failure.errMessage)),

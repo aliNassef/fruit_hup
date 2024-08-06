@@ -5,6 +5,7 @@ import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
 import 'package:fruit_hup/core/utils/app_router.dart';
 import 'package:fruit_hup/generated/l10n.dart';
 import 'package:go_router/go_router.dart';
+import '../../../../../constants.dart';
 import '../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_styles.dart';
@@ -65,7 +66,9 @@ class CartViewBody extends StatelessWidget {
                   return DefaultAppButton(
                     text: 'الدفع ${context.read<CartCubit>().total} جنيه',
                     onPressed: () {
-                       context.push(AppRouter.checkoutView);
+                      AppConstants.amountOfPayment =
+                          (context.read<CartCubit>().total * 100).toString();
+                      context.push(AppRouter.checkoutView);
                     },
                   );
                 },

@@ -46,6 +46,6 @@ class FruitHup extends StatelessWidget {
         enableScaleWH: () => false,
         enableScaleText: () => false,
       ),
-    );
+    ); 
   }
 }

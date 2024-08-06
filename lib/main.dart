@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_stripe/flutter_stripe.dart';
+import 'package:fruit_hup/core/services/stripe_payment/stripe_keys.dart';
 import 'core/api/notification_services.dart';
 import 'core/service_locator.dart';
 
@@ -13,6 +15,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  Stripe.publishableKey = StripeKeys.publishableKey;
   await PushNotificationService().init();
   await CacheHelper().init();
   await setupGetIt();
