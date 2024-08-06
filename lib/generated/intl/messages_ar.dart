@@ -67,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "ourProducts": MessageLookupByLibrary.simpleMessage("منتجاتنا"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "pay": MessageLookupByLibrary.simpleMessage("الدفع"),
         "payments": MessageLookupByLibrary.simpleMessage("المدفوعات"),
         "personalAccount": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "personalInfo":
@@ -90,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تسجيل بواسطة جوجل"),
         "sorryInfonotfound": MessageLookupByLibrary.simpleMessage(
             "عفوًا... هذه المعلومات غير متوفرة للحظة"),
+        "success": MessageLookupByLibrary.simpleMessage("تم بنجاح !"),
         "termsAndCondation": MessageLookupByLibrary.simpleMessage(
             " الشروط \nوالأحكام الخاصة بنا"),
         "theme": MessageLookupByLibrary.simpleMessage("الوضع"),

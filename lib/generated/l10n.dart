@@ -50,580 +50,580 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Login`
+  /// `تسجيل دخول`
   String get login {
     return Intl.message(
-      'Login',
+      'تسجيل دخول',
       name: 'login',
       desc: '',
       args: [],
     );
   }
 
-  /// `Email`
+  /// `البريد الإلكتروني`
   String get email {
     return Intl.message(
-      'Email',
+      'البريد الإلكتروني',
       name: 'email',
       desc: '',
       args: [],
     );
   }
 
-  /// `Password`
+  /// `كلمة المرور`
   String get password {
     return Intl.message(
-      'Password',
+      'كلمة المرور',
       name: 'password',
       desc: '',
       args: [],
     );
   }
 
-  /// `Forgot Password?`
+  /// `نسيت كلمة المرور؟`
   String get forgetPass {
     return Intl.message(
-      'Forgot Password?',
+      'نسيت كلمة المرور؟',
       name: 'forgetPass',
       desc: '',
       args: [],
     );
   }
 
-  /// `Don't have an account?`
+  /// `لا تمتلك حساب؟`
   String get haveAccount {
     return Intl.message(
-      'Don\'t have an account?',
+      'لا تمتلك حساب؟',
       name: 'haveAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Create a new account`
+  /// `قم بانشاء حساب`
   String get createNewAccount {
     return Intl.message(
-      'Create a new account',
+      'قم بانشاء حساب',
       name: 'createNewAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Or`
+  /// `أو`
   String get or {
     return Intl.message(
-      'Or',
+      'أو',
       name: 'or',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign in with Google`
+  /// `تسجيل بواسطة جوجل`
   String get signwithgoogle {
     return Intl.message(
-      'Sign in with Google',
+      'تسجيل بواسطة جوجل',
       name: 'signwithgoogle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign in with Apple`
+  /// `تسجيل بواسطة أبل`
   String get signwithapple {
     return Intl.message(
-      'Sign in with Apple',
+      'تسجيل بواسطة أبل',
       name: 'signwithapple',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign in with Facebook`
+  /// `تسجيل بواسطة فيسبوك`
   String get signwithfacebook {
     return Intl.message(
-      'Sign in with Facebook',
+      'تسجيل بواسطة فيسبوك',
       name: 'signwithfacebook',
       desc: '',
       args: [],
     );
   }
 
-  /// `New Account`
+  /// `حساب جديد`
   String get newaccount {
     return Intl.message(
-      'New Account',
+      'حساب جديد',
       name: 'newaccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Full Name`
+  /// `الاسم كامل`
   String get fullname {
     return Intl.message(
-      'Full Name',
+      'الاسم كامل',
       name: 'fullname',
       desc: '',
       args: [],
     );
   }
 
-  /// `By creating an account, you agree to our`
+  /// ` من خلال إنشاء حساب ، فإنك توافق على `
   String get fromRules {
     return Intl.message(
-      'By creating an account, you agree to our',
+      ' من خلال إنشاء حساب ، فإنك توافق على ',
       name: 'fromRules',
       desc: '',
       args: [],
     );
   }
 
-  /// `Terms \nand Conditions`
+  /// ` الشروط \nوالأحكام الخاصة بنا`
   String get termsAndCondation {
     return Intl.message(
-      'Terms \nand Conditions',
+      ' الشروط \nوالأحكام الخاصة بنا',
       name: 'termsAndCondation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign Up`
+  /// `إنشاء حساب جديد`
   String get signUp {
     return Intl.message(
-      'Sign Up',
+      'إنشاء حساب جديد',
       name: 'signUp',
       desc: '',
       args: [],
     );
   }
 
-  /// `Already have an account?`
+  /// ` تمتلك حساب بالفعل؟ `
   String get HaveAccount {
     return Intl.message(
-      'Already have an account?',
+      ' تمتلك حساب بالفعل؟ ',
       name: 'HaveAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Good Morning!`
+  /// `صباح الخير !..`
   String get goodMorning {
     return Intl.message(
-      'Good Morning!',
+      'صباح الخير !..',
       name: 'goodMorning',
       desc: '',
       args: [],
     );
   }
 
-  /// `Search for...`
+  /// `ابحث عن.......`
   String get searchFor {
     return Intl.message(
-      'Search for...',
+      'ابحث عن.......',
       name: 'searchFor',
       desc: '',
       args: [],
     );
   }
 
-  /// `Best Seller`
+  /// `الأكثر مبيعًا`
   String get bestSeller {
     return Intl.message(
-      'Best Seller',
+      'الأكثر مبيعًا',
       name: 'bestSeller',
       desc: '',
       args: [],
     );
   }
 
-  /// `More`
+  /// `المزيد`
   String get lot {
     return Intl.message(
-      'More',
+      'المزيد',
       name: 'lot',
       desc: '',
       args: [],
     );
   }
 
-  /// `Search`
+  /// `البحث`
   String get search {
     return Intl.message(
-      'Search',
+      'البحث',
       name: 'search',
       desc: '',
       args: [],
     );
   }
 
-  /// `Notifications`
+  /// `الاشعارات`
   String get notification {
     return Intl.message(
-      'Notifications',
+      'الاشعارات',
       name: 'notification',
       desc: '',
       args: [],
     );
   }
 
-  /// `Products`
+  /// `المنتجات`
   String get products {
     return Intl.message(
-      'Products',
+      'المنتجات',
       name: 'products',
       desc: '',
       args: [],
     );
   }
 
-  /// `Our Products`
+  /// `منتجاتنا`
   String get ourProducts {
     return Intl.message(
-      'Our Products',
+      'منتجاتنا',
       name: 'ourProducts',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sort by:`
+  /// `تصنيف حسب :`
   String get filter {
     return Intl.message(
-      'Sort by:',
+      'تصنيف حسب :',
       name: 'filter',
       desc: '',
       args: [],
     );
   }
 
-  /// `Price:`
+  /// `السعر :`
   String get priceRange {
     return Intl.message(
-      'Price:',
+      'السعر :',
       name: 'priceRange',
       desc: '',
       args: [],
     );
   }
 
-  /// `to`
+  /// `الي`
   String get to {
     return Intl.message(
-      'to',
+      'الي',
       name: 'to',
       desc: '',
       args: [],
     );
   }
 
-  /// `Results`
+  /// `نتائج`
   String get result {
     return Intl.message(
-      'Results',
+      'نتائج',
       name: 'result',
       desc: '',
       args: [],
     );
   }
 
-  /// `Cart`
+  /// `السلة`
   String get cart {
     return Intl.message(
-      'Cart',
+      'السلة',
       name: 'cart',
       desc: '',
       args: [],
     );
   }
 
-  /// `My Profile`
+  /// `حسابي`
   String get myProfile {
     return Intl.message(
-      'My Profile',
+      'حسابي',
       name: 'myProfile',
       desc: '',
       args: [],
     );
   }
 
-  /// `Public`
+  /// `عام`
   String get public {
     return Intl.message(
-      'Public',
+      'عام',
       name: 'public',
       desc: '',
       args: [],
     );
   }
 
-  /// `Personal Account`
+  /// `الملف الشخصي`
   String get personalAccount {
     return Intl.message(
-      'Personal Account',
+      'الملف الشخصي',
       name: 'personalAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `My Orders`
+  /// `طلباتي`
   String get myOrders {
     return Intl.message(
-      'My Orders',
+      'طلباتي',
       name: 'myOrders',
       desc: '',
       args: [],
     );
   }
 
-  /// `Payments`
+  /// `المدفوعات`
   String get payments {
     return Intl.message(
-      'Payments',
+      'المدفوعات',
       name: 'payments',
       desc: '',
       args: [],
     );
   }
 
-  /// `Favorites`
+  /// `المفضلة`
   String get favorites {
     return Intl.message(
-      'Favorites',
+      'المفضلة',
       name: 'favorites',
       desc: '',
       args: [],
     );
   }
 
-  /// `Who Are We`
+  /// `من نحن`
   String get whoAreWe {
     return Intl.message(
-      'Who Are We',
+      'من نحن',
       name: 'whoAreWe',
       desc: '',
       args: [],
     );
   }
 
-  /// `Help`
+  /// `المساعدة`
   String get help {
     return Intl.message(
-      'Help',
+      'المساعدة',
       name: 'help',
       desc: '',
       args: [],
     );
   }
 
-  /// `Theme`
+  /// `الوضع`
   String get theme {
     return Intl.message(
-      'Theme',
+      'الوضع',
       name: 'theme',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sign Out`
+  /// `تسجيل الخروج`
   String get signOut {
     return Intl.message(
-      'Sign Out',
+      'تسجيل الخروج',
       name: 'signOut',
       desc: '',
       args: [],
     );
   }
 
-  /// `Personal Info`
+  /// `المعلومات الشخصية`
   String get personalInfo {
     return Intl.message(
-      'Personal Info',
+      'المعلومات الشخصية',
       name: 'personalInfo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Change Password`
+  /// `تغيير كلمة المرور`
   String get changePass {
     return Intl.message(
-      'Change Password',
+      'تغيير كلمة المرور',
       name: 'changePass',
       desc: '',
       args: [],
     );
   }
 
-  /// `Save Changes`
+  /// `حفظ التغييرات`
   String get saveChanges {
     return Intl.message(
-      'Save Changes',
+      'حفظ التغييرات',
       name: 'saveChanges',
       desc: '',
       args: [],
     );
   }
 
-  /// `Current Password`
+  /// `كلمة المرور الحالي`
   String get currentPass {
     return Intl.message(
-      'Current Password',
+      'كلمة المرور الحالي',
       name: 'currentPass',
       desc: '',
       args: [],
     );
   }
 
-  /// `New Password`
+  /// `كلمة المرور الجديدة`
   String get newPass {
     return Intl.message(
-      'New Password',
+      'كلمة المرور الجديدة',
       name: 'newPass',
       desc: '',
       args: [],
     );
   }
 
-  /// `Confirm New Password`
+  /// `تأكيد كلمة المرور الجديده`
   String get confirmPass {
     return Intl.message(
-      'Confirm New Password',
+      'تأكيد كلمة المرور الجديده',
       name: 'confirmPass',
       desc: '',
       args: [],
     );
   }
 
-  /// `Do you want to log out?`
+  /// `هل تريد تسجيل الخروج؟`
   String get doYOuWantToLogout {
     return Intl.message(
-      'Do you want to log out?',
+      'هل تريد تسجيل الخروج؟',
       name: 'doYOuWantToLogout',
       desc: '',
       args: [],
     );
   }
 
-  /// `Confirm`
+  /// `تأكيد`
   String get confirm {
     return Intl.message(
-      'Confirm',
+      'تأكيد',
       name: 'confirm',
       desc: '',
       args: [],
     );
   }
 
-  /// `Cancel`
+  /// `لا أرغب`
   String get cancel {
     return Intl.message(
-      'Cancel',
+      'لا أرغب',
       name: 'cancel',
       desc: '',
       args: [],
     );
   }
 
-  /// `Favorites`
+  /// `المفضلة`
   String get fav {
     return Intl.message(
-      'Favorites',
+      'المفضلة',
       name: 'fav',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sorry... this information is not available at the moment`
+  /// `عفوًا... هذه المعلومات غير متوفرة للحظة`
   String get sorryInfonotfound {
     return Intl.message(
-      'Sorry... this information is not available at the moment',
+      'عفوًا... هذه المعلومات غير متوفرة للحظة',
       name: 'sorryInfonotfound',
       desc: '',
       args: [],
     );
   }
 
-  /// `Recent Searches`
+  /// `عمليات البحث الأخيرة`
   String get lastSearchInfo {
     return Intl.message(
-      'Recent Searches',
+      'عمليات البحث الأخيرة',
       name: 'lastSearchInfo',
       desc: '',
       args: [],
     );
   }
 
-  /// `Delete All`
+  /// `حذف الكل`
   String get deleteAll {
     return Intl.message(
-      'Delete All',
+      'حذف الكل',
       name: 'deleteAll',
       desc: '',
       args: [],
     );
   }
 
-  /// `Home`
+  /// `الرئيسية `
   String get main {
     return Intl.message(
-      'Home',
+      'الرئيسية ',
       name: 'main',
       desc: '',
       args: [],
     );
   }
 
-  /// `Products`
+  /// `المنتجات `
   String get productList {
     return Intl.message(
-      'Products',
+      'المنتجات ',
       name: 'productList',
       desc: '',
       args: [],
     );
   }
 
-  /// `Shopping Cart`
+  /// `سلة التسوق `
   String get shoppingCart {
     return Intl.message(
-      'Shopping Cart',
+      'سلة التسوق ',
       name: 'shoppingCart',
       desc: '',
       args: [],
     );
   }
 
-  /// `language`
+  /// `اللغة`
   String get language {
     return Intl.message(
-      'language',
+      'اللغة',
       name: 'language',
       desc: '',
       args: [],
     );
   }
 
-  /// `English`
+  /// `العربية`
   String get lang {
     return Intl.message(
-      'English',
+      'العربية',
       name: 'lang',
       desc: '',
       args: [],
     );
   }
 
-  /// `Choose Language`
+  /// `اختر اللغة`
   String get chooseLanguage {
     return Intl.message(
-      'Choose Language',
+      'اختر اللغة',
       name: 'chooseLanguage',
       desc: '',
       args: [],
@@ -645,6 +645,26 @@ class S {
     return Intl.message(
       'العربية',
       name: 'ar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `الدفع`
+  String get pay {
+    return Intl.message(
+      'الدفع',
+      name: 'pay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `تم بنجاح !`
+  String get success {
+    return Intl.message(
+      'تم بنجاح !',
+      name: 'success',
       desc: '',
       args: [],
     );
