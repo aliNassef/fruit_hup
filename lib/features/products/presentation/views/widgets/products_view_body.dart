@@ -23,11 +23,11 @@ class ProductsViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        VerticalSpace(16),
+    const    VerticalSpace(16),
         TopBar(showLeading: false,
           text: S.of(context).products,
         ),
-        VerticalSpace(16),
+    const    VerticalSpace(16),
         InkWell(
           onTap: () {
             context.push(AppRouter.searchView);
@@ -38,7 +38,7 @@ class ProductsViewBody extends StatelessWidget {
             ),
           ),
         ),
-        VerticalSpace(16),
+   const     VerticalSpace(16),
         BlocBuilder<ProductCubit, ProductState>(
           buildWhen: (previous, current) =>
               current is ProductLoaded ||
@@ -51,9 +51,9 @@ class ProductsViewBody extends StatelessWidget {
                 child: Column(
                   children: [
                     ProductHeader(),
-                    VerticalSpace(8),
+               const     VerticalSpace(8),
                     HorizantalproductList(),
-                    VerticalSpace(24),
+              const      VerticalSpace(24),
                     ProductGridSection(),
                   ],
                 ),
@@ -64,7 +64,7 @@ class ProductsViewBody extends StatelessWidget {
                   child: Column(
                     children: [
                       SortedProductHeader(productCount: state.products.length),
-                      VerticalSpace(16),
+                 const     VerticalSpace(16),
                       SortedProductGridSection(
                         products: state.products,
                       ),

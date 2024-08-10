@@ -31,13 +31,13 @@ class CartViewBody extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              VerticalSpace(16),
+            const  VerticalSpace(16),
               TopBar(
                 text: S.of(context).cart,
                 showLeading: false,
                 showTrailing: false,
               ),
-              VerticalSpace(20),
+        const      VerticalSpace(20),
               Container(
                 alignment: Alignment.center,
                 color: Color(0xffEBF9F1),
@@ -50,14 +50,14 @@ class CartViewBody extends StatelessWidget {
                   ),
                 ),
               ),
-              VerticalSpace(24),
+        const      VerticalSpace(24),
               Expanded(
                 child: ListView.separated(
                   itemBuilder: (context, index) => CartItem(
                     index: index,
                     cartItem: cartItems[index],
                   ),
-                  separatorBuilder: (context, index) => VerticalSpace(4),
+                  separatorBuilder: (context, index) =>const VerticalSpace(4),
                   itemCount: cartItems.length,
                 ),
               ),
@@ -73,7 +73,7 @@ class CartViewBody extends StatelessWidget {
                   );
                 },
               ),
-              VerticalSpace(20),
+           const   VerticalSpace(20),
             ],
           );
         } else if (state is CartFailure) {
@@ -86,19 +86,19 @@ class CartViewBody extends StatelessWidget {
             children: [
               ShimmerLoading(
                   height: 40.h, width: MediaQuery.sizeOf(context).width),
-              VerticalSpace(24),
+           const   VerticalSpace(24),
               Expanded(
                 child: ListView.separated(
                   itemBuilder: (context, index) =>
                       ShimmerLoading(height: 100.h, width: double.infinity),
-                  separatorBuilder: (context, index) => VerticalSpace(4),
+                  separatorBuilder: (context, index) =>const VerticalSpace(4),
                   itemCount:
                       10, // You can adjust the item count for the shimmer effect
                 ),
               ),
               ShimmerLoading(
                   height: 50.h, width: double.infinity), // Button shimmer
-              VerticalSpace(20),
+           const   VerticalSpace(20),
             ],
           );
         }

@@ -8,6 +8,7 @@ import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav
 import 'package:fruit_hup/features/profile/presentation/views/about_us.dart';
 import 'package:fruit_hup/features/profile/presentation/views/fav_view.dart';
 import 'package:fruit_hup/features/profile/presentation/views/my_profile_view.dart';
+import 'package:fruit_hup/features/profile/presentation/views/orders_view.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import '../../../../../core/shared/functions/build_loading_box.dart';
 import '../../../../../core/shared/widgets/app_spacer.dart';
@@ -44,22 +45,22 @@ class ProfileViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VerticalSpace(16),
+       const     VerticalSpace(16),
             TopBar(
               showLeading: false,
               showTrailing: false,
               text: S.of(context).myProfile,
             ),
-            VerticalSpace(20),
+     const       VerticalSpace(20),
             UserInfo(),
-            VerticalSpace(30),
+   const         VerticalSpace(30),
             Text(
               S.of(context).public,
               style: AppStyles.textStyle16B.copyWith(
                 color: AppColors.gray950,
               ),
             ),
-            VerticalSpace(20),
+      const      VerticalSpace(20),
             ProfileListTile(
               onTap: () {
                 final profileCubit = context.read<ProfileCubit>();
@@ -76,6 +77,12 @@ class ProfileViewBody extends StatelessWidget {
               text: S.of(context).personalAccount,
             ),
             ProfileListTile(
+              onTap: () {
+                navigateToNewPage(
+                  context,
+                  OrdersView(),
+                );
+              },
               icon: AppImages.orders_icon,
               text: S.of(context).myOrders,
             ),
@@ -122,14 +129,14 @@ class ProfileViewBody extends StatelessWidget {
               icon: AppImages.theme_choose,
               text: S.of(context).theme,
             ),
-            VerticalSpace(22),
+        const    VerticalSpace(22),
             Text(
               S.of(context).help,
               style: AppStyles.textStyle13B.copyWith(
                 color: AppColors.gray950,
               ),
             ),
-            VerticalSpace(16),
+    const        VerticalSpace(16),
             ProfileListTile(
               onTap: () {
                 navigateToNewPage(context, AboutUs());
@@ -137,9 +144,9 @@ class ProfileViewBody extends StatelessWidget {
               icon: AppImages.info_circle,
               text: S.of(context).whoAreWe,
             ),
-            VerticalSpace(20),
+   const         VerticalSpace(20),
             LogOutButton(),
-            VerticalSpace(20),
+    const        VerticalSpace(20),
           ],
         ),
       ),

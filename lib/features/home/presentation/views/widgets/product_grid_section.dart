@@ -28,7 +28,7 @@ class ProductGridSection extends StatelessWidget {
         child: Column(
           children: [
             BestSellerRow(),
-            VerticalSpace(8),
+     const       VerticalSpace(8),
             BlocBuilder<GetAllProductCubit, GetAllProductState>(
               buildWhen: (previous, current) =>
                   current is GetAllProductLoaded ||

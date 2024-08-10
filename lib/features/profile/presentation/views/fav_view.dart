@@ -19,13 +19,13 @@ class FavView extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            VerticalSpace(16),
+        const    VerticalSpace(16),
             TopBar(
               onTap: () => Navigator.pop(context),
               text: S.of(context).fav,
               showTrailing: false,
             ),
-            VerticalSpace(20),
+      const      VerticalSpace(20),
             BlocBuilder<FavCubit, FavState>(
               builder: (context, state) {
                 if (state is FavLoaded) {

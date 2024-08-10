@@ -45,7 +45,7 @@ class SignUpViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              VerticalSpace(20),
+           const   VerticalSpace(20),
               TopBar(
                 showTrailing: false,
                 onTap: () {
@@ -53,12 +53,12 @@ class SignUpViewBody extends StatelessWidget {
                 },
                 text: S.of(context).newaccount,
               ),
-              VerticalSpace(24),
+            const  VerticalSpace(24),
               CustomTextFormField(
                 controller: context.read<SignUpCubit>().name,
                 hintText: S.of(context).fullname,
               ),
-              VerticalSpace(16),
+          const    VerticalSpace(16),
               CustomTextFormField(
                 validator: (val) {
                   final regex = RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$');
@@ -72,7 +72,7 @@ class SignUpViewBody extends StatelessWidget {
                 controller: context.read<SignUpCubit>().email,
                 hintText: S.of(context).email,
               ),
-              VerticalSpace(16),
+         const     VerticalSpace(16),
               CustomTextFormField(
                 icon: Icon(
                   Icons.visibility_rounded,
@@ -88,9 +88,9 @@ class SignUpViewBody extends StatelessWidget {
                 hintText: S.of(context).password,
                 showIcon: true,
               ),
-              VerticalSpace(16),
+            const  VerticalSpace(16),
               TermsAndConditionsCheckbox(),
-              VerticalSpace(30),
+          const    VerticalSpace(30),
               DefaultAppButton(
                 onPressed: () {
                   if (context.read<SignUpCubit>().checkedBox == true) {
@@ -107,7 +107,7 @@ class SignUpViewBody extends StatelessWidget {
                 },
                 text: S.of(context).signUp,
               ),
-              VerticalSpace(30),
+         const     VerticalSpace(30),
               DonotHaveAccount(),
             ],
           ),

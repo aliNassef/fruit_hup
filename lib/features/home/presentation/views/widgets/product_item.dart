@@ -84,7 +84,7 @@ class ProductItem extends StatelessWidget {
                       instanceOfProduct.name,
                       style: AppStyles.textStyle13SB,
                     ),
-                    VerticalSpace(4),
+               const     VerticalSpace(4),
                     Text.rich(
                       TextSpan(
                         children: [

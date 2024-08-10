@@ -23,14 +23,14 @@ class MorePopularBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        VerticalSpace(16),
+      const  VerticalSpace(16),
         TopBar(
           text: S.of(context).bestSeller,
           onTap: () {
             context.pop();
           },
         ),
-        VerticalSpace(24),
+     const   VerticalSpace(24),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Text(
@@ -40,7 +40,7 @@ class MorePopularBody extends StatelessWidget {
             ),
           ),
         ),
-        VerticalSpace(8),
+    const    VerticalSpace(8),
         BlocBuilder<GetAllProductCubit, GetAllProductState>(
           builder: (context, state) {
             if (state is GetAllProductLoaded) {

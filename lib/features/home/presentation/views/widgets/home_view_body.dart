@@ -14,9 +14,9 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        VerticalSpace(16),
+   const     VerticalSpace(16),
         HomeTopBar(),
-        VerticalSpace(16),
+    const    VerticalSpace(16),
         InkWell(
           onTap: () {
             context.push(AppRouter.searchView);
@@ -27,9 +27,9 @@ class HomeViewBody extends StatelessWidget {
             ),
           ),
         ),
-        VerticalSpace(12),
+    const    VerticalSpace(12),
         OffersCarsuralSlider(),
-        VerticalSpace(12),
+     const   VerticalSpace(12),
         ProductGridSection(),
       ],
     );

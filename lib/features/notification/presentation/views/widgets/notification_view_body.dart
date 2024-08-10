@@ -33,7 +33,7 @@ class _NotificationViewBodyState extends State<NotificationViewBody> {
         if (state is NotificationLoaded) {
           return Column(
             children: [
-              VerticalSpace(16),
+         const     VerticalSpace(16),
               TopBar(
                 text: S.of(context).notification,
                 onTap: () {
@@ -44,7 +44,7 @@ class _NotificationViewBodyState extends State<NotificationViewBody> {
                   }
                 },
               ),
-              VerticalSpace(16),
+       const       VerticalSpace(16),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -54,7 +54,7 @@ class _NotificationViewBodyState extends State<NotificationViewBody> {
                         instanceOfNotification: state.notificationList[index],
                       );
                     },
-                    separatorBuilder: (context, index) => VerticalSpace(16),
+                    separatorBuilder: (context, index) =>const VerticalSpace(16),
                     itemCount: state.notificationList.length,
                   ),
                 ),

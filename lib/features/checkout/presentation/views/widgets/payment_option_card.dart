@@ -60,7 +60,7 @@ class PaymentOptionCard extends StatelessWidget {
                   title,
                   style: AppStyles.textStyle13SB.copyWith(color: Colors.black),
                 ),
-                VerticalSpace(6),
+            const    VerticalSpace(6),
                 Text(
                   subTitle,
                   style: AppStyles.textStyle13R

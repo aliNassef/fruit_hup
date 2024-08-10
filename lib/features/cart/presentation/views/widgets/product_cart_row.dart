@@ -48,7 +48,7 @@ class ProductCartRow extends StatelessWidget {
                     width: 20.w,
                   ),
                 ),
-                VerticalSpace(30),
+             const   VerticalSpace(30),
                 Text(
                   '${cartItem.quantity * cartItem.price} جنية',
                   style: AppStyles.textStyle16SB.copyWith(

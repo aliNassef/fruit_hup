@@ -36,7 +36,7 @@ class ProductDetailsItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               title,
-              VerticalSpace(4),
+          const    VerticalSpace(4),
               Text(
                 subtitle,
                 style: AppStyles.textStyle13SB.copyWith(
@@ -45,7 +45,7 @@ class ProductDetailsItem extends StatelessWidget {
               ),
             ],
           ),
-          HorizontalSpace(16),
+      const    HorizontalSpace(16),
           SvgPicture.asset(
             image,
             height: 35.h,

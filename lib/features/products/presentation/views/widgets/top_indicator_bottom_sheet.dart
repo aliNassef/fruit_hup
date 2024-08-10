@@ -8,7 +8,7 @@ class TopIndicatorBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        VerticalSpace(20),
+      const  VerticalSpace(20),
         Divider(
           endIndent: 140.w,
           indent: 140.w,
@@ -16,7 +16,7 @@ class TopIndicatorBottomSheet extends StatelessWidget {
           height: 3,
           thickness: 3,
         ),
-        VerticalSpace(7),
+    const    VerticalSpace(7),
       ],
     );
   }

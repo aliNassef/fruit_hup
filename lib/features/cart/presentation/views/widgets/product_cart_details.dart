@@ -26,14 +26,14 @@ class ProductCartDetails extends StatelessWidget {
             color: AppColors.gray950,
           ),
         ),
-        VerticalSpace(8),
+    const    VerticalSpace(8),
         Text(
           '${instanceOfCartModel.quantity} ${instanceOfCartModel.measure}',
           style: AppStyles.textStyle13R.copyWith(
             color: AppColors.orange500,
           ),
         ),
-        VerticalSpace(6),
+     const   VerticalSpace(6),
         BlocBuilder<CartCubit, CartState>(
           builder: (context, state) {
             return CounterRow(

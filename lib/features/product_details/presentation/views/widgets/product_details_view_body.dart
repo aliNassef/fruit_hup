@@ -62,7 +62,7 @@ class ProductDetailsViewBody extends StatelessWidget {
               ),
             ],
           ),
-          VerticalSpace(24),
+    const      VerticalSpace(24),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Column(
@@ -71,16 +71,16 @@ class ProductDetailsViewBody extends StatelessWidget {
                 ProductInfo(
                   instanceOfProduct: instanceOfProduct,
                 ),
-                VerticalSpace(16),
+          const      VerticalSpace(16),
                 ProductRatingAndReview(),
-                VerticalSpace(9),
+        const        VerticalSpace(9),
                 Text(
                   'ينتمي إلى الفصيلة القرعية ولثمرته لُب حلو المذاق وقابل للأكل، وبحسب علم النبات فهي تعتبر ثمار لبيّة، تستعمل لفظة البطيخ للإشارة إلى النبات نفسه أو إلى الثمرة تحديداً',
                   style: AppStyles.textStyle13R.copyWith(
                     color: Color(0xff979899),
                   ),
                 ),
-                VerticalSpace(16),
+           const     VerticalSpace(16),
                 Row(
                   children: [
                     Expanded(
@@ -109,7 +109,7 @@ class ProductDetailsViewBody extends StatelessWidget {
                     )),
                   ],
                 ),
-                VerticalSpace(16),
+           const     VerticalSpace(16),
                 Row(
                   children: [
                     Expanded(
@@ -150,7 +150,7 @@ class ProductDetailsViewBody extends StatelessWidget {
                     )),
                   ],
                 ),
-                VerticalSpace(16),
+          const      VerticalSpace(16),
                 DefaultAppButton(
                   text: 'اضف للسلة',
                   onPressed: () {
@@ -164,7 +164,7 @@ class ProductDetailsViewBody extends StatelessWidget {
                         );
                   },
                 ),
-                VerticalSpace(32),
+           const     VerticalSpace(32),
               ],
             ),
           ),

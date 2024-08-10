@@ -22,7 +22,7 @@ class ProductInfo extends StatelessWidget {
               instanceOfProduct.name,
               style: AppStyles.textStyle16B.copyWith(color: AppColors.gray950),
             ),
-            VerticalSpace(8),
+       const     VerticalSpace(8),
             Text.rich(
               textAlign: TextAlign.start,
               TextSpan(

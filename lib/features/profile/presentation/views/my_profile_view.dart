@@ -37,7 +37,7 @@ class MyProfileView extends StatelessWidget {
             builder: (context, state) => Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                VerticalSpace(16),
+                const VerticalSpace(16),
                 TopBar(
                   onTap: () {
                     Navigator.pop(context);
@@ -46,7 +46,7 @@ class MyProfileView extends StatelessWidget {
                   showTrailing: false,
                   text: S.of(context).personalAccount,
                 ),
-                VerticalSpace(24),
+                const VerticalSpace(24),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Row(
@@ -60,7 +60,7 @@ class MyProfileView extends StatelessWidget {
                     ],
                   ),
                 ),
-                VerticalSpace(20),
+                const VerticalSpace(20),
                 // name
                 CustomTextFormField(
                   controller: cubit.newName,
@@ -71,7 +71,7 @@ class MyProfileView extends StatelessWidget {
                           .getData(key: AppConstants.username) ??
                       'ali',
                 ),
-                VerticalSpace(8),
+                const VerticalSpace(8),
 
                 // email
                 CustomTextFormField(
@@ -83,7 +83,7 @@ class MyProfileView extends StatelessWidget {
                           .getData(key: AppConstants.useremail) ??
                       'test@gmail.com',
                 ),
-                VerticalSpace(16),
+                const VerticalSpace(16),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Row(
@@ -97,7 +97,7 @@ class MyProfileView extends StatelessWidget {
                     ],
                   ),
                 ),
-                VerticalSpace(8),
+                const VerticalSpace(8),
                 //  currentPass
                 CustomTextFormField(
                   secure: cubit.secureCurrentPass,
@@ -118,7 +118,7 @@ class MyProfileView extends StatelessWidget {
                   ),
                   hintText: S.of(context).currentPass,
                 ),
-                VerticalSpace(8),
+                const VerticalSpace(8),
                 // new Pass
                 CustomTextFormField(
                   secure: cubit.secureNewPass,
@@ -137,7 +137,7 @@ class MyProfileView extends StatelessWidget {
                   ),
                   hintText: S.of(context).newPass,
                 ),
-                VerticalSpace(8),
+                const VerticalSpace(8),
                 // confirm New Pass
                 CustomTextFormField(
                   secure: cubit.secureReNewPass,
@@ -156,14 +156,14 @@ class MyProfileView extends StatelessWidget {
                   ),
                   hintText: S.of(context).confirmPass,
                 ),
-                VerticalSpace(32),
+                const VerticalSpace(32),
                 DefaultAppButton(
                   text: S.of(context).saveChanges,
                   onPressed: () {
                     saveChanges(context);
                   },
                 ),
-                VerticalSpace(32),
+                const VerticalSpace(32),
               ],
             ),
           ),

@@ -45,9 +45,9 @@ class BottomSheetContainer extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       HeaderSectionBottomSheet(),
-                      VerticalSpace(16),
+                  const    VerticalSpace(16),
                       PriceRangeSection(),
-                      VerticalSpace(5),
+                  const    VerticalSpace(5),
                       CustomRangeSlider(
                         start: double.parse(
                             context.read<ProductCubit>().startPrice.text.isEmpty
@@ -58,14 +58,14 @@ class BottomSheetContainer extends StatelessWidget {
                                 ? '0'
                                 : context.read<ProductCubit>().endPrice.text),
                       ),
-                      VerticalSpace(16),
+                  const    VerticalSpace(16),
                       DefaultAppButton(
                         text: 'تصفيه',
                         onPressed: () {
                           context.read<ProductCubit>().changeBottomSheetPage();
                         },
                       ),
-                      VerticalSpace(10),
+                  const    VerticalSpace(10),
                     ],
                   );
                 } else {
@@ -93,7 +93,7 @@ class BottomSheetContainer extends StatelessWidget {
                         index: 2,
                         text: 'الأبجديه',
                       ),
-                      VerticalSpace(16),
+                  const    VerticalSpace(16),
                       DefaultAppButton(
                         text: 'تصفيه',
                         onPressed: () {

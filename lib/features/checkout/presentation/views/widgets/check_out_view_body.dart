@@ -42,7 +42,7 @@ class CheckOutViewBody extends StatelessWidget {
                       checkoutCubit.changeIntroPayMethod(0);
                     },
                   ),
-                  VerticalSpace(8),
+              const    VerticalSpace(8),
                   PaymentOptionCard(
                     title: 'اشتري الان وادفع لاحقا',
                     subTitle: 'يرجي تحديد طريقه الدفع',
@@ -52,7 +52,7 @@ class CheckOutViewBody extends StatelessWidget {
                       checkoutCubit.changeIntroPayMethod(1);
                     },
                   ),
-                  VerticalSpace(100),
+          const        VerticalSpace(100),
                 ],
               ),
             );

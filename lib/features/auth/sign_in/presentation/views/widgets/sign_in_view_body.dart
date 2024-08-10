@@ -48,7 +48,7 @@ class SignInViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                VerticalSpace(20),
+              const  VerticalSpace(20),
                 TopBar(
                   showTrailing: false,
                   showLeading: false,
@@ -57,7 +57,7 @@ class SignInViewBody extends StatelessWidget {
                   },
                   text: S.of(context).login,
                 ),
-                VerticalSpace(24),
+             const   VerticalSpace(24),
                 CustomTextFormField(
                   controller: context.read<SignInCubit>().email,
                   validator: (val) {
@@ -71,7 +71,7 @@ class SignInViewBody extends StatelessWidget {
                   },
                   hintText: S.of(context).email,
                 ),
-                VerticalSpace(16),
+             const   VerticalSpace(16),
                 CustomTextFormField(
                   icon: Icon(
                     Icons.visibility_rounded,
@@ -87,9 +87,9 @@ class SignInViewBody extends StatelessWidget {
                   hintText: S.of(context).password,
                   showIcon: true,
                 ),
-                VerticalSpace(16),
+             const   VerticalSpace(16),
                 ForgetPassButton(),
-                VerticalSpace(33),
+             const   VerticalSpace(33),
                 DefaultAppButton(
                   onPressed: () async {
                     if (context
@@ -104,9 +104,9 @@ class SignInViewBody extends StatelessWidget {
                   },
                   text: S.of(context).login,
                 ),
-                VerticalSpace(33),
+             const   VerticalSpace(33),
                 DonotHaveAccount(),
-                VerticalSpace(33),
+             const   VerticalSpace(33),
                 OrDivider(),
                 SignInWithAnotherWay(),
               ],

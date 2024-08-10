@@ -70,13 +70,13 @@ class PageViewItem extends StatelessWidget {
             ),
           ],
         ),
-        VerticalSpace(48),
+   const     VerticalSpace(48),
         SvgPicture.asset(
           AppImages.intro1,
           height: 43.h,
           width: 222.w,
         ),
-        VerticalSpace(24),
+    const    VerticalSpace(24),
         Text(
           instance.title,
           style: AppStyles.textStyle13SB.copyWith(
@@ -85,7 +85,7 @@ class PageViewItem extends StatelessWidget {
           textAlign: TextAlign.center,
           textDirection: TextDirection.rtl,
         ),
-        VerticalSpace(64),
+   const     VerticalSpace(64),
         DotsIndicator(
           dotsCount: introPages.length,
           position: currentIndex,
@@ -96,7 +96,7 @@ class PageViewItem extends StatelessWidget {
             activeColor: AppColors.mainColor,
           ),
         ),
-        VerticalSpace(16),
+   const     VerticalSpace(16),
         Visibility(
           visible: currentIndex == introPages.length - 1,
           child: DefaultAppButton(

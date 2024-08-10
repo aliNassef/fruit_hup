@@ -51,14 +51,14 @@ class _SearchViewBodyState extends State<SearchViewBody> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          VerticalSpace(16),
+          const VerticalSpace(16),
           TopBar(
             text: S.of(context).search,
             onTap: () {
               context.pop();
             },
           ),
-          VerticalSpace(16),
+          const VerticalSpace(16),
           CustomSearchBar(
             onSaved: (val) {
               print(" *********** " + val!);
@@ -66,7 +66,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             },
             searchControler: context.read<SearchCubit>().search,
           ),
-          VerticalSpace(24),
+          const VerticalSpace(24),
           context.read<SearchCubit>().search.text.isEmpty
               ? BlocBuilder<SearchCubit, SearchState>(
                   builder: (context, state) {
@@ -147,20 +147,20 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                   ? Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        VerticalSpace(100),
+                        const VerticalSpace(100),
                         Image.asset(
                           AppImages.noResult,
                           height: 230.h,
                           width: 230.w,
                           fit: BoxFit.cover,
                         ),
-                        VerticalSpace(20),
+                        const VerticalSpace(20),
                         Text(
                           S.of(context).search,
                           style: AppStyles.textStyle16B
                               .copyWith(color: AppColors.gray600),
                         ),
-                        VerticalSpace(6),
+                        const VerticalSpace(6),
                         Text(
                           S.of(context).sorryInfonotfound,
                           style: AppStyles.textStyle13R

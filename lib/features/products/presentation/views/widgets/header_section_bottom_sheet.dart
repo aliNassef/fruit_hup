@@ -25,7 +25,7 @@ class HeaderSectionBottomSheet extends StatelessWidget {
               ),
             ],
           ),
-          VerticalSpace(19),
+      const    VerticalSpace(19),
           Row(
             children: [
               SvgPicture.asset(

@@ -44,7 +44,7 @@ class HorizantalproductList extends StatelessWidget {
                           width: 36.w,
                         ),
                       ),
-                      VerticalSpace(2),
+              const        VerticalSpace(2),
                       Text(
                         AppConstants.products[index].name,
                         style: AppStyles.textStyle13SB.copyWith(
@@ -92,7 +92,7 @@ class HorizantalproductList extends StatelessWidget {
                           ),
                         ),
                       ),
-                      VerticalSpace(2),
+               const       VerticalSpace(2),
                       Shimmer.fromColors(
                         baseColor: Colors.grey[300]!,
                         highlightColor: Colors.grey[100]!,
