@@ -14,15 +14,16 @@ class ApiServices {
   CollectionReference orders =
       FirebaseFirestore.instance.collection(AppConstants.orderCollection);
 
-
   getProductsData() async {
     QuerySnapshot querySnapshot = await products.get();
     var data = querySnapshot.docs;
     return data;
   }
+
   getProductCollection() {
     return products;
   }
+
   getOffers() async {
     QuerySnapshot querySnapshot = await offers.get();
     var data = querySnapshot.docs;
@@ -35,6 +36,12 @@ class ApiServices {
         'search': val,
       },
     );
+  }
+
+  getOrders() async {
+    QuerySnapshot querySnapshot = await orders.get();
+    var data = querySnapshot.docs;
+    return data;
   }
 
   getQuries() async {

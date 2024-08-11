@@ -39,7 +39,7 @@ abstract class AppConstants {
   static const String offerCollection = 'offers';
   static const String searchCollection = 'search';
   static const String notificationCollection = 'notifications';
-  static const String orderCollection = 'order';
+  static const String orderCollection = 'orders';
   static const String cartCollection = 'cart';
   static const String userAddrress = 'address';
   static const String userCity = 'city';

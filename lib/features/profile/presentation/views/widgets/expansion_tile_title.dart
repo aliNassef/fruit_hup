@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -6,12 +5,14 @@ import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
 import 'package:fruit_hup/core/utils/app_colors.dart';
 import 'package:fruit_hup/core/utils/app_images.dart';
 import 'package:fruit_hup/core/utils/app_styles.dart';
+import 'package:fruit_hup/features/profile/data/models/order_model.dart';
 
 class ExpansionTileTitle extends StatelessWidget {
   const ExpansionTileTitle({
     super.key,
+    required this.orderModel,
   });
-
+  final OrderModel orderModel;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,30 +32,28 @@ class ExpansionTileTitle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'طلباتي',
+              orderModel.order_id.substring(0, 6),
               style: AppStyles.textStyle13B.copyWith(color: Colors.black),
             ),
             Text(
-              'طلباتي',
-              style:
-                  AppStyles.textStyle11R.copyWith(color: AppColors.gray400),
+              '${orderModel.created_at.toDate().day}/ ${orderModel.created_at.toDate().month}/ ${orderModel.created_at.toDate().year}',
+              style: AppStyles.textStyle11R.copyWith(color: AppColors.gray400),
             ),
             const VerticalSpace(6),
             Row(
               children: [
                 Text(
                   'طلباتي',
-                  style: AppStyles.textStyle13R
-                      .copyWith(color: AppColors.gray400),
+                  style:
+                      AppStyles.textStyle13R.copyWith(color: AppColors.gray400),
                 ),
                 HorizontalSpace(10),
                 Text(
-                  '10',
+                  orderModel.amount.toString(),
                   style: AppStyles.textStyle13B,
                 ),
-                HorizontalSpace(16),
                 Text(
-                  '250 EGP',
+                  orderModel.currency,
                   style: AppStyles.textStyle13B,
                 ),
               ],

@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
 import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/get_orders_cubit/getorders_cubit.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/get_orders_cubit/getorders_state.dart';
 
 import 'order_item.dart';
 
@@ -20,7 +25,25 @@ class OrdersViewBody extends StatelessWidget {
           showTrailing: false,
         ),
         const VerticalSpace(16),
-        OrderItem(),
+        BlocBuilder<GetordersCubit, GetordersState>(
+          builder: (context, state) {
+            if (state is GetordersLoaded) {
+              log(state.orders.length.toString());
+              return Expanded(
+                child: ListView.separated(
+                  itemBuilder: (context, index) => OrderItem(
+                    orderModel: state.orders[index],
+                  ),
+                  separatorBuilder: (context, index) => const VerticalSpace(16),
+                  itemCount: state.orders.length,
+                ),
+              );
+            } else {
+              log('message');
+              return Container();
+            }
+          },
+        ),
       ],
     );
   }

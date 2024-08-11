@@ -5,9 +5,11 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hup/constants.dart';
+import 'package:fruit_hup/core/api/api_services.dart';
 import 'package:fruit_hup/core/cache/cache_helper.dart';
 import 'package:fruit_hup/core/service_locator.dart';
 import 'package:fruit_hup/features/home/data/models/product_model.dart';
+import 'package:fruit_hup/features/profile/data/models/order_model.dart';
 
 import '../../../../core/error/failure.dart';
 import 'profile_repo.dart';
@@ -86,7 +88,7 @@ class ProfileRepoImpl extends ProfileRepo {
   Future<void> removeProductFromFavById({required int index}) async {
     try {
       var data = await favCollection.get();
-     
+
       var docId = data.docs[index].id;
       await favCollection.doc(docId).delete();
     } catch (e) {
@@ -107,6 +109,21 @@ class ProfileRepoImpl extends ProfileRepo {
       }
     } catch (e) {
       log(e.toString());
+    }
+  }
+
+  @override
+  Future<Either<List<OrderModel>, String>> getOrders() async {
+    try {
+      var data = await ApiServices().getOrders();
+      List<OrderModel> orders = [];
+
+      for (var item in data) {
+        orders.add(OrderModel.fromJson(item));
+      }
+      return Left(orders);
+    } catch (e) {
+      return Right(e.toString());
     }
   }
 }
