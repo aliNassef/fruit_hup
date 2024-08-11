@@ -66,7 +66,10 @@ abstract class AppImages {
   static const hearted = 'assets/svgs/hearted_icon.svg';
   // checkout
   static const checkout = 'assets/svgs/check_out_icon.svg';
-  static const paySuccess = 'assets/svgs/pay_success.png';
+  static const paySuccess = 'assets/images/pay_success.png';
+  // order
+  static const order = 'assets/svgs/order.svg';
+  // static const dropDownArrow = 'assets/svgs/drop_down_arrow.svg';
   // demo
   static const demoProfilr = 'assets/images/demo.png';
   static const demoHome = 'assets/images/demo_home.png';

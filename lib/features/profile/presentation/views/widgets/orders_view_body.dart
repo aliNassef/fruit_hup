@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
 import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
 
+import 'order_item.dart';
+
 class OrdersViewBody extends StatelessWidget {
   const OrdersViewBody({super.key});
 
@@ -11,19 +13,14 @@ class OrdersViewBody extends StatelessWidget {
       children: [
         const VerticalSpace(16),
         TopBar(
+          onTap: () {
+            Navigator.pop(context);
+          },
           text: 'طلباتي',
           showTrailing: false,
         ),
         const VerticalSpace(16),
-        ExpansionTile(
-          title: Text('طلباتي'),
-          children: [
-            Text('طلباتي'),
-            Text('طلباتي'),
-            Text('طلباتي'),
-            Text('طلباتي'),
-          ],
-        ),
+        OrderItem(),
       ],
     );
   }
