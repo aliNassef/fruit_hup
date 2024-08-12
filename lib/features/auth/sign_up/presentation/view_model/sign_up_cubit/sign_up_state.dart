@@ -16,3 +16,5 @@ final class SignUpFailure extends SignUpState {
 }
 
 final class SignUpDone extends SignUpState {}
+
+final class SignUpChangeSecurePass extends SignUpState {}

@@ -45,7 +45,7 @@ class SignUpViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-           const   VerticalSpace(20),
+              const VerticalSpace(20),
               TopBar(
                 showTrailing: false,
                 onTap: () {
@@ -53,12 +53,12 @@ class SignUpViewBody extends StatelessWidget {
                 },
                 text: S.of(context).newaccount,
               ),
-            const  VerticalSpace(24),
+              const VerticalSpace(24),
               CustomTextFormField(
                 controller: context.read<SignUpCubit>().name,
                 hintText: S.of(context).fullname,
               ),
-          const    VerticalSpace(16),
+              const VerticalSpace(16),
               CustomTextFormField(
                 validator: (val) {
                   final regex = RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$');
@@ -72,12 +72,27 @@ class SignUpViewBody extends StatelessWidget {
                 controller: context.read<SignUpCubit>().email,
                 hintText: S.of(context).email,
               ),
-         const     VerticalSpace(16),
+              const VerticalSpace(16),
               CustomTextFormField(
-                icon: Icon(
-                  Icons.visibility_rounded,
-                  color: AppColors.grayForIcon,
-                ),
+                secure: context.read<SignUpCubit>().isSecurePass,
+                icon: context.read<SignUpCubit>().isSecurePass
+                    ? GestureDetector(
+                        onTap: () {
+                          context.read<SignUpCubit>().changeSecurepass();
+                        },
+                        child: Icon(
+                          Icons.visibility_rounded,
+                          color: AppColors.grayForIcon,
+                        ),
+                      )
+                    : GestureDetector(
+                        onTap: () =>
+                            context.read<SignUpCubit>().changeSecurepass(),
+                        child: Icon(
+                          Icons.visibility_off_rounded,
+                          color: AppColors.grayForIcon,
+                        ),
+                      ),
                 validator: (val) {
                   if (val == null || val.isEmpty) {
                     return 'Please enter a password';
@@ -88,9 +103,9 @@ class SignUpViewBody extends StatelessWidget {
                 hintText: S.of(context).password,
                 showIcon: true,
               ),
-            const  VerticalSpace(16),
+              const VerticalSpace(16),
               TermsAndConditionsCheckbox(),
-          const    VerticalSpace(30),
+              const VerticalSpace(30),
               DefaultAppButton(
                 onPressed: () {
                   if (context.read<SignUpCubit>().checkedBox == true) {
@@ -107,7 +122,7 @@ class SignUpViewBody extends StatelessWidget {
                 },
                 text: S.of(context).signUp,
               ),
-         const     VerticalSpace(30),
+              const VerticalSpace(30),
               DonotHaveAccount(),
             ],
           ),

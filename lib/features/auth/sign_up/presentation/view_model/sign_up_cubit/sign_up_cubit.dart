@@ -17,6 +17,8 @@ class SignUpCubit extends Cubit<SignUpState> {
 
   // checkBox State
   bool checkedBox = false;
+  bool isSecurePass = true;
+
   // sign up parametes
   TextEditingController name = TextEditingController();
   TextEditingController email = TextEditingController();
@@ -33,15 +35,18 @@ class SignUpCubit extends Cubit<SignUpState> {
           .get<CacheHelper>()
           .saveData(key: AppConstants.useremail, value: email.text);
 
-      getIt
-          .get<CacheHelper>()
-          .setSecureData(  AppConstants.userPass,  pass.text);
+      getIt.get<CacheHelper>().setSecureData(AppConstants.userPass, pass.text);
       emit(SignUpLoaded());
     } catch (e) {
       emit(
         SignUpFailure(errMessage: e.toString()),
       );
     }
+  }
+
+  changeSecurepass() {
+    isSecurePass = !isSecurePass;
+    emit(SignUpChangeSecurePass());
   }
 
   changeCheckBoxState() {

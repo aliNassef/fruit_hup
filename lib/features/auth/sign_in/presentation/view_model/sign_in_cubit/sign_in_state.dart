@@ -9,6 +9,8 @@ final class SignInLoading extends SignInState {}
 
 final class SignInLoaded extends SignInState {}
 
+final class SignInSecurePassState extends SignInState {}
+
 final class SignInFailure extends SignInState {
   final String errMessage;
 

@@ -36,9 +36,9 @@ class SignInViewBody extends StatelessWidget {
               );
             },
           );
-        } else {
+        } else if (state is SignInLoading) {
           buildLoadingBox(context);
-        }
+        } else {}
       },
       builder: (context, state) {
         return SingleChildScrollView(
@@ -48,7 +48,7 @@ class SignInViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-              const  VerticalSpace(20),
+                const VerticalSpace(20),
                 TopBar(
                   showTrailing: false,
                   showLeading: false,
@@ -57,7 +57,7 @@ class SignInViewBody extends StatelessWidget {
                   },
                   text: S.of(context).login,
                 ),
-             const   VerticalSpace(24),
+                const VerticalSpace(24),
                 CustomTextFormField(
                   controller: context.read<SignInCubit>().email,
                   validator: (val) {
@@ -71,12 +71,28 @@ class SignInViewBody extends StatelessWidget {
                   },
                   hintText: S.of(context).email,
                 ),
-             const   VerticalSpace(16),
+                const VerticalSpace(16),
                 CustomTextFormField(
-                  icon: Icon(
-                    Icons.visibility_rounded,
-                    color: AppColors.grayForIcon,
-                  ),
+                  secure: context.read<SignInCubit>().isSecurePass,
+                  icon: context.read<SignInCubit>().isSecurePass
+                      ? GestureDetector(
+                          onTap: () {
+                            context.read<SignInCubit>().changeIsSecurePass();
+                          },
+                          child: Icon(
+                            Icons.visibility_rounded,
+                            color: AppColors.grayForIcon,
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () {
+                            context.read<SignInCubit>().changeIsSecurePass();
+                          },
+                          child: Icon(
+                            Icons.visibility_off_rounded,
+                            color: AppColors.grayForIcon,
+                          ),
+                        ),
                   controller: context.read<SignInCubit>().pass,
                   validator: (val) {
                     if (val == null || val.isEmpty) {
@@ -87,9 +103,9 @@ class SignInViewBody extends StatelessWidget {
                   hintText: S.of(context).password,
                   showIcon: true,
                 ),
-             const   VerticalSpace(16),
+                const VerticalSpace(16),
                 ForgetPassButton(),
-             const   VerticalSpace(33),
+                const VerticalSpace(33),
                 DefaultAppButton(
                   onPressed: () async {
                     if (context
@@ -104,9 +120,9 @@ class SignInViewBody extends StatelessWidget {
                   },
                   text: S.of(context).login,
                 ),
-             const   VerticalSpace(33),
+                const VerticalSpace(33),
                 DonotHaveAccount(),
-             const   VerticalSpace(33),
+                const VerticalSpace(33),
                 OrDivider(),
                 SignInWithAnotherWay(),
               ],
