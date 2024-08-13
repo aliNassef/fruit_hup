@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
-import 'package:fruit_hup/features/checkout/presentation/view_model/address_cubit/address_cubit.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_styles.dart';
+import '../../view_model/address_cubit/address_cubit.dart';
 
 class CustomAddressSwitch extends StatelessWidget {
   const CustomAddressSwitch({

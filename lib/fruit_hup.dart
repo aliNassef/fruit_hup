@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/utils/locale/language_cubit/change_lang_cubit.dart';
+import 'core/utils/locale/language_cubit/change_lang_cubit.dart';
 import 'core/utils/app_colors.dart';
 import 'core/utils/app_router.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

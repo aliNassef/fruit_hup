@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/cache/cache_helper.dart';
-import 'package:fruit_hup/core/service_locator.dart';
-import 'package:fruit_hup/core/services/stripe_payment/payment_manger.dart';
-import 'package:fruit_hup/core/shared/widgets/custom_text_form_field.dart';
-import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
-import 'package:fruit_hup/features/checkout/presentation/view_model/address_cubit/address_cubit.dart';
-import 'package:fruit_hup/features/checkout/presentation/views/widgets/custom_address_switch.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/cache/cache_helper.dart';
+import '../../../../../core/service_locator.dart';
+import '../../../../../core/services/stripe_payment/payment_manger.dart';
+import '../../../../../core/shared/widgets/custom_text_form_field.dart';
+import '../../../../../core/shared/widgets/default_app_button.dart';
+import '../../view_model/address_cubit/address_cubit.dart';
+import 'custom_address_switch.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/shared/widgets/app_spacer.dart';

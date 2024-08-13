@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/features/profile/data/models/order_model.dart';
-import 'package:fruit_hup/features/profile/presentation/views/widgets/expansion_tile_title.dart';
-import 'package:fruit_hup/features/profile/presentation/views/widgets/timeline.dart';
+import '../../../data/models/order_model.dart';
+import 'expansion_tile_title.dart';
+import 'timeline.dart';
 
 class OrderItem extends StatelessWidget {
   const OrderItem({

@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/cache/cache_helper.dart';
-import 'package:fruit_hup/core/service_locator.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/cache/cache_helper.dart';
+import '../../../../../core/service_locator.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../../../../core/utils/app_images.dart';

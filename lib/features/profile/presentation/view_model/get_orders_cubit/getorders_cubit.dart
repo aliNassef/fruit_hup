@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hup/features/profile/data/repo/profile_repo.dart';
-import 'package:fruit_hup/features/profile/presentation/view_model/get_orders_cubit/getorders_state.dart';
+import '../../../data/repo/profile_repo.dart';
+import 'getorders_state.dart';
 
 class GetordersCubit extends Cubit<GetordersState> {
   GetordersCubit(this._profileRepo) : super(GetordersInitial());

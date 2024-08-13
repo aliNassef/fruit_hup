@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:fruit_hup/features/home/data/models/product_model.dart';
-import 'package:fruit_hup/features/profile/data/models/order_model.dart';
+import '../../../home/data/models/product_model.dart';
+import '../models/order_model.dart';
 
 abstract class ProfileRepo {
   Future<void> logout();

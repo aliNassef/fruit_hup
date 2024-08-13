@@ -1,5 +1,5 @@
-import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
-import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
+import '../features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
+import '../features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
 
 import '../features/cart/data/repo/cart_repo_impl.dart';
 import '../features/profile/data/repo/profile_repo_impl.dart';

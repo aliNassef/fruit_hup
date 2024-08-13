@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/features/checkout/presentation/view_model/address_cubit/address_cubit.dart';
-import 'package:fruit_hup/features/checkout/presentation/views/widgets/address_view_body.dart';
+import '../view_model/address_cubit/address_cubit.dart';
+import 'widgets/address_view_body.dart';
 
 class AddressView extends StatelessWidget {
   const AddressView({super.key});

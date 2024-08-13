@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
-import 'package:fruit_hup/core/utils/app_router.dart';
-import 'package:fruit_hup/generated/l10n.dart';
+import '../../../../../core/shared/widgets/top_bar.dart';
+import '../../../../../core/utils/app_router.dart';
+import '../../../../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
 import '../../../../../core/shared/widgets/default_app_button.dart';

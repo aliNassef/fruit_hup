@@ -1,10 +1,10 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/core/shared/widgets/layout_or_login.dart';
-import 'package:fruit_hup/features/checkout/presentation/views/address_view.dart';
-import 'package:fruit_hup/features/checkout/presentation/views/check_out_view.dart';
-import 'package:fruit_hup/features/home/data/models/product_model.dart';
-import 'package:fruit_hup/features/intro_screens/presentations/splash/views/splash_view.dart';
+import '../shared/widgets/layout_or_login.dart';
+import '../../features/checkout/presentation/views/address_view.dart';
+import '../../features/checkout/presentation/views/check_out_view.dart';
+import '../../features/home/data/models/product_model.dart';
+import '../../features/intro_screens/presentations/splash/views/splash_view.dart';
 import '../../features/auth/sign_in/presentation/views/forgetpass_view.dart';
 import '../../features/layout/presentation/views/layout_view.dart';
 import '../../features/home/presentation/views/more_popular.dart';

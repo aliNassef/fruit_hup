@@ -4,12 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/api/api_services.dart';
-import 'package:fruit_hup/core/cache/cache_helper.dart';
-import 'package:fruit_hup/core/service_locator.dart';
-import 'package:fruit_hup/features/home/data/models/product_model.dart';
-import 'package:fruit_hup/features/profile/data/models/order_model.dart';
+import '../../../../constants.dart';
+import '../../../../core/api/api_services.dart';
+import '../../../../core/cache/cache_helper.dart';
+import '../../../../core/service_locator.dart';
+import '../../../home/data/models/product_model.dart';
+import '../models/order_model.dart';
 
 import '../../../../core/error/failure.dart';
 import 'profile_repo.dart';

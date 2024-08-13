@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/features/auth/sign_up/presentation/views/widgets/donot_have_account.dart';
+import 'donot_have_account.dart';
 import '../../../../../../core/shared/functions/toast_dialog.dart';
 import '../../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../../core/utils/app_colors.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/features/home/data/models/product_model.dart';
+import '../../../../home/data/models/product_model.dart';
 
 import '../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../core/utils/app_colors.dart';

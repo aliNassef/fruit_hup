@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruit_hup/core/shared/functions/locale.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/generated/l10n.dart';
+import '../../../../../core/shared/functions/locale.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../generated/l10n.dart';
 import '../../../../../core/utils/app_images.dart';
 import '../../../../../core/utils/app_styles.dart';
 

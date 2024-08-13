@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
-import 'package:fruit_hup/core/shared/widgets/default_app_button.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_images.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
-import 'package:fruit_hup/features/layout/presentation/views/layout_view.dart';
-import 'package:fruit_hup/generated/l10n.dart';
+import '../../../../constants.dart';
+import '../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../core/shared/widgets/default_app_button.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_images.dart';
+import '../../../../core/utils/app_styles.dart';
+import '../../../layout/presentation/views/layout_view.dart';
+import '../../../../generated/l10n.dart';
 
 class PaymentView extends StatelessWidget {
   const PaymentView({super.key});

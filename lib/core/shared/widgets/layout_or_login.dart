@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
  import 'package:flutter/material.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/features/auth/sign_in/presentation/views/sign_in_view.dart';
-import 'package:fruit_hup/features/layout/presentation/views/layout_view.dart';
+import '../../utils/app_colors.dart';
+import '../../../features/auth/sign_in/presentation/views/sign_in_view.dart';
+import '../../../features/layout/presentation/views/layout_view.dart';
 
 class LayoutOrLogin extends StatelessWidget {
   const LayoutOrLogin({super.key});

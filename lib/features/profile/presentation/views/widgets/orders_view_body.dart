@@ -2,10 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
-import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
-import 'package:fruit_hup/features/profile/presentation/view_model/get_orders_cubit/getorders_cubit.dart';
-import 'package:fruit_hup/features/profile/presentation/view_model/get_orders_cubit/getorders_state.dart';
+import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../core/shared/widgets/top_bar.dart';
+import '../../view_model/get_orders_cubit/getorders_cubit.dart';
+import '../../view_model/get_orders_cubit/getorders_state.dart';
 
 import 'order_item.dart';
 

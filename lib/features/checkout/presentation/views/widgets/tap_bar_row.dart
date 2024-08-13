@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/features/checkout/presentation/views/widgets/tap_bar_check_out.dart';
+import 'tap_bar_check_out.dart';
 
 class TapBarRow extends StatelessWidget {
   const TapBarRow({

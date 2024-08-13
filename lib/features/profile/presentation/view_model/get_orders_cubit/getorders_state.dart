@@ -1,4 +1,4 @@
-import 'package:fruit_hup/features/profile/data/models/order_model.dart';
+import '../../../data/models/order_model.dart';
 
 class GetordersState {}
 

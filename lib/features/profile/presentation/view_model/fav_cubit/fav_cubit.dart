@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:bloc/bloc.dart';
-import 'package:fruit_hup/features/home/data/models/product_model.dart';
-import 'package:fruit_hup/features/profile/data/repo/profile_repo.dart';
+import '../../../../home/data/models/product_model.dart';
+import '../../../data/repo/profile_repo.dart';
 import 'package:meta/meta.dart';
 
 part 'fav_state.dart';

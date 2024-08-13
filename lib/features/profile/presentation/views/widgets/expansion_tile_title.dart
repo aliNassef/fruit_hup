@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruit_hup/core/shared/widgets/app_spacer.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_images.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
-import 'package:fruit_hup/features/profile/data/models/order_model.dart';
+import '../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_images.dart';
+import '../../../../../core/utils/app_styles.dart';
+import '../../../data/models/order_model.dart';
 
 class ExpansionTileTitle extends StatelessWidget {
   const ExpansionTileTitle({

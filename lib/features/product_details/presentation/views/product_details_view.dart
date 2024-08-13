@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/service_locator.dart';
-import 'package:fruit_hup/features/cart/presentation/view_model/cart_cubit/cart_cubit.dart';
-import 'package:fruit_hup/features/home/data/models/product_model.dart';
+import '../../../../core/service_locator.dart';
+import '../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
+import '../../../home/data/models/product_model.dart';
 
 import 'widgets/product_details_view_body.dart';
 

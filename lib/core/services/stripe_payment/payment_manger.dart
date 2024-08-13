@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/core/services/stripe_payment/stripe_keys.dart';
-import 'package:fruit_hup/features/checkout/presentation/views/payment_view.dart';
+import '../../../constants.dart';
+import 'stripe_keys.dart';
+import '../../../features/checkout/presentation/views/payment_view.dart';
 
 abstract class PaymentManager {
   static Map<String, dynamic>? paymentIntentData;
