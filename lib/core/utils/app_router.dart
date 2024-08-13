@@ -5,6 +5,7 @@ import 'package:fruit_hup/features/checkout/presentation/views/address_view.dart
 import 'package:fruit_hup/features/checkout/presentation/views/check_out_view.dart';
 import 'package:fruit_hup/features/home/data/models/product_model.dart';
 import 'package:fruit_hup/features/intro_screens/presentations/splash/views/splash_view.dart';
+import '../../features/auth/sign_in/presentation/views/forgetpass_view.dart';
 import '../../features/layout/presentation/views/layout_view.dart';
 import '../../features/home/presentation/views/more_popular.dart';
 import '../../features/product_details/presentation/views/product_details_view.dart';
@@ -33,6 +34,7 @@ abstract class AppRouter {
   static const addressView = '/AddressView';
   static const paymentView = '/PaymentView';
   static const checkoutView = '/checkoutView';
+  static const forgetpassView = '/forgetpassView';
 
   static final GoRouter router = GoRouter(
     initialLocation: '/',
@@ -63,6 +65,17 @@ abstract class AppRouter {
         },
         pageBuilder: (context, state) => CustomTransitionPage(
           child: LayoutView(),
+          transitionsBuilder: buildEaseoutAnimation,
+          transitionDuration: Duration(milliseconds: 300),
+        ),
+      ),
+      GoRoute(
+        path: forgetpassView,
+        builder: (context, state) {
+          return ForgetPassView();
+        },
+        pageBuilder: (context, state) => CustomTransitionPage(
+          child: ForgetPassView(),
           transitionsBuilder: buildEaseoutAnimation,
           transitionDuration: Duration(milliseconds: 300),
         ),
