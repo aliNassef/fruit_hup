@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
+import '../../../../../core/utils/app_styles.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../view_model/search_cubit/search_cubit.dart';
 

@@ -21,7 +21,7 @@ class SignInWithAnotherWay extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             children: [
-              VerticalSpace(16),
+           const   VerticalSpace(16),
               SignWithAnotherWay(
                 onTap: () async {
                   context.read<SignInCubit>().signInWithGoogle();
@@ -29,12 +29,12 @@ class SignInWithAnotherWay extends StatelessWidget {
                 img: AppImages.google,
                 text: S.of(context).signwithgoogle,
               ),
-              VerticalSpace(16),
+           const   VerticalSpace(16),
               SignWithAnotherWay(
                 img: AppImages.apple,
                 text: S.of(context).signwithapple,
               ),
-              VerticalSpace(16),
+           const   VerticalSpace(16),
               SignWithAnotherWay(
                 img: AppImages.facebook,
                 text: S.of(context).signwithfacebook,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 abstract class AppColors {
   // green
   static const mainColor = Color(0xff1B5E37);
+  static const green950 = Color(0xff06140C);
   static const green500 = Color(0xff5DB957);
   static const green50 = Color(0xffEEF8ED);
 
@@ -10,7 +11,6 @@ abstract class AppColors {
   // gray
   static const gray500 = Color(0xff4E5556);
   static const gray600 = Color(0xff616A6B);
-
   static const gray400 = Color(0xff949D9E);
   static const grayForIcon = Color(0xffC9CECF);
   static const gray950 = Color(0xff0C0D0D);
@@ -19,6 +19,7 @@ abstract class AppColors {
   // orange
   static const orange500 = Color(0xffF4A91F);
   static const orange300 = Color(0xffF8C76D);
-  //#F8C76D
+  // notification
+  static const notificationTextColor = Color(0xff323232);
+  static const notificationDisColor = Color(0xffEB5757);
 }
-// F3F5F7

@@ -22,9 +22,9 @@ class DefaultAppButton extends StatelessWidget {
           alignment: Alignment.center,
           backgroundColor: WidgetStatePropertyAll(AppColors.mainColor),
         ),
-        onPressed:onPressed ,
+        onPressed: onPressed,
         child: Text(
-         text,
+          text,
           style: AppStyles.textStyle16B.copyWith(
             color: Colors.white,
           ),

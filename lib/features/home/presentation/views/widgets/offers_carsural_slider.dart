@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/features/home/presentation/view_model/get_offers_cubit/get_offers_cubit.dart';
+import '../../view_model/get_offers_cubit/get_offers_cubit.dart';
 import 'package:shimmer/shimmer.dart';
 
 class OffersCarsuralSlider extends StatelessWidget {

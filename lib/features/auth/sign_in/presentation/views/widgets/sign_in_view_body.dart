@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/shared/functions/build_loading_box.dart';
 import '../../view_model/sign_in_cubit/sign_in_cubit.dart';
-import '../../../../../home/presentation/views/home_view.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
 import '../../../../../../core/shared/widgets/custom_text_form_field.dart';
@@ -24,12 +24,8 @@ class SignInViewBody extends StatelessWidget {
       listener: (context, state) {
         if (state is SignInLoaded) {
           debugPrint('sucess *************');
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomeView(),
-            ),
-          );
+          context.pop();
+          context.go(AppRouter.layoutView);
         } else if (state is SignInFailure) {
           context.pop();
           showDialog(
@@ -40,9 +36,9 @@ class SignInViewBody extends StatelessWidget {
               );
             },
           );
-        } else {
+        } else if (state is SignInLoading) {
           buildLoadingBox(context);
-        }
+        } else {}
       },
       builder: (context, state) {
         return SingleChildScrollView(
@@ -52,14 +48,16 @@ class SignInViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                VerticalSpace(20),
+                const VerticalSpace(20),
                 TopBar(
+                  showTrailing: false,
+                  showLeading: false,
                   onTap: () {
                     context.go(AppRouter.OnBoardingView);
                   },
                   text: S.of(context).login,
                 ),
-                VerticalSpace(24),
+                const VerticalSpace(24),
                 CustomTextFormField(
                   controller: context.read<SignInCubit>().email,
                   validator: (val) {
@@ -73,8 +71,28 @@ class SignInViewBody extends StatelessWidget {
                   },
                   hintText: S.of(context).email,
                 ),
-                VerticalSpace(16),
+                const VerticalSpace(16),
                 CustomTextFormField(
+                  secure: context.read<SignInCubit>().isSecurePass,
+                  icon: context.read<SignInCubit>().isSecurePass
+                      ? GestureDetector(
+                          onTap: () {
+                            context.read<SignInCubit>().changeIsSecurePass();
+                          },
+                          child: Icon(
+                            Icons.visibility_rounded,
+                            color: AppColors.grayForIcon,
+                          ),
+                        )
+                      : GestureDetector(
+                          onTap: () {
+                            context.read<SignInCubit>().changeIsSecurePass();
+                          },
+                          child: Icon(
+                            Icons.visibility_off_rounded,
+                            color: AppColors.grayForIcon,
+                          ),
+                        ),
                   controller: context.read<SignInCubit>().pass,
                   validator: (val) {
                     if (val == null || val.isEmpty) {
@@ -85,9 +103,9 @@ class SignInViewBody extends StatelessWidget {
                   hintText: S.of(context).password,
                   showIcon: true,
                 ),
-                VerticalSpace(16),
+                const VerticalSpace(16),
                 ForgetPassButton(),
-                VerticalSpace(33),
+                const VerticalSpace(33),
                 DefaultAppButton(
                   onPressed: () async {
                     if (context
@@ -102,9 +120,9 @@ class SignInViewBody extends StatelessWidget {
                   },
                   text: S.of(context).login,
                 ),
-                VerticalSpace(33),
+                const VerticalSpace(33),
                 DonotHaveAccount(),
-                VerticalSpace(33),
+                const VerticalSpace(33),
                 OrDivider(),
                 SignInWithAnotherWay(),
               ],

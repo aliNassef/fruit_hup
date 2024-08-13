@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/features/search/data/repo/search_repo.dart';
+import '../../../data/repo/search_repo.dart';
 
 part 'search_state.dart';
 

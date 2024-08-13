@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:fruit_hup/constants.dart';
-import 'package:fruit_hup/features/home/data/repo/home_repo.dart';
+import '../../../../../constants.dart';
+import '../../../data/repo/home_repo.dart';
 
 part 'get_all_product_state.dart';
 
@@ -14,7 +14,7 @@ class GetAllProductCubit extends Cubit<GetAllProductState> {
     data.fold(
       (l) {
         AppConstants.products = l;
-        debugPrint(AppConstants.products.length.toString());
+      //  debugPrint(AppConstants.products.length.toString());
         emit(GetAllProductLoaded());
       },
       (r) {

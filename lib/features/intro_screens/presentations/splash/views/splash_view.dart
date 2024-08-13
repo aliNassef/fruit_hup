@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../../../../../constants.dart';
+import '../../../../../core/cache/cache_helper.dart';
+import '../../../../../core/service_locator.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/app_router.dart';
@@ -28,11 +31,21 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void executeNav() {
+    if (getIt.get<CacheHelper>().getData(key: AppConstants.isLoggedOnce) ==
+        null) {
+      getIt
+          .get<CacheHelper>()
+          .saveData(key: AppConstants.isLoggedOnce, value: false);
+    }
     Future.delayed(
       Duration(seconds: 3),
-      () => GoRouter.of(context).pushReplacement(
-        AppRouter.OnBoardingView,
-      ),
+      () => getIt.get<CacheHelper>().getData(key: AppConstants.isLoggedOnce)
+          ? GoRouter.of(context).pushReplacement(
+              AppRouter.layoutOrLogin,
+            )
+          : GoRouter.of(context).pushReplacement(
+              AppRouter.OnBoardingView,
+            ),
     );
   }
 }

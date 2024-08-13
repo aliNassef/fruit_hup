@@ -14,6 +14,13 @@ class SignInCubit extends Cubit<SignInState> {
   // sign with email and password
   TextEditingController email = TextEditingController();
   TextEditingController pass = TextEditingController();
+  bool isSecurePass = true;
+
+  void changeIsSecurePass() {
+    isSecurePass = !isSecurePass;
+    emit(SignInInitial());
+  }
+
   signInWithEmailAndPassword(
       {required String email, required String pass}) async {
     emit(SignInLoading());

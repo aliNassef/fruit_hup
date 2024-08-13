@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fruit_hup/constants.dart';
+import '../../constants.dart';
 
 class ApiServices {
-  CollectionReference products =
+  static CollectionReference products =
       FirebaseFirestore.instance.collection(AppConstants.productCollection);
 
   CollectionReference offers =
@@ -11,10 +11,17 @@ class ApiServices {
   CollectionReference search =
       FirebaseFirestore.instance.collection(AppConstants.searchCollection);
 
+  CollectionReference orders =
+      FirebaseFirestore.instance.collection(AppConstants.orderCollection);
+
   getProductsData() async {
     QuerySnapshot querySnapshot = await products.get();
     var data = querySnapshot.docs;
     return data;
+  }
+
+  getProductCollection() {
+    return products;
   }
 
   getOffers() async {
@@ -29,6 +36,12 @@ class ApiServices {
         'search': val,
       },
     );
+  }
+
+  getOrders() async {
+    QuerySnapshot querySnapshot = await orders.get();
+    var data = querySnapshot.docs;
+    return data;
   }
 
   getQuries() async {

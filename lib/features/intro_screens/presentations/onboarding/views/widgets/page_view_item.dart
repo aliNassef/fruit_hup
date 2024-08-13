@@ -2,16 +2,18 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../../constants.dart';
-import '../../../../../../core/shared/widgets/default_app_button.dart';
-import '../../../../../../core/utils/app_router.dart';
-import '../../../../data/model/on_boarding_model.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../../constants.dart';
+import '../../../../../../core/cache/cache_helper.dart';
+import '../../../../../../core/service_locator.dart';
 import '../../../../../../core/shared/widgets/app_spacer.dart';
+import '../../../../../../core/shared/widgets/default_app_button.dart';
 import '../../../../../../core/utils/app_colors.dart';
 import '../../../../../../core/utils/app_images.dart';
+import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../core/utils/app_styles.dart';
+import '../../../../data/model/on_boarding_model.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
@@ -51,6 +53,10 @@ class PageViewItem extends StatelessWidget {
                 left: MediaQuery.sizeOf(context).width * .9,
                 child: InkWell(
                   onTap: () {
+                    getIt.get<CacheHelper>().saveData(
+                          key: AppConstants.isLoggedOnce,
+                          value: true,
+                        );
                     context.go(AppRouter.signInView);
                   },
                   child: Text(
@@ -64,13 +70,13 @@ class PageViewItem extends StatelessWidget {
             ),
           ],
         ),
-        VerticalSpace(48),
+   const     VerticalSpace(48),
         SvgPicture.asset(
           AppImages.intro1,
           height: 43.h,
           width: 222.w,
         ),
-        VerticalSpace(24),
+    const    VerticalSpace(24),
         Text(
           instance.title,
           style: AppStyles.textStyle13SB.copyWith(
@@ -79,7 +85,7 @@ class PageViewItem extends StatelessWidget {
           textAlign: TextAlign.center,
           textDirection: TextDirection.rtl,
         ),
-        VerticalSpace(64),
+   const     VerticalSpace(64),
         DotsIndicator(
           dotsCount: introPages.length,
           position: currentIndex,
@@ -90,11 +96,16 @@ class PageViewItem extends StatelessWidget {
             activeColor: AppColors.mainColor,
           ),
         ),
-        VerticalSpace(16),
+   const     VerticalSpace(16),
         Visibility(
           visible: currentIndex == introPages.length - 1,
           child: DefaultAppButton(
             onPressed: () {
+              getIt.get<CacheHelper>().saveData(
+                    key: AppConstants.isLoggedOnce,
+                    value: true,
+                  );
+
               context.go(AppRouter.signInView);
             },
             text: 'ابدأ الان',

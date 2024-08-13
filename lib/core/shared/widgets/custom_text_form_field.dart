@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../functions/locale.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_styles.dart';
 
@@ -10,17 +9,34 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     this.showIcon = false,
     this.controller,
+    this.centerHint = false,
     this.validator,
+    this.icon,
+    this.initialValue,
+    this.onSaved,
+    this.readOnly = false,
+    this.secure = false,
   });
   final String hintText;
   final bool showIcon;
+  final bool centerHint;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final Widget? icon;
+  final String? initialValue;
+  final void Function(String?)? onSaved;
+  final bool readOnly;
+  final bool secure;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       child: TextFormField(
+        obscureText: secure,
+        readOnly: readOnly,
+        onSaved: onSaved,
+        initialValue: initialValue,
+        textAlign: centerHint ? TextAlign.center : TextAlign.start,
         controller: controller,
         validator: validator,
         style: AppStyles.textStyle16SB.copyWith(
@@ -33,27 +49,16 @@ class CustomTextFormField extends StatelessWidget {
           hintStyle: AppStyles.textStyle13B.copyWith(
             color: AppColors.gray400,
           ),
+
           filled: true,
           fillColor: Color(0xffF9FAFA), //#E6E9EA
           border: borderStyle(),
           enabledBorder: borderStyle(),
           focusedBorder: borderStyle(),
-          suffixIcon: showIcon && isArabic()
+          suffixIcon: showIcon
               ? Padding(
-                  padding: EdgeInsets.only(left: 16.w),
-                  child: Icon(
-                    Icons.visibility_rounded,
-                    color: AppColors.grayForIcon,
-                  ),
-                )
-              : null,
-          prefixIcon: showIcon && !isArabic()
-              ? Padding(
-                  padding: EdgeInsets.only(right: 16.w),
-                  child: Icon(
-                    Icons.visibility,
-                    color: AppColors.grayForIcon,
-                  ),
+                  padding: EdgeInsetsDirectional.only(end: 16.w),
+                  child: icon,
                 )
               : null,
         ),

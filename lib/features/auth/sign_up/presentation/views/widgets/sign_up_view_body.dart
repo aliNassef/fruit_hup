@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hup/features/auth/sign_up/presentation/views/widgets/donot_have_account.dart';
 import '../../../../../../core/shared/functions/toast_dialog.dart';
 import '../../../../../../core/shared/widgets/default_app_button.dart';
+import '../../../../../../core/utils/app_colors.dart';
 import '../../view_model/sign_up_cubit/sign_up_cubit.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../../core/shared/functions/build_loading_box.dart';
@@ -10,7 +12,6 @@ import '../../../../../../core/shared/widgets/custom_text_form_field.dart';
 import '../../../../../../core/shared/widgets/top_bar.dart';
 import '../../../../../../core/utils/app_router.dart';
 import '../../../../../../generated/l10n.dart';
-import '../../../../sign_in/presentation/views/widgets/donot_have_account.dart';
 import 'terms_and_condation_check_box.dart';
 
 class SignUpViewBody extends StatelessWidget {
@@ -21,7 +22,8 @@ class SignUpViewBody extends StatelessWidget {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
         if (state is SignUpLoaded) {
-          context.go(AppRouter.homeView);
+          context.pop();
+          context.go(AppRouter.layoutView);
         } else if (state is SignUpFailure) {
           context.pop();
           showDialog(
@@ -43,18 +45,20 @@ class SignUpViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              VerticalSpace(20),
+              const VerticalSpace(20),
               TopBar(
+                showTrailing: false,
                 onTap: () {
                   context.pop();
                 },
                 text: S.of(context).newaccount,
               ),
-              VerticalSpace(24),
+              const VerticalSpace(24),
               CustomTextFormField(
+                controller: context.read<SignUpCubit>().name,
                 hintText: S.of(context).fullname,
               ),
-              VerticalSpace(16),
+              const VerticalSpace(16),
               CustomTextFormField(
                 validator: (val) {
                   final regex = RegExp(r'^[a-zA-Z0-9._%+-]+@gmail\.com$');
@@ -68,8 +72,27 @@ class SignUpViewBody extends StatelessWidget {
                 controller: context.read<SignUpCubit>().email,
                 hintText: S.of(context).email,
               ),
-              VerticalSpace(16),
+              const VerticalSpace(16),
               CustomTextFormField(
+                secure: context.read<SignUpCubit>().isSecurePass,
+                icon: context.read<SignUpCubit>().isSecurePass
+                    ? GestureDetector(
+                        onTap: () {
+                          context.read<SignUpCubit>().changeSecurepass();
+                        },
+                        child: Icon(
+                          Icons.visibility_rounded,
+                          color: AppColors.grayForIcon,
+                        ),
+                      )
+                    : GestureDetector(
+                        onTap: () =>
+                            context.read<SignUpCubit>().changeSecurepass(),
+                        child: Icon(
+                          Icons.visibility_off_rounded,
+                          color: AppColors.grayForIcon,
+                        ),
+                      ),
                 validator: (val) {
                   if (val == null || val.isEmpty) {
                     return 'Please enter a password';
@@ -80,9 +103,9 @@ class SignUpViewBody extends StatelessWidget {
                 hintText: S.of(context).password,
                 showIcon: true,
               ),
-              VerticalSpace(16),
+              const VerticalSpace(16),
               TermsAndConditionsCheckbox(),
-              VerticalSpace(30),
+              const VerticalSpace(30),
               DefaultAppButton(
                 onPressed: () {
                   if (context.read<SignUpCubit>().checkedBox == true) {
@@ -99,7 +122,7 @@ class SignUpViewBody extends StatelessWidget {
                 },
                 text: S.of(context).signUp,
               ),
-              VerticalSpace(30),
+              const VerticalSpace(30),
               DonotHaveAccount(),
             ],
           ),

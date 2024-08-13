@@ -1,13 +1,17 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fruit_hup/core/shared/widgets/custom_search_bar.dart';
-import 'package:fruit_hup/core/shared/widgets/top_bar.dart';
-import 'package:fruit_hup/core/utils/app_colors.dart';
-import 'package:fruit_hup/core/utils/app_images.dart';
-import 'package:fruit_hup/core/utils/app_styles.dart';
-import 'package:fruit_hup/features/search/presentation/view_model/search_cubit/search_cubit.dart';
-import 'package:fruit_hup/generated/l10n.dart';
+import 'package:fruit_hup/features/profile/presentation/view_model/fav_cubit/fav_cubit.dart';
+import '../../../../../core/shared/widgets/custom_search_bar.dart';
+import '../../../../../core/shared/widgets/top_bar.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_images.dart';
+import '../../../../../core/utils/app_styles.dart';
+import '../../../../cart/presentation/view_model/cart_cubit/cart_cubit.dart';
+import '../../view_model/search_cubit/search_cubit.dart';
+import '../../../../../generated/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shimmer/shimmer.dart';
 import '../../../../../constants.dart';
@@ -47,14 +51,14 @@ class _SearchViewBodyState extends State<SearchViewBody> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          VerticalSpace(16),
+          const VerticalSpace(16),
           TopBar(
             text: S.of(context).search,
             onTap: () {
               context.pop();
             },
           ),
-          VerticalSpace(16),
+          const VerticalSpace(16),
           CustomSearchBar(
             onSaved: (val) {
               print(" *********** " + val!);
@@ -62,7 +66,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
             },
             searchControler: context.read<SearchCubit>().search,
           ),
-          VerticalSpace(24),
+          const VerticalSpace(24),
           context.read<SearchCubit>().search.text.isEmpty
               ? BlocBuilder<SearchCubit, SearchState>(
                   builder: (context, state) {
@@ -143,22 +147,22 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                   ? Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        VerticalSpace(100),
+                        const VerticalSpace(100),
                         Image.asset(
                           AppImages.noResult,
                           height: 230.h,
                           width: 230.w,
                           fit: BoxFit.cover,
                         ),
-                        VerticalSpace(20),
+                        const VerticalSpace(20),
                         Text(
                           S.of(context).search,
                           style: AppStyles.textStyle16B
                               .copyWith(color: AppColors.gray600),
                         ),
-                        VerticalSpace(6),
+                        const VerticalSpace(6),
                         Text(
-                          'عفوًا... هذه المعلومات غير متوفرة للحظة',
+                          S.of(context).sorryInfonotfound,
                           style: AppStyles.textStyle13R
                               .copyWith(color: AppColors.gray400),
                         )
@@ -179,7 +183,23 @@ class _SearchViewBodyState extends State<SearchViewBody> {
                               mainAxisExtent: 214.h,
                             ),
                             itemBuilder: (context, index) {
+                              final favCubit = context.read<FavCubit>();
                               return ProductItem(
+                                addOrRemoveToFav: () {
+                                  favCubit.changeFav(index, filteredItems);
+                                },
+                                addToCart: () {
+                                  context.read<CartCubit>().addProductToCart(
+                                        index: index,
+                                        quantity: 1,
+                                        img: filteredItems[index].image,
+                                        price: filteredItems[index].price,
+                                        name: filteredItems[index].name,
+                                        measure: filteredItems[index].measure,
+                                      );
+                                  log('added to cart');
+                                },
+                                index: index,
                                 instanceOfProduct: filteredItems[index],
                               );
                             },
