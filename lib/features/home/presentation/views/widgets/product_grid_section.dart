@@ -23,12 +23,12 @@ class ProductGridSection extends StatelessWidget {
     return Expanded(
       child: Padding(
         padding: EdgeInsets.symmetric(
-            horizontal: 16.w,
-          ),
+          horizontal: 16.w,
+        ),
         child: Column(
           children: [
             BestSellerRow(),
-     const       VerticalSpace(8),
+            const VerticalSpace(8),
             BlocBuilder<GetAllProductCubit, GetAllProductState>(
               buildWhen: (previous, current) =>
                   current is GetAllProductLoaded ||

@@ -18,23 +18,29 @@ class SplashViewBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              AppImages.SplashPlanet,
-              width: 192.w,
-              height: 172.h,
-            ),
-            Spacer(),
-            Center(
-              child: Image.asset(
-                AppImages.SplashLogo,
-                height: 173.h,
-                width: 178.w,
+            RepaintBoundary(
+              child: SvgPicture.asset(
+                AppImages.SplashPlanet,
+                width: 192.w,
+                height: 172.h,
               ),
             ),
             Spacer(),
-            SvgPicture.asset(
-              AppImages.SplashBottom,
-              height: 165.h,
+            Center(
+              child: RepaintBoundary(
+                child: Image.asset(
+                  AppImages.SplashLogo,
+                  height: 173.h,
+                  width: 178.w,
+                ),
+              ),
+            ),
+            Spacer(),
+            RepaintBoundary(
+              child: SvgPicture.asset(
+                AppImages.SplashBottom,
+                height: 165.h,
+              ),
             ),
           ],
         ),

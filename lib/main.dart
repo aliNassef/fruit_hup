@@ -5,7 +5,6 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'core/services/stripe_payment/stripe_keys.dart';
 import 'core/api/notification_services.dart';
 import 'core/service_locator.dart';
-
 import 'core/cache/cache_helper.dart';
 import 'firebase_options.dart';
 import 'fruit_hup.dart';
