@@ -24,10 +24,11 @@ class SignInViewBody extends StatelessWidget {
       listener: (context, state) {
         if (state is SignInLoaded) {
           debugPrint('sucess *************');
-          context.pop();
+          Navigator.pop(context);
           context.go(AppRouter.layoutView);
         } else if (state is SignInFailure) {
-          context.pop();
+          Navigator.pop(context);
+          ;
           showDialog(
             context: context,
             builder: (context) {

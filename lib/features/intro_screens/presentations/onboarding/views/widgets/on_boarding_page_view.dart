@@ -15,7 +15,7 @@ class OnBoardingPageview extends StatelessWidget {
       children: [
         PageviewItem(
           isVisible: true,
-          image: AppImages.intro1,
+          image: AppImages.FruitsBasket,
           backgroundImage: AppImages.OnboardingFrame1,
           subtitle:
               'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
@@ -43,7 +43,7 @@ class OnBoardingPageview extends StatelessWidget {
         ),
         const PageviewItem(
           isVisible: false,
-          image: AppImages.intro2,
+          image: AppImages.Pineapple,
           backgroundImage: AppImages.OnboardingFrame2,
           subtitle:
               'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',

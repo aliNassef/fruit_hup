@@ -45,22 +45,22 @@ class ProfileViewBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-       const     VerticalSpace(16),
+            const VerticalSpace(16),
             TopBar(
               showLeading: false,
               showTrailing: false,
               text: S.of(context).myProfile,
             ),
-     const       VerticalSpace(20),
+            const VerticalSpace(20),
             UserInfo(),
-   const         VerticalSpace(30),
+            const VerticalSpace(30),
             Text(
               S.of(context).public,
               style: AppStyles.textStyle16B.copyWith(
                 color: AppColors.gray950,
               ),
             ),
-      const      VerticalSpace(20),
+            const VerticalSpace(20),
             ProfileListTile(
               onTap: () {
                 final profileCubit = context.read<ProfileCubit>();
@@ -122,21 +122,21 @@ class ProfileViewBody extends StatelessWidget {
                 );
               },
               icon: AppImages.language_icon,
-              text: S.of(context).lang,
+              text:  S.of(context).lang,
               showLang: true,
             ),
             CheckBoxListTile(
               icon: AppImages.theme_choose,
               text: S.of(context).theme,
             ),
-        const    VerticalSpace(22),
+            const VerticalSpace(22),
             Text(
               S.of(context).help,
               style: AppStyles.textStyle13B.copyWith(
                 color: AppColors.gray950,
               ),
             ),
-    const        VerticalSpace(16),
+            const VerticalSpace(16),
             ProfileListTile(
               onTap: () {
                 navigateToNewPage(context, AboutUs());
@@ -144,9 +144,9 @@ class ProfileViewBody extends StatelessWidget {
               icon: AppImages.info_circle,
               text: S.of(context).whoAreWe,
             ),
-   const         VerticalSpace(20),
+            const VerticalSpace(20),
             LogOutButton(),
-    const        VerticalSpace(20),
+            const VerticalSpace(20),
           ],
         ),
       ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruit_hup/constants.dart';
- import 'package:fruit_hup/core/cache/cache_helper.dart';
+import 'package:fruit_hup/core/cache/cache_helper.dart';
 import 'package:fruit_hup/core/service_locator.dart';
 import 'package:fruit_hup/core/utils/app_router.dart';
 import 'package:fruit_hup/core/utils/app_styles.dart';
@@ -46,21 +46,24 @@ class PageviewItem extends StatelessWidget {
                   image,
                 ),
               ),
-              Visibility(
-                visible: isVisible,
-                child: GestureDetector(
-                  onTap: () {
-                    getIt<CacheHelper>()
-                        .saveData(key: AppConstants.isLoggedOnce, value: true);
+              Align(
+                alignment: Alignment.topRight,
+                child: Visibility(
+                  visible: isVisible,
+                  child: GestureDetector(
+                    onTap: () {
+                      getIt<CacheHelper>().saveData(
+                          key: AppConstants.isLoggedOnce, value: true);
 
-                    context.go(AppRouter.signInView);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Text(
-                      'تخط',
-                      style: AppStyles.textStyle13R.copyWith(
-                        color: const Color(0xFF949D9E),
+                      context.go(AppRouter.signInView);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(20),
+                      child: Text(
+                        'تخط',
+                        style: AppStyles.textStyle13R.copyWith(
+                          color: const Color(0xFF949D9E),
+                        ),
                       ),
                     ),
                   ),

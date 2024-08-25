@@ -52,7 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير !.."),
         "haveAccount": MessageLookupByLibrary.simpleMessage("لا تمتلك حساب؟"),
         "help": MessageLookupByLibrary.simpleMessage("المساعدة"),
-        "lang": MessageLookupByLibrary.simpleMessage("العربية"),
+        "lang": MessageLookupByLibrary.simpleMessage("الانجليزية"),
         "language": MessageLookupByLibrary.simpleMessage("اللغة"),
         "lastSearchInfo":
             MessageLookupByLibrary.simpleMessage("عمليات البحث الأخيرة"),
