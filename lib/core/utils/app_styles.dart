@@ -50,4 +50,10 @@ abstract class AppStyles {
     fontFamily: 'Cairo',
     color: AppColors.gray950,
   );
+
+  static final textStyle23B = TextStyle(
+    fontSize: 23.sp,
+    fontWeight: FontWeight.w700,
+    fontFamily: 'Cairo',
+  );
 }
